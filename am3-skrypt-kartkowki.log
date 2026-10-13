@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  13 OCT 2026 14:45
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  13 OCT 2026 14:49
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/am3-skrypt-kartkowki.tex
@@ -1218,14 +1218,14 @@ L3 programming layer <2026-01-19>
 Here is how much of LuaTeX's memory you used:
  32602 strings out of 476076
  125240,1373583 words of node,token memory allocated
- 1392 words of node memory still in use:
-   30 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 2 glyph, 105 attribute, 60 glue_spec, 90 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:1910,3:635,4:110,5:630,6:78,7:4868,8:35,9:740,11:260
+ 1405 words of node memory still in use:
+   30 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 3 glyph, 107 attribute, 60 glue_spec, 91 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:1961,3:641,4:126,5:658,6:80,7:4900,8:35,9:778,11:262
  54271 multiletter control sequences out of 65536+600000
- 54 fonts using 24473063 bytes
+ 54 fonts using 24472975 bytes
  111i,8n,107p,1069b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoText.ttf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Bold.otf>
-Output written on am3-skrypt-kartkowki.pdf (1 page, 32895 bytes).
+Output written on am3-skrypt-kartkowki.pdf (1 page, 32947 bytes).
 
 PDF statistics: 84 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
