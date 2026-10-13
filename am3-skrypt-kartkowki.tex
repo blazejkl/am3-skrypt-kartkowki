@@ -108,7 +108,59 @@
 \smallskip
 \textbf{wniosek} \; ciągowe kryterium domkniętości w przestrzeni metrycznej: \, \(A\) - domknięty \(\iff A = \operatorname{scl} A\)
 
-\indeks{w1-2}
+\bigskip
+\textbf{def} \; \((X, \mathcal{T}_X), \, (Y, \mathcal{T}_Y)\) - przestrzenie topologiczne, \; \(f: X \to Y\) - \textbf{ciągła} \, \(\iff \, \forall_{V \in \mathcal{T}_Y} \;\, f^{-1}(V) \in \mathcal{T}_X\)
+
+\bigskip
+\textbf{def} \; \(f\) spełnia \textbf{warunek Heinego} w \(x_0 \in X\) \, \(\iff \, \forall_{(x_n) \subset X} \;\, x_0 \in \operatorname{Lim}(x_n) \implies f(x_0) \in \operatorname{Lim}\big(f(x_n)\big)\) \; \((H)\)
+
+\smallskip
+\textbf{tw o równoważnych warunkach ciągłości}
+\begin{itemize}
+    \item \(f\) - ciągła \(\implies \forall_{x_0 \in X} \;\, f\) spełnia \((H)\) w \(x_0\)
+    \item \(\mathcal{T}_X\) - metryzowalna (pochodzi od pewnej metryki), \; \(\forall_{x_0 \in X} \;\, f\) spełnia \((H)\) w \(x_0 \implies f\) - ciągła
+\end{itemize}
+
+\newpage
+\textbf{def} \; \(\mathcal{B} \subseteq 2^X\), \, \textbf{topologia generowana przez bazę} \(\mathcal{B}\) \, \(\mathcal{T}(\mathcal{B}) \coloneqq \{\bigcup \mathcal{B}_0 : \mathcal{B}_0 \subseteq \mathcal{B}\}\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; w przestrzeni metrycznej \, \(\mathcal{T}\big(\{B(x, r) : x \in X, \; r > 0\}\big) = \mathcal{T}\)
+\end{logbox}
+
+\bigskip
+\textbf{fakt} \; \(\mathcal{T}(\mathcal{B})\) - topologia \, \(\iff\)
+\begin{podpunkty}
+    \item \(\displaystyle\bigcup \mathcal{B} = X\)
+    \item \(\forall_{U, \hat{U} \in \mathcal{B}} \;\, U \cap \hat{U} \in \mathcal{T}(\mathcal{B})\)
+\end{podpunkty}
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(\mathcal{B} = \{[a, b] : a < b, \; a, b \in \mathbb{R}\} \implies \mathcal{T}(\mathcal{B})\) nie jest topologią, bo \([a, b] \cap [b, c] = \{b\} \notin \mathcal{T}(\mathcal{B})\)
+\end{logbox}
+
+\bigskip
+\textbf{def} \; \(\mathcal{P} \subseteq 2^X\), \, \textbf{baza generowana przez podbazę} \(\mathcal{P}\) \, \(\mathcal{B}(\mathcal{P}) \coloneqq \{\bigcap_{j=1}^{n} V_j : V_1, \dots, V_n \in \mathcal{P}, \; n \in \mathbb{N}\}\)
+
+\smallskip
+\textbf{fakt} \; \(\mathcal{T}\big(\mathcal{B}(\mathcal{P})\big)\) jest zawsze topologią
+
+\bigskip
+\textbf{def} \; \((X_\alpha)_{\alpha \in A}\) - rodzina zbiorów, \; \textbf{iloczyn kartezjański} \, \(\prod \{X_\alpha : \alpha \in A\} \coloneqq \{\varphi : A \to \bigcup \{X_\alpha : \alpha \in A\} \;\; : \;\; \forall_{\alpha \in A} \;\, \varphi(\alpha) \in X_\alpha\}\)
+
+\smallskip
+\textbf{wniosek} \; \(\forall_{\alpha \in A} \;\, X_\alpha = X \implies \prod \{X_\alpha : \alpha \in A\} = X^A\)
+
+\bigskip
+\textbf{aksjomat wyboru} \; \(\forall_{\alpha \in A} \;\, X_\alpha \neq \emptyset \implies \prod \{X_\alpha : \alpha \in A\} \neq \emptyset\)
+
+
+\bigskip
+\bigskip
+
+\indeks{w3-4}
 
 
 \end{document}
