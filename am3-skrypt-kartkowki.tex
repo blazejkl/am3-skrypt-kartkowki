@@ -1,0 +1,114 @@
+%!LW recipe=latexmk (lualatex)
+
+\documentclass[a4paper,12pt]{article}
+
+\input{setup/preamble}
+\input{setup/style}
+\input{setup/math}
+
+\begin{document}
+
+\bit{skrypt pod kartkówki, wykłady z 25/26, mogą być błędy}
+\indeks{w1-2}
+
+\bigskip
+
+\textbf{def} \; \(X\) - zbiór, \; \(\mathcal{T} \subseteq 2^X\), \; \(\mathcal{T}\) - \textbf{topologia} \, \(\iff\)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(X, \emptyset \in \mathcal{T}\)
+    \item \(\forall_{\alpha \in A} \;\, U_\alpha \in \mathcal{T} \implies \displaystyle\bigcup \{U_\alpha : \alpha \in A\} \in \mathcal{T}\)
+    \item \(U, \hat{U} \in \mathcal{T} \implies U \cap \hat{U} \in \mathcal{T}\)
+\end{enumerate}
+
+\bigskip
+\textbf{def} \; \(A\) - \textbf{otwarty} \, \(\iff \, A \in \mathcal{T}\)
+
+\smallskip
+\textbf{def} \; \(A\) - \textbf{domknięty} \, \(\iff \, A^c \in \mathcal{T}\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykłady}
+\smallskip
+\begin{steps}
+    \item \(\mathcal{T} = 2^X\) \, - \textbf{topologia dyskretna}
+    \item \(\mathcal{T} = \{\emptyset, X\}\) \, - \textbf{topologia antydyskretna}
+\end{steps}
+\end{logbox}
+
+\bigskip
+\textbf{stw} \; \((X, d)\) - przestrzeń metryczna, \; \(A \subseteq X\) - otwarty \, \(\iff \, \forall_{x_0 \in A} \; \exists_{r > 0} \;\, B(x_0, r) \subseteq A\)
+
+\bigskip
+\textbf{def} \; \textbf{wnętrze} \, \(\operatorname{int} A \coloneqq \displaystyle\bigcup \{U \in \mathcal{T} : U \subseteq A\}\)
+
+\smallskip
+\textbf{def} \; \textbf{domknięcie} \, \(\overline{A} \coloneqq \displaystyle\bigcap \{F : F^c \in \mathcal{T}, \; F \supseteq A\}\)
+
+\bigskip
+\textbf{stw} \; o wnętrzu i domknięciu
+\begin{podpunkty}
+    \item \(\operatorname{int} A \subseteq A \subseteq \overline{A}\)
+    \item \(\operatorname{int} A \in \mathcal{T}, \;\; \big(\overline{A}\big)^c \in \mathcal{T}\)
+    \item \(\operatorname{int} A = \{x \in A : \exists_{U \in \mathcal{T}, \; x \in U} \;\, U \subseteq A\}\)
+    \item \(\overline{A} = \big(\operatorname{int} A^c\big)^c\)
+\end{podpunkty}
+
+\smallskip
+\textbf{wniosek} \; \(x \in \overline{A}^{\,c} \, \iff \, \exists_{U \in \mathcal{T}} \;\, x \in U \subseteq A^c\)
+
+\bigskip
+\textbf{def} \; \textbf{brzeg} \, \(\partial A \coloneqq \overline{A} \setminus \operatorname{int} A\)
+
+\smallskip
+\textbf{wniosek} \; \(x \in \partial A \, \iff \, \forall_{U \in \mathcal{T}, \; x \in U} \;\, U \cap A \neq \emptyset \; \land \; U \cap A^c \neq \emptyset\)
+
+\bigskip
+\textbf{tw o trichotomii} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(A \subseteq X \implies X = \operatorname{int} A \sqcup \partial A \sqcup \underbrace{\overline{A}^{\,c}}_{= \, \operatorname{int} A^c}\)
+
+\bigskip
+\textbf{def} \; \(A\) jest \textbf{gęsty} w \(X\) \, \(\iff \, \overline{A} = X\)
+
+\bigskip
+\textbf{def} \; \textbf{zbiór graniczny} \; \((x_n) \subset X\), \;\; \(\operatorname{Lim}(x_n) \coloneqq \{x_0 \in X : \forall_{U \in \mathcal{T}, \; x_0 \in U} \;\, \#\{n \in \mathbb{N} : x_n \notin U\} < \infty\}\)
+
+\bigskip
+\textbf{def} \; \(x_0\) ma \textbf{przeliczalną bazę otoczeń} \, \(\iff \, \exists_{\{V_n\}_{n=1}^{\infty} \subset \mathcal{T}} \;\; \big(\forall_n \;\, x_0 \in V_n\big) \; \land \; \big(\forall_{U \in \mathcal{T}, \; x_0 \in U} \; \exists_n \;\, V_n \subseteq U\big)\)
+
+\smallskip
+\begin{logbox}
+\textbf{przykład} \; w przestrzeni metrycznej \, \(V_n = B\big(x_0, \frac{1}{n}\big)\)
+\end{logbox}
+
+\bigskip
+\textbf{def} \; powiemy, że przestrzeń topologiczna \((X, \mathcal{T})\) ma \textbf{przeliczalną bazę otoczeń} \, \(\iff\) każdy punkt z \(X\) ma przeliczalną bazę otoczeń
+
+\smallskip
+\textbf{wniosek} \; przestrzenie metryczne mają przeliczalne bazy otoczeń
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - \textbf{przestrzeń Hausdorffa} \, \(\iff \, \forall_{x, \hat{x} \in X, \; x \neq \hat{x}} \; \exists_{U, \hat{U} \in \mathcal{T}} \;\, x \in U, \; \hat{x} \in \hat{U}, \; U \cap \hat{U} = \emptyset\)
+
+\smallskip
+\textbf{wniosek} \; każda przestrzeń metryczna jest przestrzenią Hausdorffa
+
+\smallskip
+\textbf{fakt} \; \((X, \mathcal{T})\) - przestrzeń Hausdorffa \(\implies \forall_{(x_n) \subset X} \;\, \#\operatorname{Lim}(x_n) \leq 1\)
+
+\bigskip
+\textbf{def} \; \textbf{domknięcie ciągowe} zbioru \, \(\operatorname{scl} A \coloneqq \{x_0 \in X : \exists_{(x_n)_{n=1}^{\infty} \subset A} \;\, x_0 \in \operatorname{Lim}(x_n)\}\)
+
+\smallskip
+\textbf{tw o domknięciu ciągowym}
+\begin{itemize}
+    \item \(A\) - zbiór \(\implies \operatorname{scl} A \subseteq \overline{A}\)
+    \item \((X, d)\) - przestrzeń metryczna, \; \(A \subseteq X \implies \operatorname{scl} A = \overline{A}\)
+\end{itemize}
+
+\smallskip
+\textbf{wniosek} \; ciągowe kryterium domkniętości w przestrzeni metrycznej: \, \(A\) - domknięty \(\iff A = \operatorname{scl} A\)
+
+\indeks{w1-2}
+
+
+\end{document}
