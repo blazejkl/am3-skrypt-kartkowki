@@ -8,11 +8,15 @@
 
 \begin{document}
 
-\bit{skrypt pod kartkówki, wykłady z 25/26, mogą być błędy}
+\bit{skrypt pod kartkówki, wykłady z 25/26}
+
+\bigskip
 \indeks{w1-2}
 
 \bigskip
+\temat{topologia}
 
+\bigskip
 \textbf{def} \; \(X\) - zbiór, \; \(\mathcal{T} \subseteq 2^X\), \; \(\mathcal{T}\) - \textbf{topologia} \, \(\iff\)
 \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
     \item \(X, \emptyset \in \mathcal{T}\)
@@ -159,8 +163,133 @@
 
 \bigskip
 \bigskip
-
 \indeks{w3-4}
+
+\bigskip
+niech \((X_\alpha, \mathcal{T}_\alpha)_{\alpha \in A}\) - przestrzenie topologiczne, \; \(X = \prod \{X_\alpha : \alpha \in A\}\)
+
+\bigskip
+\textbf{def} \; \(\alpha \in A\), \; \(U_\alpha \in \mathcal{T}_\alpha\), \; \textbf{cylinder} (otwarty) w \(X\) \, \(C_\alpha(U_\alpha) \coloneqq \{\varphi \in X : \varphi(\alpha) \in U_\alpha\}\)
+
+\bigskip
+\textbf{def} \; \textbf{topologia Tichonowa} (produktowa) na \(X\) \, \(\mathcal{T}_X \coloneqq \mathcal{T}\big(\mathcal{B}(\mathcal{P}_X)\big)\), \;\; \(\mathcal{P}_X \coloneqq \{C_\alpha(U_\alpha) : \alpha \in A, \; U_\alpha \in \mathcal{T}_\alpha\}\)
+
+\smallskip
+ozn.: \, \(\mathcal{B}_X \coloneqq \mathcal{B}(\mathcal{P}_X) = \{\bigcap_{j=1}^{n} C_{\alpha_j}(U_{\alpha_j}) : n \in \mathbb{N}_0, \; \alpha_j \in A, \; U_{\alpha_j} \in \mathcal{T}_{\alpha_j}\}\)
+
+\smallskip
+\textbf{wniosek} \; \(X = \prod_{j=1}^{n} X_j \implies \mathcal{B}_X = \{\prod_{j=1}^{n} U_j : \forall_j \;\, U_j \in \mathcal{T}_j\}\)
+
+\bigskip
+\textbf{stw} \; \((\varphi_n)_{n=0}^{\infty} \subset X \implies \Big(\varphi_0 \in \operatorname{Lim}(\varphi_n)_{n=1}^{\infty} \, \iff \, \forall_{\alpha \in A} \;\, \varphi_0(\alpha) \in \operatorname{Lim}\big(\varphi_n(\alpha)\big)_{n=1}^{\infty}\Big)\)
+
+\bigskip
+niech \((X_1, d_1), \dots, (X_{\hat{n}}, d_{\hat{n}})\) - przestrzenie metryczne, \; \(X = \prod_{j=1}^{\hat{n}} X_j\), \; \(\mathcal{T}_X\) - topologia Tichonowa
+
+\bigskip
+\textbf{def} \; \textbf{metryka produktowa} \, \(d_\Pi\big((x_j)_{j=1}^{\hat{n}}, (\hat{x}_j)_{j=1}^{\hat{n}}\big) \coloneqq \max\{d_j(x_j, \hat{x}_j) : j = 1, \dots, \hat{n}\}\)
+
+\smallskip
+\textbf{tw o równości topologii dla skończonego produktu} \; \(\mathcal{T}_X = \mathcal{T}_{d_\Pi}\)
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(Z \subseteq X\), \; \(\{U_\alpha\}_{\alpha \in A} \subset \mathcal{T}\) - \textbf{pokrycie} (otwarte) \(Z\) \, \(\iff \, Z \subseteq \bigcup \{U_\alpha : \alpha \in A\}\)
+
+\smallskip
+\textbf{def} \; \(\{U_\alpha\}_{\alpha \in \hat{A}}\) - \textbf{podpokrycie} \(\{U_\alpha\}_{\alpha \in A}\) \, \(\iff \, \hat{A} \subseteq A \; \land \; \{U_\alpha\}_{\alpha \in \hat{A}}\) - pokrycie \(Z\)
+
+\bigskip
+\textbf{def} \; \(K \subseteq X\) - \textbf{zwarty} \, \(\iff \, \forall_{\{U_\alpha\}_{\alpha \in A} \subset \mathcal{T}, \; K \subseteq \bigcup \{U_\alpha : \alpha \in A\}} \; \exists_{\hat{A} \subseteq A, \; \#\hat{A} < \infty} \;\, K \subseteq \bigcup \{U_\alpha : \alpha \in \hat{A}\}\) \, 
+(dla każdego pokrycia otw. $K$ istnieje jego sk. podpokrycie)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(X = \mathbb{R}\), \; \(Z = \{\frac{1}{n} : n \in \mathbb{N}\}\) \, - nie jest zwarty
+\end{logbox}
+
+\bigskip
+\textbf{tw o zbiorach zwartych i domkniętych} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(K \subseteq X\)
+\begin{podpunkty}
+    \item \(X\) - przestrzeń zwarta \; \(\land\) \; \(K\) - domknięty \(\implies K\) - zwarty
+    \item \(X\) - przestrzeń Hausdorffa \; \(\land\) \; \(K\) - zwarty \(\implies K\) - domknięty
+\end{podpunkty}
+
+\bigskip
+\textbf{tw Tichonowa} \; \(\forall_{\alpha \in A} \;\, (X_\alpha, \mathcal{T}_\alpha)\) - zwarta \(\implies \prod \{X_\alpha : \alpha \in A\}\) - zwarty
+
+\bigskip
+\textbf{tw o funkcjach ciągłych na zbiorach zwartych} \; \(f: X \to Y\) - ciągła, \; \(K \subseteq X\) - zwarty
+\begin{podpunkty}
+    \item \(f(K)\) - zwarty w \(Y\)
+    \item \(Y = \mathbb{R} \implies f\) przyjmuje kresy na \(K\): \, \(\exists_{x_{\min}, x_{\max} \in K} \;\, f(x_{\min}) = \inf \{f(x) : x \in K\}, \; f(x_{\max}) = \sup \{f(x) : x \in K\}\)
+    \item \((X, d_X), \, (Y, d_Y)\) - przestrzenie metryczne \(\implies f\) - \textbf{jednostajnie ciągła} na \(K\): \, \(\forall_{\varepsilon > 0} \; \exists_{\delta > 0} \; \forall_{x, \hat{x} \in K} \;\, d_X(x, \hat{x}) < \delta \implies d_Y\big(f(x), f(\hat{x})\big) < \varepsilon\)
+\end{podpunkty}
+
+\bigskip
+niech \((X, d)\) - przestrzeń metryczna
+
+\bigskip
+\textbf{def} \; \(Z \subseteq X\), \; \(\varepsilon > 0\), \; \(\{x_1, \dots, x_p\} \subseteq X\) - \textbf{sieć o prześwicie} \(\varepsilon\) dla \(Z\) \, \(\iff \, Z \subseteq \bigcup_{j=1}^{p} B(x_j, \varepsilon)\)
+
+\smallskip
+\textbf{def} \; \(Z\) - \textbf{całkowicie ograniczony} \, \(\iff \, \forall_{\varepsilon > 0} \; \exists\) sieć o prześwicie \(\varepsilon\) dla \(Z\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(\#X = \infty\), \; \(d(x, y) = 1 - \delta_x^y\) \,(metryka dyskretna) \, - \(X\) ograniczony, ale nie całkowicie ograniczony
+\end{logbox}
+
+\bigskip
+\textbf{fakt} \; \(\exists\) sieć o prześwicie \(\varepsilon\) dla \(Z \implies \exists\) sieć \(\{x_1, \dots, x_p\} \subseteq Z\) o prześwicie \(2\varepsilon\) dla \(Z\)
+
+\bigskip
+\textbf{def} \; \((x_n)\) - \textbf{zdystansowany} o \(\varepsilon > 0\) \, \(\iff \, \forall_{n, \hat{n}, \; n \neq \hat{n}} \;\, d(x_n, x_{\hat{n}}) \geq \varepsilon\)
+
+\smallskip
+\textbf{def} \; \((x_n)\) - \textbf{zdystansowany} \, \(\iff \, \exists_{\varepsilon > 0} \;\, (x_n)\) - zdystansowany o \(\varepsilon\)
+
+\bigskip
+\textbf{kryterium całkowitej ograniczoności} \; \(Z\) - całkowicie ograniczony \(\iff\) nie istnieje ciąg zdystansowany \((x_n) \subset Z\)
+
+\newpage
+\indeks{w5}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \((x_n) \subset X\), \; \(\operatorname{Acc}(x_n)_{n=1}^{\infty} \coloneqq \{x \in X : \forall_{U \in \mathcal{T}, \; x \in U} \;\, \#\{n \in \mathbb{N} : x_n \in U\} = \infty\}\)
+
+\smallskip
+\textbf{def} \; \(x_0 \in X\) - \textbf{punkt skupienia} ciągu \((x_n)\) \, \(\iff \, x_0 \in \operatorname{Acc}(x_n)\)
+
+\smallskip
+\textbf{fakt} \; \(\operatorname{Lim}(x_n) \subseteq \operatorname{Acc}(x_n)\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(x_n = (-1)^n\) \, - \(\operatorname{Lim}(x_n) = \emptyset \subseteq \{-1, 1\} = \operatorname{Acc}(x_n)\)
+\end{logbox}
+
+\bigskip
+\textbf{tw o zwartości w przestrzeniach metrycznych} \; \((X, d)\) - przestrzeń metryczna, \; \(K \subseteq X\), \; NWSR:
+\begin{podpunkty}
+    \item \(K\) - zwarty
+    \item \(\forall_{(x_n) \subset K} \;\, \operatorname{Acc}(x_n) \cap K \neq \emptyset\) \, (każdy ciąg o wyrazach z $K$ ma punkt skupienia należący do $K$)
+    \item \(\forall_{(x_n) \subset K} \; \exists_{(x_{n_k}) \text{ - podciąg}} \;\, \operatorname{Lim}(x_{n_k}) \cap K \neq \emptyset\) \, (każdy ciąg o wyrazach z $K$ ma podciąg zbieżny do granicy w $K$)
+    \item \(K\) - całkowicie ograniczony \(\land \; (K, d)\) - zupełna
+\end{podpunkty}
+
+\bigskip
+\textbf{tw o całkowitej ograniczoności w przestrzeniach} \(\mathbb{R}^n\) \; \(K \subseteq \mathbb{R}^n\) - ograniczony \(\implies K\) - całkowicie ograniczony
+
+\bigskip
+\textbf{tw Heinego-Borela} \; \(K \subseteq \mathbb{R}^n\) - zwarty \, \(\iff \, K\) - domknięty \(\land \; K\) - ograniczony
+
+
+\bigskip
+\bigskip
+\indeks{w6-7}
+
+\bigskip
+\temat{teoria miary}
 
 
 \end{document}

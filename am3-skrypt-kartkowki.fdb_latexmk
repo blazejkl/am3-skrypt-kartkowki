@@ -1,8 +1,8 @@
 # Fdb version 4
-["lualatex"] 1791896738.49763 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/am3-skrypt-kartkowki.tex" "am3-skrypt-kartkowki.pdf" "am3-skrypt-kartkowki" 1791896740.61216 0
+["lualatex"] 1791899536.77629 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/am3-skrypt-kartkowki.tex" "am3-skrypt-kartkowki.pdf" "am3-skrypt-kartkowki" 1791899539.37285 0
   "/System/Library/Fonts/Supplemental/STIXTwoMath.otf" 1777577597 838652 fb2396fd2ef8c2e20bbb59b398c5e5b2 ""
   "/System/Library/Fonts/Supplemental/STIXTwoText.ttf" 1777577597 418956 f30770c0c6d2f28df776fa38e697dd4d ""
-  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/am3-skrypt-kartkowki.tex" 1791896736.11574 7451 d36a0d52ec9f68a5314795a12ae7f3e0 ""
+  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/am3-skrypt-kartkowki.tex" 1791899536.64654 14361 88f40d055056b15c6e324d1972935d19 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/1bf66b236f82bc2a932aece03596c98956d1e89791c939de056b0af983bb67e6.luc" 1774820196.71856 113899 cd61ef35cdd759601a523c5e72967e98 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/4535fff5720926da9eb41482febfbf87ab8c02a4232fee006a16c0028a1c21f4.luc" 1783298542.10267 116532 fd7195ebfe39c5178b639d8d6d94ae05 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/951d7374bd446dd7af3ccf8522cc114c66a592d223d5addd18777c1b5f92ab60.luc" 1783298542.06403 112992 027767471409683013dd78de211dcaf3 ""
@@ -256,8 +256,8 @@
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat" 1774209518 6843 b47da19a8f71adfd0d5f143e53e45276 ""
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat.lua" 1774209518 18335 c4274f8330817a9faeabaefbb3147a29 ""
   "/usr/local/texlive/2026/texmf-var/web2c/luahbtex/lualatex.fmt" 1774811157 5655603 173f143ad37b8dc4c9ae53d40a591731 ""
-  "am3-skrypt-kartkowki.aux" 1791896740.3326 130 1116cc55a16f993401c249a26d109ff3 "lualatex"
-  "am3-skrypt-kartkowki.tex" 1791896736.11574 7451 d36a0d52ec9f68a5314795a12ae7f3e0 ""
+  "am3-skrypt-kartkowki.aux" 1791899539.07245 130 b064b04b1bada8ce6352b51e3180b4e7 "lualatex"
+  "am3-skrypt-kartkowki.tex" 1791899536.64654 14361 88f40d055056b15c6e324d1972935d19 ""
   "setup/math.tex" 1791894188.43189 497 7c03886e88d3edcee8c382176bd9caa0 ""
   "setup/preamble.tex" 1791894188.43218 874 c97df71915aca7e2ecce6c535e5fc17f ""
   "setup/style.tex" 1791894188.43243 2016 a6d71b6405ef8b23689b29c66b5c9845 ""
