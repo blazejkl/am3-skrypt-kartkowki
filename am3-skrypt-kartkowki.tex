@@ -14,7 +14,7 @@
 \indeks{w1-2}
 
 \bigskip
-\temat{topologia}
+\temat{1: topologia}
 
 \bigskip
 \textbf{def} \; \(X\) - zbiór, \; \(\mathcal{T} \subseteq 2^X\), \; \(\mathcal{T}\) - \textbf{topologia} \, \(\iff\)
@@ -289,7 +289,79 @@ niech \((X, d)\) - przestrzeń metryczna
 \indeks{w6-7}
 
 \bigskip
-\temat{teoria miary}
+\temat{2: teoria miary}
 
+\bigskip
+\textbf{def} \; \textbf{cegła} w \(\mathbb{R}^m\) \, \(C \coloneqq \prod_{j=1}^{m} [c_j, \hat{c}_j]\), \; \(c_j \leq \hat{c}_j\)
+
+\smallskip
+\textbf{def} \; \textbf{objętość} cegły \, \(\operatorname{Vol}(C) \coloneqq \prod_{j=1}^{m} (\hat{c}_j - c_j)\)
+
+\smallskip
+\textbf{def} \; \(C\) - \textbf{niezdegenerowana} \, \(\iff \, \operatorname{int} C \neq \emptyset\)
+
+\bigskip
+\textbf{stw o podstawowych własnościach cegły} \; \(C, D \subseteq \mathbb{R}^m\) - cegły
+\begin{podpunkty}
+    \item \(C \cap D\) - cegła \(\lor \; C \cap D = \emptyset\)
+    \item \(C \subseteq D \implies \operatorname{Vol}(C) \leq \operatorname{Vol}(D)\)
+\end{podpunkty}
+
+\bigskip
+\textbf{def} \; \(C = \prod_{j=1}^{m} [c_j, \hat{c}_j]\) - cegła, \; \(\forall_j \;\, c_j = d_{j,0} < d_{j,1} < \dots < d_{j,p_j} = \hat{c}_j\), \\ \textbf{rozbicie kartezjańskie} cegły \(C\) \, \(\mathcal{D} \coloneqq \{D_\varphi \coloneqq \prod_{j=1}^{m} [d_{j,\varphi(j)-1}, \, d_{j,\varphi(j)}] : \varphi \in \prod_{j=1}^{m} \{1, \dots, p_j\}\}\) \, (cegły wyznaczone przez punkty podziału na każdej osi)
+
+\bigskip
+\textbf{stw o rozbiciu kartezjańskim} \; \(\operatorname{Vol}(C) = \sum_{D \in \mathcal{D}} \operatorname{Vol}(D)\)
+
+\bigskip
+\textbf{stw o pokryciu i rozbiciu} \; \(C\) - cegła, \; \(\mathcal{D}\) - skończona rodzina cegieł
+\begin{itemize}
+    \item \(C \subseteq \bigcup \mathcal{D} \implies \sum_{D \in \mathcal{D}} \operatorname{Vol}(D) \geq \operatorname{Vol}(C)\) \, (pokrycie)
+    \item \(\big(\forall_{D, \hat{D} \in \mathcal{D}, \; D \neq \hat{D}} \;\, \operatorname{int} D \cap \operatorname{int} \hat{D} = \emptyset\big) \; \land \; \big(\forall_{D \in \mathcal{D}} \;\, D \subseteq C\big) \implies \sum_{D \in \mathcal{D}} \operatorname{Vol}(D) \leq \operatorname{Vol}(C)\) \, (cegły o rozłącznych wnętrzach zawarte w \(C\))
+\end{itemize}
+
+\bigskip
+\textbf{def} \; \(A \subseteq \mathbb{R}^m\), \; \textbf{miara zewnętrzna Lebesgue'a} \, \(\lambda_0(A) \coloneqq \inf \ \{\sum_n \operatorname{Vol}(C_n) : (C_n)_{n \in \mathbb{N}} \text{ - cegły}, \; \bigcup_n C_n \supseteq A\}\)
+
+\bigskip
+\textbf{def} \; \(\mu: 2^X \to [0, +\infty]\) - \textbf{miara zewnętrzna} na \(X\) \, \(\iff\)
+\begin{podpunkty}
+    \item \(\mu\) - \textbf{monotoniczna}: \, \(A \subseteq B \implies \mu(A) \leq \mu(B)\)
+    \item \(\mu\) - \textbf{przeliczalnie podaddytywna}: \, \(\forall_{\{A_n\}_{n \in \mathbb{N}} \subseteq 2^X} \;\, \mu\big(\bigcup_n A_n\big) \leq \sum_n \mu(A_n)\)
+\end{podpunkty}
+
+\bigskip
+\textbf{tw o podstawowych własnościach} \(\lambda_0\) \; \(A \subseteq \mathbb{R}^m\), \; \(C \subseteq \mathbb{R}^m\) - cegła
+\begin{podpunkty}
+    \item \(\lambda_0\) - miara zewnętrzna
+    \item \textbf{zgodność na cegłach}: \, \(\lambda_0(C) = \lambda_0(\operatorname{int} C) = \operatorname{Vol}(C)\)
+    \item \textbf{borelowskość}: \, \(\lambda_0(A) = \inf \{\lambda_0(U) : U \supseteq A, \; U \text{ - otwarty}\}\)
+    \item \textbf{translacyjna niezmienniczość}: \, \(\forall_{v \in \mathbb{R}^m} \;\, \lambda_0(A + v) = \lambda_0(A)\)
+    \item \(\lambda_0\) nie jest \textbf{przeliczalnie addytywna}: \, \(\exists_{\{A_n\}_{n \in \mathbb{N}} \subseteq 2^{\mathbb{R}}, \; \forall_{n \neq \hat{n}} \, A_n \cap A_{\hat{n}} = \emptyset} \;\, \lambda_0\big(\bigcup_n A_n\big) \neq \sum_n \lambda_0(A_n)\)\end{podpunkty}
+
+\bigskip
+\textbf{def} \; \(\mathcal{M} \subseteq 2^X\) - \textbf{\(\sigma\)-ciało} \, \(\iff\)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\emptyset \in \mathcal{M}\)
+    \item \(A \in \mathcal{M} \implies A^c \in \mathcal{M}\)
+    \item \(\forall_n \;\, A_n \in \mathcal{M} \implies \bigcup_n A_n \in \mathcal{M}\)
+\end{enumerate}
+
+\bigskip
+\textbf{def} \; \(\mathcal{M}\) - \(\sigma\)-ciało, \; \(\mu: \mathcal{M} \to [0, +\infty]\) - \textbf{miara} \, \(\iff\)
+\begin{podpunkty}
+    \item \(\mu(\emptyset) = 0\)
+    \item \(\{A_n\}_{n \in \mathbb{N}} \subseteq \mathcal{M}, \; \forall_{n \neq \hat{n}} \;\, A_n \cap A_{\hat{n}} = \emptyset \implies \mu\big(\bigcup_n A_n\big) = \sum_n \mu(A_n)\)
+\end{podpunkty}
+
+\bigskip
+\textbf{tw Carathéodory'ego} \; \(\mu\) - miara zewnętrzna na \(X\), \; \(\mu(\emptyset) = 0\), \; \(\mathcal{M} \coloneqq \{A \in 2^X : \forall_{E \subseteq X} \;\, \mu(E \cap A) + \mu(E \setminus A) = \mu(E)\}\)
+\begin{podpunkty}
+    \item \(\mathcal{M}\) - \(\sigma\)-ciało \(\land \; \mu|_{\mathcal{M}}\) - miara
+    \item \(\mu(A) = 0 \implies A \in \mathcal{M}\)
+\end{podpunkty}
+
+\newpage
+\indeks{w8}
 
 \end{document}
