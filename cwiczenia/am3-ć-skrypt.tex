@@ -568,14 +568,106 @@ czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topolog
     zatem \(g^{-1}\) nie jest ciągła \, \(\big((g^{-1})^{-1}(\{0\}) = g(\{0\})\big)\), \; zatem \(g\) nie jest homeomorfizmem
 \end{podpunkty}
 
-
 \bigskip
 \bigskip
 \indeks{ć4}
 
+\bigskip
+\zd{12} \; \((X, d_X)\) - przestrzeń metryczna, \; \(Y \subseteq X\), \; uzasadnij, że topologia indukowana na \(Y\) to topologia indukowana przez metrykę \(d_X\) obciętą do \(Y\)
+
+\smallskip
+\(\mathcal{T}_X\) - topologia generowana przez \(d_X\): \, \(U \in \mathcal{T}_X \iff \forall_{x \in U} \; \exists_{r > 0} \;\, B_X(x, r) \subseteq U\)
+
+\(\mathcal{T}_Y\) - topologia indukowana na \(Y\): \, \(\mathcal{T}_Y = \{U \cap Y : U \in \mathcal{T}_X\}\)
+
+\(\mathcal{T}_{d_Y}\) - topologia generowana przez \(d_Y\) - \(d_X\) obciętą do \(Y\):
+\smallskip
+\begin{itemize}
+    \item metryki dziedziczą się trywialnie: \, \(d_Y \coloneqq d_X|_{Y \times Y}\)
+    \item \(U \in \mathcal{T}_{d_Y} \iff \forall_{x \in U} \; \exists_{r > 0} \;\, B_Y(x, r) \subseteq U\)
+\end{itemize}
+\smallskip
+wykażemy \(\mathcal{T}_Y = \mathcal{T}_{d_Y}\):
+\begin{itemize}
+    \item \((*)\) \; \(B_Y(x, r) = B_X(x, r) \cap Y\) \, dla \(x \in Y\): \, \(z \in B_Y(x, r) \iff z \in Y \land d_X(z, x) < r \iff z \in Y \land z \in B_X(x, r)\)
+    \item \(\subseteq\): \, \(Y \supseteq V \in \mathcal{T}_Y \iff V = U \cap Y, \; U \in \mathcal{T}_X\), \; \(U \in \mathcal{T}_X \iff \forall_{x \in U} \; \exists_{r > 0} \;\, B_X(x, r) \subseteq U \overset{(*)}{\implies} \forall_{x \in V = U \cap Y} \; \exists_{r > 0} \;\, B_Y(x, r) \subseteq V \implies V \in \mathcal{T}_{d_Y}\)
+    \item \(\supseteq\): \, \(W \in \mathcal{T}_{d_Y} \overset{(*)}{\iff} \forall_{w \in W} \; \exists_{r_w > 0} \;\, B_X(w, r_w) \cap Y \subseteq W \implies W \overset{(**)}{=} Y \cap \underbrace{\bigcup_{w \in W} B_X(w, r_w)}_{\in \, \mathcal{T}_X \text{ (ii))}} \implies W \in \mathcal{T}_Y\) \\
+    (tak wybrane \(r_w\) zapewniają, że nie wpadnie nic z \(Y \setminus W\))
+    \smallskip
+    \item \((**)\)
+    \begin{itemize}
+        \item \(\supseteq\): \, \(Y \cap \bigcup_{w \in W} B_X(w, r_w) = \bigcup_{w \in W} \big(Y \cap B_X(w, r_w)\big) \subseteq W\)
+        \item \(\subseteq\): \, \(\forall_{w \in W} \;\, w \in B_X(w, r_w) \;\land\; W \subseteq Y \implies W \subseteq Y \cap \bigcup_{w \in W} B_X(w, r_w)\)
+    \end{itemize}
+\end{itemize}
 
 \bigskip
+\zad{13} \; \((X, d)\) - przestrzeń metryczna, \; czy domknięcie kuli otwartej jest kulą domkniętą o tym samym promieniu?
+
+\smallskip
+kontrprzykład: \, metryka dyskretna \(d(x, y) = \begin{cases} 1, & x \neq y \\ 0, & x = y \end{cases}\) \, na \(X = \{x, y\}\)
+\begin{itemize}
+    \item \(B(x, 1) = \{z \in X : d(x, z) < 1\} = \{x\}\)
+    \item w \(\mathcal{T}_d\) każdy singleton jest otwarty \, \(\big(\{y\} = B\big(y, \frac{1}{2}\big)\big)\), zatem każdy zbiór jest otwarty, zatem też domknięty
+    \item więc \(\overline{B(x, 1)} = \{x\}\)
+    \item ale \(\overline{B}(x, 1) = \{z \in X : d(x, z) \leq 1\} = X \neq \{x\}\)
+\end{itemize}
+
 \bigskip
+\zad{14} \; \(f: \mathbb{R} \to \mathbb{R}\) - bijekcja, \; pokazać, że \(f\) - homeomorfizm \(\iff f\) - monotoniczna
+
+\smallskip
+\textbf{fakt 14a} \; \(g\) - monotoniczna bijekcja na \(\mathbb{R} \implies g\) - ciągła
+
+\smallskip
+\textbf{dowód}
+\begin{itemize}
+    \item niech bez straty ogólności \(g\) - rosnąca, \; \(x_0 \in \mathbb{R}, \; y_0 = g(x_0), \; \varepsilon > 0\)
+    \item mamy \(\exists_{x_1, x_2 \in \mathbb{R}} \;\, \begin{cases} g(x_1) = y_0 - \varepsilon \\ g(x_2) = y_0 + \varepsilon \end{cases} \implies x_1 < x_0 < x_2\)
+    \item niech \(\delta = \min\{|x_1 - x_0|, |x_2 - x_0|\} > 0\)
+    \item wówczas \(B(x_0, \delta) \subseteq (x_1, x_2)\)
+    \item weźmy dowolne \(x\) t.że \(|x - x_0| < \delta\), wtedy \(x \in (x_1, x_2)\)
+    \item \(g\) jest rosnąca, więc: \, \(y_0 - \varepsilon = g(x_1) < g(x) < g(x_2) = y_0 + \varepsilon \iff |g(x) - g(x_0)| < \varepsilon\)
+    \item więc pokazaliśmy, że \(\forall_{\varepsilon > 0} \; \exists_{\delta > 0} \; \forall_x \;\, |x - x_0| < \delta \implies |g(x) - g(x_0)| < \varepsilon \iff g\) - ciągła w \(x_0\)
+    \item z dowolności \(x_0\): \, \(g\) - ciągła na \(\mathbb{R}\)
+\end{itemize}
+
+\bigskip
+\textbf{fakt 14b} \; \(g: I \to \mathbb{R}\), \; \(I\) - przedział w \(\mathbb{R}\), \; \(g\) - ciągła i różnowartościowa \(\implies g\) - monotoniczna
+
+\smallskip
+\textbf{dowód} (nie wprost)
+\begin{itemize}
+    \item przypuśćmy, że \(g\) nie jest monotoniczna (nie nierosnąca i nie niemalejąca): \, \(\exists_{a, b \in I, \; a < b} \;\, g(a) < g(b) \;\, \land \;\, \exists_{x, y \in I, \; x < y} \;\, g(x) > g(y)\)
+    \item idea: przesuwamy w sposób ciągły parę \((a, b)\) do pary \((x, y)\), pilnując, żeby lewy punkt był na lewo od prawego
+    \item \(\forall_{t \in [0, 1]} \;\, u(t) \coloneqq (1 - t)a + tx, \;\; v(t) \coloneqq (1 - t)b + ty\)
+    \item zauważmy że:
+    \begin{steps}
+        \item \(u(t), v(t) \in I\) \, (\(I\) - przedział, a to kombinacje wypukłe punktów z \(I\))
+        \item \(\forall_{t \in [0, 1]} \;\, v(t) - u(t) = \underbrace{(1 - t)(b - a)}_{\geq \, 0} + \underbrace{t(y - x)}_{\geq \, 0} > 0\) \, (co najmniej jeden składnik dodatni)
+        \item \(\varphi(t) \coloneqq g(v(t)) - g(u(t))\) - ciągła na \([0, 1]\) \, (złożenie funkcji ciągłych)
+    \end{steps}
+    \item \(\varphi(0) = g(b) - g(a) > 0, \;\; \varphi(1) = g(y) - g(x) < 0 \overset{\text{z własności Darboux}}{\implies} \exists_{t_0 \in (0, 1)} \;\, \varphi(t_0) = 0 \iff g(u(t_0)) = g(v(t_0))\)
+    \item \(u(t_0) \overset{(2)}{<} v(t_0)\) - dwa różne punkty o tej samej wartości \, - sprzeczność z różnowartościowością \(g\) \, \(\blacksquare\)
+\end{itemize}
+
+\smallskip
+\textbf{wniosek} \; \(g\) - ściśle monotoniczna \, (monotoniczna i różnowartościowa)
+
+\bigskip
+rozwiązanie \zad{14}:
+\begin{itemize}
+    \item \(\implies\): \, \(f\) - homeomorfizm \(\implies f\) - ciągła i różnowartościowa \(\overset{\text{fakt 14b}, \; I = \mathbb{R}}{\implies} f\) - monotoniczna
+    \item \(\impliedby\): \, \(f\) - monotoniczna bijekcja \(\overset{\text{fakt 14a}}{\implies} f\) - ciągła, \, zostaje ciągłość \(f^{-1}\)
+    \begin{itemize}
+        \item \(f^{-1}: \mathbb{R} \to \mathbb{R}\) - bijekcja, pokażemy, że jest monotoniczna
+        \item bez straty ogólności \(f\) - rosnąca (ściśle, bo monotoniczna i różnowartościowa)
+        \item \(y_1 < y_2\), \; przypuśćmy, że \(f^{-1}(y_1) \geq f^{-1}(y_2) \overset{f \text{ - rosnąca}}{\implies} y_1 \geq y_2\) \, - sprzeczność \(\implies f^{-1}(y_1) < f^{-1}(y_2)\), czyli \(f^{-1}\) - rosnąca
+        \item \(f^{-1}\) - monotoniczna bijekcja \(\mathbb{R} \to \mathbb{R} \overset{\text{fakt 14a}}{\implies} f^{-1}\) - ciągła \(\implies f\) - homeomorfizm \, \(\blacksquare\)
+    \end{itemize}
+\end{itemize}
+
+\newpage
 \indeks{ć5}
 
 
