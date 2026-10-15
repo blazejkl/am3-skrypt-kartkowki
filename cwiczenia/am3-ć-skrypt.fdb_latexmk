@@ -1,7 +1,8 @@
 # Fdb version 4
-["lualatex"] 1792062095.0241 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" "am3-ć-skrypt.pdf" "am3-ć-skrypt" 1792062096.80062 0
+["lualatex"] 1792063570.82571 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" "am3-ć-skrypt.pdf" "am3-ć-skrypt" 1792063572.71219 0
+  "/System/Library/Fonts/Supplemental/STIXTwoMath.otf" 1777577597 838652 fb2396fd2ef8c2e20bbb59b398c5e5b2 ""
   "/System/Library/Fonts/Supplemental/STIXTwoText.ttf" 1777577597 418956 f30770c0c6d2f28df776fa38e697dd4d ""
-  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" 1792062092.94198 332 476fa5b783bfe3f5a227fb437be90541 ""
+  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" 1792063570.71598 11183 7068bffb702e64f1ba73f934f0c70c6f ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/1bf66b236f82bc2a932aece03596c98956d1e89791c939de056b0af983bb67e6.luc" 1774820196.71856 113899 cd61ef35cdd759601a523c5e72967e98 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/4535fff5720926da9eb41482febfbf87ab8c02a4232fee006a16c0028a1c21f4.luc" 1783298542.10267 116532 fd7195ebfe39c5178b639d8d6d94ae05 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/951d7374bd446dd7af3ccf8522cc114c66a592d223d5addd18777c1b5f92ab60.luc" 1783298542.06403 112992 027767471409683013dd78de211dcaf3 ""
@@ -147,6 +148,8 @@
   "/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg" 1772383374 27642 f0cea12315babf4d40608f4eeb5c8458 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.lua" 1772383374 6658 199c880d7eab30058d2a30c2a625ea0c ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty" 1772383374 102845 043c56602c7d94c8a716319df1af5479 ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg" 1772226603 5929 2b35ae0f0fb46984dfffa2bc9d09de5c ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg" 1772226603 5594 992ef5c3f8fd1168bb7101a957333065 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/pdfcol/pdfcol.sty" 1663877585 8086 ac143843b6ea88d172677dc3ed532925 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty" 1601326656 1090 bae35ef70b3168089ef166db3e66f5b2 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty" 1673816307 373 00b204b1d7d095b892ad31a7494b0373 ""
@@ -253,11 +256,11 @@
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat" 1774209518 6843 b47da19a8f71adfd0d5f143e53e45276 ""
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat.lua" 1774209518 18335 c4274f8330817a9faeabaefbb3147a29 ""
   "/usr/local/texlive/2026/texmf-var/web2c/luahbtex/lualatex.fmt" 1774811157 5655603 173f143ad37b8dc4c9ae53d40a591731 ""
-  "am3-ć-skrypt.aux" 1792062096.57781 130 ad66a4b596887477ec7b092bf63ade02 "lualatex"
-  "am3-ć-skrypt.tex" 1792062092.94198 332 476fa5b783bfe3f5a227fb437be90541 ""
+  "am3-ć-skrypt.aux" 1792063572.46974 130 1116cc55a16f993401c249a26d109ff3 "lualatex"
+  "am3-ć-skrypt.tex" 1792063570.71598 11183 7068bffb702e64f1ba73f934f0c70c6f ""
   "setup/math.tex" 1792061992.36788 497 7c03886e88d3edcee8c382176bd9caa0 ""
   "setup/preamble.tex" 1792061992.36848 874 c97df71915aca7e2ecce6c535e5fc17f ""
-  "setup/style.tex" 1792061992.369 2016 a6d71b6405ef8b23689b29c66b5c9845 ""
+  "setup/style.tex" 1792062648.2432 2511 e1b16bbae3da7f089403898e254029e4 ""
   (generated)
   "am3-ć-skrypt.aux"
   "am3-ć-skrypt.log"

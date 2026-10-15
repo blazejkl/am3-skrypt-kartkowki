@@ -111,3 +111,19 @@
 }
 
 \newcommand{\definicja}[2]{\textbf{def #1}$\ \coloneqq\ $#2}
+
+% =========================
+% zadania (zwykłe i domowe)
+% =========================
+\newcommand{\zad}[1]{\textbf{z#1}}
+
+\newcommand{\zd}[1]{%
+  \tikz[baseline=(t.base)]{%
+    \node[inner xsep=2.5pt, inner ysep=1.8pt, font=\bfseries] (t) {z#1};%
+    \draw[line width=0.6pt, line join=round]
+      (t.south west) -- (t.north west) --
+      ([xshift=-1.5pt]t.north west) -- ([yshift=1.1ex]t.north) --
+      ([xshift=1.5pt]t.north east) -- (t.north east) --
+      (t.south east) -- cycle;%
+  }%
+}

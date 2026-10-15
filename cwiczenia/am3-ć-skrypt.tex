@@ -5,17 +5,180 @@
 \input{setup/preamble}
 \input{setup/style}
 \input{setup/math}
-
+ 
 \begin{document}
 
 \bigskip
 \bigskip
 \indeks{ć1}
 
+\bigskip
+\textbf{def} \; \(X\) - zbiór, \; \(\mathcal{T} \subseteq 2^X\), \; \((X, \mathcal{T})\) - \textbf{przestrzeń topologiczna} \, \(\iff\)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\emptyset, X \in \mathcal{T}\)
+    \item \(\forall_{\alpha \in A} \;\, U_\alpha \in \mathcal{T} \; \implies \displaystyle\bigcup_{\alpha \in A} U_\alpha \in \mathcal{T}\)
+    \item \(A, B \in \mathcal{T} \implies A \cap B \in \mathcal{T}\)
+\end{enumerate}
+
+\smallskip
+\textbf{def} \; elementy \(\mathcal{T}\) - \textbf{zbiory otwarte}, \; ich dopełnienia - \textbf{zbiory domknięte}
+
+\bigskip
+\begin{logbox}
+\textbf{przykłady}
+\begin{steps}
+    \item \(X\) - zbiór, \; \(\mathcal{T} = 2^X\) \, - \textbf{topologia dyskretna}
+    \item \(\mathcal{T} = \{\emptyset, X\}\) \, - \textbf{topologia antydyskretna}
+\end{steps}
+\end{logbox}
+
+\bigskip
+\textbf{pytanie} \; \(X = \mathbb{R}\) \, - czy przedziały otwarte są zbiorami otwartymi w topologii dyskretnej i antydyskretnej?
+
+\smallskip
+odp.: topologia dyskretna - tak, \; topologia antydyskretna - nie
+
+
+\bigskip
+\zad{1} \; czy \((X, \mathcal{T})\) - przestrzeń topologiczna?
+\begin{podpunkty}
+    \item \(X = [0, \infty), \; \mathcal{T} = \{\emptyset, [0, \infty), (a, \infty) \text{ dla } a \geq 0\}\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item trywialne \, \(\checkmark\)
+        \item \(U_\alpha \coloneqq (a_\alpha, \infty), \; a_\alpha \geq 0, \; \alpha \in A \implies \bigcup_{\alpha \in A} U_\alpha = \bigcup_{\alpha \in A} (a_\alpha, \infty) \overset{(*)}{=} \big(\inf_{\alpha \in A} a_\alpha, \infty\big) \in \mathcal{T}\) \, \(\checkmark\)
+
+        \smallskip
+        \((*)\):
+        \begin{itemize}
+            \item \(\subseteq\): \, \(x \in \bigcup_{\alpha \in A} (a_\alpha, \infty) \iff \exists_{\alpha_0 \in A} \;\, x \in (a_{\alpha_0}, \infty) \implies x \in \big(\inf_{\alpha \in A} a_\alpha, \infty\big)\), \, bo \(\forall_{\alpha \in A} \;\, a_\alpha \geq \inf_{\alpha \in A} a_\alpha \implies (a_\alpha, \infty) \subseteq \big(\inf_{\alpha \in A} a_\alpha, \infty\big)\)
+            \item \(\supseteq\): \, \(x \in \big(\inf_{\alpha \in A} a_\alpha, \infty\big) \overset{\text{z def kresu dolnego}}{\implies} \exists_{\alpha_0 \in A} \;\, a_{\alpha_0} < x \implies x \in (a_{\alpha_0}, \infty) \implies x \in \bigcup_{\alpha \in A} (a_\alpha, \infty)\)
+        \end{itemize}
+        \item \(\alpha_1, \alpha_2 \in A \implies (a_{\alpha_1}, \infty) \cap (a_{\alpha_2}, \infty) = \big(\max\{a_{\alpha_1}, a_{\alpha_2}\}, \infty\big) \in \mathcal{T}\) \, \(\checkmark\)
+    \end{enumerate}
+    \item \(X = [0, \infty), \; \mathcal{T} = \{\emptyset, [0, \infty), [a, \infty) \text{ dla } a \geq 0\}\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \setcounter{enumi}{1}
+        \item \(\bigcup_{n=1}^{\infty} \big[\frac{1}{n}, \infty\big) = (0, \infty) \notin \mathcal{T}\) \, \(\times\)
+    \end{enumerate}
+    \item \(X = \mathbb{R}, \; U \in \mathcal{T} \iff U\) - suma przedziałów otwartych \(\iff \exists_{\Gamma \text{ - zbiór}} \; \exists_{a_\gamma, b_\gamma \in \overline{\mathbb{R}}, \; \gamma \in \Gamma} \;\, U = \bigcup_{\gamma \in \Gamma} (a_\gamma, b_\gamma)\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item trywialne \, \(\checkmark\)
+        \item \(U_\alpha = \bigcup_{\gamma_\alpha \in \Gamma_\alpha} (a_{\gamma_\alpha}, b_{\gamma_\alpha}) \implies \bigcup_{\alpha \in A} U_\alpha = \bigcup_{\alpha \in A} \bigcup_{\gamma_\alpha \in \Gamma_\alpha} (a_{\gamma_\alpha}, b_{\gamma_\alpha}) \in \mathcal{T}\) \, (suma sum przedziałów otwartych jest sumą przedziałów otwartych) \, \(\checkmark\)
+        \item \(A = \bigcup_{\gamma_1 \in \Gamma_1} (a_{\gamma_1}, b_{\gamma_1}), \; B = \bigcup_{\gamma_2 \in \Gamma_2} (a_{\gamma_2}, b_{\gamma_2}) \implies\)
+        \begin{align*}
+        A \cap B &= \bigcup_{\gamma_1 \in \Gamma_1} (a_{\gamma_1}, b_{\gamma_1}) \cap \bigcup_{\gamma_2 \in \Gamma_2} (a_{\gamma_2}, b_{\gamma_2}) \overset{(*)}{=} \bigcup_{\gamma_1 \in \Gamma_1} \bigcup_{\gamma_2 \in \Gamma_2} \big((a_{\gamma_1}, b_{\gamma_1}) \cap (a_{\gamma_2}, b_{\gamma_2})\big) = \\
+        &= \bigcup_{\gamma_1 \in \Gamma_1} \bigcup_{\gamma_2 \in \Gamma_2} \underbrace{\big(\max\{a_{\gamma_1}, a_{\gamma_2}\}, \min\{b_{\gamma_1}, b_{\gamma_2}\}\big)}_{= \, \emptyset \text{ dla } \max \geq \min} \in \mathcal{T} \quad \checkmark
+        \end{align*}
+        \((*)\) rozdzielność przecięcia względem sumy \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\), zastosowana dwukrotnie (raz dla każdej sumy)
+    \end{enumerate}
+\end{podpunkty}
+
+\bigskip
+\textbf{def} \; topologia z \zad{1}(c) \, - \textbf{topologia standardowa} na \(\mathbb{R}\)
+
+\smallskip
+\textbf{wniosek} \; w top. st. na \(\mathbb{R}\) przedziały otwarte są zbiorami otwartymi, a przedziały domknięte domkniętymi (\([a, b] = \big((-\infty, a) \cup (b, \infty)\big)^c\))
+
+\bigskip
+\textbf{def} \; \(d: X \times X \to [0, \infty)\) - \textbf{metryka} \, \(\iff \, \forall_{x, y, z \in X}\)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(d(x, y) = 0 \iff x = y\)
+    \item \(d(x, y) = d(y, x)\)
+    \item \(d(x, y) \leq d(x, z) + d(z, y)\)
+\end{enumerate}
+
+\bigskip
+niech \((X, d)\) - przestrzeń metryczna
+
+\smallskip
+\textbf{fakt} \; metryka zadaje topologię \(\mathcal{T}_d\): \, \(U \in \mathcal{T}_d \iff \forall_{x \in U} \; \exists_{\varepsilon > 0} \;\, B(x, \varepsilon) \subseteq U\)
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(\mathcal{B} \subseteq \mathcal{T}\) - \textbf{baza topologii} \, \(\iff\) każdy \(U \in \mathcal{T}\) jest sumą pewnej podrodziny z \(\mathcal{B}\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; w topologii standardowej na \(\mathbb{R}\) bazą są przedziały otwarte, a także przedziały otwarte o końcach wymiernych \(\{(a, b) : a, b \in \mathbb{Q}\}\)
+\end{logbox}
+
+\smallskip
+\textbf{wniosek} \; \(\mathbb{R}\) ma przeliczalną bazę
+
+\bigskip
+\textbf{pytanie} \; czy standardowa metryka na \(\mathbb{R}\) zadaje topologię standardową na \(\mathbb{R}\)?
+
+\smallskip
+\(d(x, y) = |x - y|\), \; \(\mathcal{T}_d\) - topologia zadana przez metrykę, \; \(\mathcal{T}\) - topologia standardowa na \(\mathbb{R}\), \; czy \(\mathcal{T}_d = \mathcal{T}\)?
+\begin{itemize}
+    \item \(\subseteq\): \, \(U \in \mathcal{T}_d \overset{\text{def}}{\iff} \forall_{x \in U} \; \exists_{\varepsilon_x > 0} \;\, B(x, \varepsilon_x) \subseteq U \implies U \subseteq \bigcup_{x \in U} B(x, \varepsilon_x) \subseteq U\), \, czyli \(U = \bigcup_{x \in U} B(x, \varepsilon_x) \in \mathcal{T}\), \, bo \(B(x, \varepsilon) = (x - \varepsilon, x + \varepsilon)\)
+    \item \(\supseteq\): \, \(U \in \mathcal{T} \implies U = \bigcup_{\alpha \in A} B(x_\alpha, \varepsilon_\alpha) \implies \forall_{x \in U} \; \exists_{\alpha_0 \in A} \;\, x \in B(x_{\alpha_0}, \varepsilon_{\alpha_0}) \subseteq \bigcup_{\alpha \in A} B(x_\alpha, \varepsilon_\alpha) = U\) \\
+    \(\varepsilon_x \coloneqq \varepsilon_{\alpha_0} - d(x, x_{\alpha_0}) > 0 \overset{\text{z nierówności trójkąta}}{\implies} B(x, \varepsilon_x) \subseteq B(x_{\alpha_0}, \varepsilon_{\alpha_0}) \subseteq U \implies U \in \mathcal{T}_d\)
+\end{itemize}
+
+\smallskip
+odp.: tak
+
+\newpage
+\zad{2} \; na \(\mathbb{R}^2\) definiujemy:
+\smallskip
+\begin{itemize}
+    \item \(d_1(x, y) = |x_1 - y_1| + |x_2 - y_2|\)
+    \item \(d_2(x, y) = \big(|x_1 - y_1|^2 + |x_2 - y_2|^2\big)^{\frac{1}{2}}\)
+    \smallskip
+    \item \(d_\infty(x, y) = \max\{|x_1 - y_1|, |x_2 - y_2|\}\)
+\end{itemize}
+\smallskip
+sprawdź, czy to metryki na \(\mathbb{R}^2\)
+\smallskip
+\begin{podpunkty}
+    \item \(d_1\):
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item \(d_1(x, y) = 0 \overset{|\cdot| \geq 0}{\iff} x_1 = y_1 \land x_2 = y_2 \iff x = y\) \, \(\checkmark\)
+        \item trywialne z \(|a - b| = |b - a|\) \, \(\checkmark\)
+        \item
+        \begin{align*}
+        d_1(x, y) &= |x_1 - y_1| + |x_2 - y_2| = |(x_1 - z_1) + (z_1 - y_1)| + |(x_2 - z_2) + (z_2 - y_2)| \overset{\text{z nierówności trójkąta}}{\leq} \\
+        &\leq |x_1 - z_1| + |x_2 - z_2| + |z_1 - y_1| + |z_2 - y_2| = d_1(x, z) + d_1(z, y) \quad \checkmark
+        \end{align*}
+    \end{enumerate}
+    \item \(d_2\):
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item trywialne \, \(\checkmark\)
+        \item trywialne \, \(\checkmark\)
+        \item ozn.: \(a = x - z, \; b = z - y\) \, \((a_i = x_i - z_i, \; b_i = z_i - y_i)\), \; wykażemy \(d_2(x, y) \leq d_2(x, z) + d_2(z, y)\)
+        \begin{align*}
+        & \big(|x_1 - y_1|^2 + |x_2 - y_2|^2\big)^{\frac{1}{2}} \leq d_2(x, z) + d_2(z, y) \iff \\
+        \iff \; & \big(|a_1 + b_1|^2 + |a_2 + b_2|^2\big)^{\frac{1}{2}} \leq \big(a_1^2 + a_2^2\big)^{\frac{1}{2}} + \big(b_1^2 + b_2^2\big)^{\frac{1}{2}} \qquad \big/ \, (\cdot)^2 \; \text{(obie strony nieujemne)} \\
+        \iff \; & (a_1 + b_1)^2 + (a_2 + b_2)^2 \leq a_1^2 + a_2^2 + b_1^2 + b_2^2 + 2\sqrt{a_1^2 + a_2^2} \, \sqrt{b_1^2 + b_2^2} \\
+        \iff \; & a_1^2 + b_1^2 + a_2^2 + b_2^2 + 2a_1b_1 + 2a_2b_2 \leq a_1^2 + a_2^2 + b_1^2 + b_2^2 + 2\sqrt{a_1^2 + a_2^2} \, \sqrt{b_1^2 + b_2^2} \\
+        \overset{\text{po redukcji}}{\iff} \; & a_1b_1 + a_2b_2 \leq \sqrt{a_1^2 + a_2^2} \, \sqrt{b_1^2 + b_2^2}
+        \end{align*}
+        prawdziwe, bo \(a_1b_1 + a_2b_2 \leq |a_1b_1 + a_2b_2| \overset{\text{z nierówności Cauchy'ego-Schwarza}}{\leq} \sqrt{a_1^2 + a_2^2} \, \sqrt{b_1^2 + b_2^2}\) \, \(\checkmark\)
+    \end{enumerate}
+    \item \(d_\infty\):
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item trywialne \, \(\checkmark\)
+        \item trywialne \, \(\checkmark\)
+        \item \((*)\) \; \(\max\{u, v\} \leq M \iff u \leq M \land v \leq M\)
+        \begin{align*}
+        |x_1 - y_1| &= |x_1 - z_1 + z_1 - y_1| \overset{\text{z nierówności trójkąta}}{\leq} |x_1 - z_1| + |z_1 - y_1| \leq \\
+        &\leq \max\{|x_1 - z_1|, |x_2 - z_2|\} + \max\{|z_1 - y_1|, |z_2 - y_2|\} \eqqcolon M
+        \end{align*}
+        analogicznie dla \(i = 2\): \, \(|x_2 - y_2| \leq M\), \; zatem
+        \begin{align*}
+        d_\infty(x, y) = \max\{|x_1 - y_1|, |x_2 - y_2|\} \overset{(*)}{\leq} \max\{|x_1 - z_1|, |x_2 - z_2|\} + \max\{|z_1 - y_1|, |z_2 - y_2|\} = d_\infty(x, z) + d_\infty(z, y) \quad \checkmark
+        \end{align*}
+    \end{enumerate}
+\end{podpunkty}
+
 
 \bigskip
 \bigskip
 \indeks{ć2}
+
+
+
+
 
 
 \bigskip
