@@ -176,15 +176,248 @@ sprawdź, czy to metryki na \(\mathbb{R}^2\)
 \bigskip
 \indeks{ć2}
 
+\bigskip
+\textbf{pytanie} \; jakie są inkluzje między topologiami \(\mathcal{T}_{d_1}, \mathcal{T}_{d_2}, \mathcal{T}_{d_\infty}\)?
 
+\smallskip
+będziemy rozważać kule:
+\begin{itemize}
+    \item \(B_{d_2}(0, 1) = \{x \in \mathbb{R}^2 : d_2(0, x) < 1\} = \{x \in \mathbb{R}^2 : \big(|x_1|^2 + |x_2|^2\big)^{\frac{1}{2}} < 1\}\) \, - koło
+    \item \(B_{d_1}(0, 1) = \{x \in \mathbb{R}^2 : d_1(0, x) < 1\} = \{x \in \mathbb{R}^2 : |x_1| + |x_2| < 1\}\) \, - romb
+    \item \(B_{d_\infty}(0, 1) = \{x \in \mathbb{R}^2 : d_\infty(0, x) < 1\} = \{x \in \mathbb{R}^2 : \max\{|x_1|, |x_2|\} < 1\}\) \, - kwadrat
+\end{itemize}
 
+\smallskip
+\(\mathcal{T}_{d_1} = \mathcal{T}_{d_2} = \mathcal{T}_{d_\infty}\), \, bo
+\begin{itemize}
+    \item \(U \in \mathcal{T}_{d_2} \iff \forall_{x \in U} \; \exists_{\varepsilon > 0} \;\, B_{d_2}(x, \varepsilon) \subseteq U\)
+    \item \(U \in \mathcal{T}_{d_1} \iff \forall_{x \in U} \; \exists_{\varepsilon > 0} \;\, B_{d_1}(x, \varepsilon) \subseteq U\)
+\end{itemize}
 
+\smallskip
+a w każdej kuli jednej metryki o środku \(x\) mieści się mniejsza kula każdej innej o tym samym środku:
+\begin{align*}
+d_\infty \leq d_2 \leq d_1 \leq 2 \, d_\infty \implies B_{d_\infty}\big(x, \tfrac{\varepsilon}{2}\big) \subseteq B_{d_1}(x, \varepsilon) \subseteq B_{d_2}(x, \varepsilon) \subseteq B_{d_\infty}(x, \varepsilon)
+\end{align*}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(A \subseteq X\), \; \textbf{wnętrze} \(A\): \, \(\operatorname{int} A \coloneqq \bigcup \{U \subseteq A : U \in \mathcal{T}\}\) \, (największy zbiór otwarty zawarty w \(A\))
+
+\bigskip
+\zad{3} \; na \((\mathbb{R}, d_e)\) wyznacz
+\begin{podpunkty}
+    \item \(\operatorname{int}[a, b] \overset{?}{=} (a, b)\)
+    \begin{align*}
+    x_0 \in \operatorname{int}[a, b] \overset{\text{def wnętrza}}{\iff} \exists_{U_0 \subseteq [a, b], \; U_0 \in \mathcal{T}_{\text{st}}} \;\, x_0 \in U_0 \overset{(1)}{\iff} \exists_{r > 0} \;\, B(x_0, r) \subseteq [a, b] \overset{(2)}{\iff} x_0 \in (a, b)
+    \end{align*}
+    \begin{steps}
+        \item \(\implies\): z def zbioru otwartego w przestrzeni metrycznej, \; \(\impliedby\): kule otwarte są zbiorami otwartymi, bierzemy \(U_0 = B(x_0, r)\)
+        \item \(\implies\): \((x_0 - r, x_0 + r) \subseteq [a, b] \implies a \leq x_0 - r < x_0 < x_0 + r \leq b\), \; \(\impliedby\): \(r = \min\{x_0 - a, b - x_0\} > 0\), wtedy \((x_0 - r, x_0 + r) \subseteq (a, b) \subseteq [a, b]\)
+    \end{steps}
+    \item \(\operatorname{int}[a, b) \overset{?}{=} (a, b)\)
+
+    \smallskip
+    \textbf{monotoniczność wnętrza} \; \(A \subseteq B \implies \operatorname{int} A \subseteq \operatorname{int} B\), \, bo \(U \subseteq A \subseteq B \implies \bigcup \{U \subseteq A : U \in \mathcal{T}\} \subseteq \bigcup \{U \subseteq B : U \in \mathcal{T}\}\)
+    \begin{itemize}
+        \item \(\subseteq\): \, \([a, b) \subseteq [a, b] \overset{\text{z monotoniczności}}{\implies} \operatorname{int}[a, b) \subseteq \operatorname{int}[a, b] \overset{\text{(a)}}{=} (a, b)\)
+        \item \(\supseteq\): \, \((a, b) \in \mathcal{T}_{\text{st}}, \; (a, b) \subseteq [a, b) \implies (a, b) \subseteq \bigcup \{U \subseteq [a, b) : U \in \mathcal{T}_{\text{st}}\} = \operatorname{int}[a, b)\)
+    \end{itemize}
+    \item \(\operatorname{int}(a, b) \overset{?}{=} (a, b)\)
+    \begin{itemize}
+        \item \(\subseteq\): \, \(\forall_A \;\, \operatorname{int} A \subseteq A\)
+        \item \(\supseteq\): \, \((a, b) \in \mathcal{T}_{\text{st}}, \; (a, b) \subseteq (a, b) \implies (a, b) \subseteq \bigcup \{U \subseteq (a, b) : U \in \mathcal{T}_{\text{st}}\} = \operatorname{int}(a, b)\)
+    \end{itemize}
+\end{podpunkty}
+
+\smallskip
+\textbf{wniosek} \; \(U \in \mathcal{T} \iff \operatorname{int} U = U\)
+
+\bigskip
+\textbf{def} \; \textbf{domknięcie} \, \(\overline{A} \coloneqq \bigcap \{B \supseteq A : B^c \in \mathcal{T}\}\) \, (najmniejszy zbiór domknięty zawierający \(A\))
+
+\smallskip
+\textbf{fakt} \; \(A = \overline{A} \iff A\) - domknięty
+
+\bigskip
+\begin{align*}
+\overline{A}^{\,c} \overset{\text{z praw de Morgana}}{=} \bigcup \{B^c : B \supseteq A, \; B^c \in \mathcal{T}\} \overset{B \supseteq A \, \iff \, B^c \subseteq A^c}{=} \bigcup \{B^c \subseteq A^c : B^c \in \mathcal{T}\} = \bigcup \{U \subseteq A^c : U \in \mathcal{T}\} \overset{\text{def int}}{=} \operatorname{int} A^c
+\end{align*}
+
+\smallskip
+\textbf{wniosek} \; \(\overline{A} = \big(\operatorname{int} A^c\big)^c\)
+
+\bigskip
+\zad{4} \; w \((\mathbb{R}, d)\), \; \(d(x, y) = |x - y|\) \, wyznacz
+\begin{podpunkty}
+    \item \(\overline{(a, b)}\)
+
+    \smallskip
+    \((a, b)^c = (-\infty, a] \cup [b, \infty)\)
+    \begin{align*}
+    \overline{(a, b)} \overset{\overline{A} = (\operatorname{int} A^c)^c}{=} \big(\operatorname{int}\big((-\infty, a] \cup [b, \infty)\big)\big)^c = \big((-\infty, a) \cup (b, \infty)\big)^c = [a, b]
+    \end{align*}
+    po co tak? \, wnętrze można badać punktowo, domknięcie z definicji nie
+    \item \(\overline{[a, b]} \overset{?}{=} [a, b]\)
+
+    \smallskip
+    \([a, b]^c = (-\infty, a) \cup (b, \infty) \in \mathcal{T}_{\text{st}} \implies [a, b]\) - domknięty \(\overset{\text{fakt}}{\implies} \overline{[a, b]} = [a, b]\)
+    \item \(\overline{[a, b)} \overset{?}{=} [a, b]\)
+    \begin{align*}
+    [a, b] \overset{\text{(a)}}{=} \overline{(a, b)} \overset{\text{z monotoniczności domknięcia}}{\subseteq} \overline{[a, b)} \subseteq \overline{[a, b]} \overset{\text{(b)}}{=} [a, b]
+    \end{align*}
+\end{podpunkty}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(A \subseteq X\), \; \textbf{brzeg} \(A \eqqcolon \partial A\): \, \(x \in \partial A \iff \forall_{U \in \mathcal{T}, \; x \in U} \;\, U \cap A \neq \emptyset \land U \cap A^c \neq \emptyset\)
+
+\smallskip
+\textbf{fakt} \; \(\partial A = \overline{A} \setminus \operatorname{int} A\)
+
+\smallskip
+\textbf{wniosek} \; \(\partial A\) - domknięty
+
+\bigskip
+\textbf{tw o trójpodziale} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(A \subseteq X \implies X = \operatorname{int} A \sqcup \operatorname{int} A^c \sqcup \partial A\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(A = \mathbb{Q} \subseteq (\mathbb{R}, \mathcal{T}_{\text{st}})\) \, - \(\operatorname{int} \mathbb{Q} = \emptyset, \;\; \operatorname{int} \mathbb{Q}^c = \emptyset, \;\; \partial \mathbb{Q} = \mathbb{R}\)
+\end{logbox}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(Y \subseteq X\), \; \((Y, \mathcal{T}_Y)\) - przestrzeń topologiczna z \textbf{topologią indukowaną} z \(X\), \, gdzie \(\mathcal{T}_Y \coloneqq \{Y \cap U : U \in \mathcal{T}\}\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(X = \mathbb{R}, \; Y = [0, \infty)\), \, wtedy \([0, 1) \in \mathcal{T}_Y\), \, bo \([0, 1) = \underbrace{[0, \infty)}_{= \, Y} \cap \underbrace{(-1, 1)}_{\in \, \mathcal{T}_X}\)
+\end{logbox}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \((x_n)_{n=1}^{\infty} \subset X\), \; \textbf{zbiór graniczny} \, \(\operatorname{Lim}(x_n) \coloneqq \{x_0 \in X : \forall_{U \in \mathcal{T}, \; x_0 \in U} \;\, \#\{n \in \mathbb{N} : x_n \notin U\} < \infty\}\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład}
+\begin{podpunkty}
+    \item \((X, \mathcal{T})\) - przestrzeń topologiczna z topologią antydyskretną, \; \((x_n) \subset X\), \; \(\operatorname{Lim}(x_n) = \, ?\)
+
+    \smallskip
+    \(\forall_{x_0} \;\, x_0 \notin \emptyset\) \, (sprawdzamy tylko \(U = X\))
+
+    \(\forall_{x_0} \;\, x_0 \in X\) \, i \, \(\#\{n \in \mathbb{N} : x_n \notin X\} = 0 < \infty\)
+
+    więc \(\operatorname{Lim}(x_n) = X\)
+    \item \(\mathcal{T}\) - topologia dyskretna, \; \(\operatorname{Lim}(x_n) = \, ?\)
+
+    \smallskip
+    intuicyjnie: do sprawdzenia jest każdy \(U\), w tym singleton \(\{x_0\}\), więc zbiór graniczny będzie mały lub pusty
+
+    \smallskip
+    ustalmy \(x_0 \in X\): \, \(x_0 \in \operatorname{Lim}(x_n) \iff (x_n)\) jest od pewnego momentu stale równy \(x_0\) \, \(\big(\#\{n \in \mathbb{N} : x_n \neq x_0\} < \infty\big)\)
+    \begin{itemize}
+        \item \(\implies\): \, \(x_0 \in \operatorname{Lim}(x_n) \implies \forall_{U \in \mathcal{T}, \; x_0 \in U} \;\, \#\{n \in \mathbb{N} : x_n \notin U\} < \infty \;\, \land \;\, \{x_0\} \in \mathcal{T} \implies \#\{n : x_n \notin \{x_0\}\} < \infty\)
+        \item \(\impliedby\): \, \(\#\{n : x_n \neq x_0\} < \infty \;\, \land \;\, \forall_{U \in \mathcal{T}, \; x_0 \in U} \;\, \{x_0\} \subseteq U \implies \forall_{U \in \mathcal{T}, \; x_0 \in U} \;\, \#\{n : x_n \notin U\} \leq \#\{n : x_n \neq x_0\} < \infty \overset{\text{def}}{\iff} x_0 \in \operatorname{Lim}(x_n)\)
+    \end{itemize}
+    \smallskip
+    ciąg może być od pewnego momentu stały tylko dla jednej wartości (trywialne), więc
+    \[
+    \operatorname{Lim}(x_n) = \begin{cases} \{x_0\}, & \exists_{x_0} \;\, \#\{n \in \mathbb{N} : x_n \neq x_0\} < \infty \\ \emptyset, & \text{w przeciwnym przypadku} \end{cases}
+    \]
+\end{podpunkty}
+\end{logbox}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \((X, \mathcal{T})\) - \textbf{przestrzeń Hausdorffa} \, \(\iff \, \forall_{x_1, x_2 \in X, \; x_1 \neq x_2} \; \exists_{U_1, U_2 \in \mathcal{T}} \;\, x_1 \in U_1 \land x_2 \in U_2 \land U_1 \cap U_2 = \emptyset\)
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(\mathbb{R}^n, \; \mathbb{C}^n\) \, - przestrzenie Hausdorffa
+\end{logbox}
+
+\newpage
+\zdc \; pokazać, że w przestrzeni Hausdorffa \(\#\operatorname{Lim}(x_n) \leq 1\)
+\smallskip
+\begin{itemize}
+    \item przypuśćmy, że \(\exists_{x_0, y_0} \;\, x_0 \neq y_0 \land x_0, y_0 \in \operatorname{Lim}(x_n)\)
+    \item z def przestrzeni Hausdorffa \(\exists_{U_{x_0}, U_{y_0} \in \mathcal{T}} \;\, x_0 \in U_{x_0} \land y_0 \in U_{y_0} \land U_{x_0} \cap U_{y_0} = \emptyset\)
+    \item \(x_0 \in \operatorname{Lim}(x_n)\), zatem \(\#\{n \in \mathbb{N} : x_n \notin U_{x_0}\} < \infty\), \; \(\{n : x_n \notin U_{x_0}\} \supseteq \{n : x_n \in U_{y_0}\}\) \, (bo \(U_{x_0} \cap U_{y_0} = \emptyset\))
+    \item zatem \(\#\{n : x_n \in U_{y_0}\} \leq \#\{n : x_n \notin U_{x_0}\} < \infty\)
+    \item zatem \(\#\{n : x_n \notin U_{y_0}\} = \infty\), \, bo \(\mathbb{N} = \{n : x_n \in U_{y_0}\} \sqcup \{n : x_n \notin U_{y_0}\}, \; \#\mathbb{N} = \infty\) \, - sprzeczność z założeniem, że \(y_0 \in \operatorname{Lim}(x_n)\)
+    \item więc \(\nexists_{x_0 \neq y_0} \;\, x_0, y_0 \in \operatorname{Lim}(x_n)\), więc \(\#\operatorname{Lim}(x_n) \leq 1\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zdc \; \(X\) - przestrzeń spójna \(\implies\) jedynymi zbiorami otwarto-domkniętymi są \(X\) i \(\emptyset\)
+\begin{itemize}
+    \item \(X\) i \(\emptyset\) są zawsze otwarto-domknięte z i) \(\land \; X^c = \emptyset, \; \emptyset^c = X\)
+    \item \(X\) - spójna \(\iff \nexists_{A, B \text{ - otwarte, rozłączne, niepuste}} \;\, X = A \sqcup B\)
+    \item przypuśćmy, że \(\exists_{A \subseteq X, \; A \notin \{\emptyset, X\}}\) \, \(A\) - otwarto-domknięty
+    \item wtedy \(A \in \mathcal{T}\) z założenia
+    \item \(A^c \in \mathcal{T}\), bo \(A\) - domknięty
+    \item \(A, A^c\) - otwarte, rozłączne i niepuste \(\land \; X = A \sqcup A^c\) \, - sprzeczność ze spójnością \, \(\blacksquare\)
+\end{itemize}
 
 
 \bigskip
 \bigskip
 \indeks{ć3}
 
+\bigskip
+\zd{5} \; \((X, d)\) - przestrzeń metryczna, \; \(\tilde{d}(x, y) = \frac{d(x, y)}{1 + d(x, y)}\)
+
+\smallskip
+\((*)\) \; \(\tilde{d} \in [0, 1)\) \, - to pozwala normować każdą metrykę \(d\)
+\begin{podpunkty}
+    \item pokazać, że \(\tilde{d}\) - metryka na \(X\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item trywialne
+        \item trywialne
+        \item
+        \begin{align*}
+        & \tilde{d}(x, y) \leq \tilde{d}(x, z) + \tilde{d}(z, y) \iff \\
+        \iff \; & \frac{d(x, y)}{1 + d(x, y)} \leq \frac{d(x, z)}{1 + d(x, z)} + \frac{d(z, y)}{1 + d(z, y)} \\
+        \overset{(1)}{\impliedby} \; & \frac{d(x, y)}{1 + d(x, y)} \leq \frac{d(x, z) + d(z, y)}{1 + d(x, z) + d(z, y)} \\
+        \overset{(2)}{\iff} \; & d(x, y) \leq d(x, z) + d(z, y) \qquad \text{(nierówność trójkąta dla } d\text{)} \quad \blacksquare
+        \end{align*}
+        \begin{steps}
+            \item \(\frac{d(x, z) + d(z, y)}{1 + d(x, z) + d(z, y)} = \frac{d(x, z)}{1 + d(x, z) + d(z, y)} + \frac{d(z, y)}{1 + d(x, z) + d(z, y)} \overset{d \geq 0}{\leq} \frac{d(x, z)}{1 + d(x, z)} + \frac{d(z, y)}{1 + d(z, y)}\)
+            \item \(\forall_{a, b \geq 0} \;\, \frac{a}{1 + a} \leq \frac{b}{1 + b} \iff a(1 + b) \leq b(1 + a) \iff a + ab \leq b + ab \iff a \leq b\)
+        \end{steps}
+    \end{enumerate}
+    \item czy \(\mathcal{T}_d = \mathcal{T}_{\tilde{d}}\)? \, tak
+
+    \smallskip
+    \(\varphi(t) = \frac{t}{1 + t}\) - ściśle rosnąca bijekcja \([0, \infty) \to [0, 1)\), \; \(\varphi^{-1}(s) = \frac{s}{1 - s}\), \; \(\tilde{d} = \varphi \circ d\)
+    \begin{itemize}
+        \item \(\forall_{r > 0} \;\, B_d(x, r) = \{y \in X : \varphi(d(x, y)) < \varphi(r)\} = B_{\tilde{d}}\big(x, \frac{r}{1 + r}\big)\)
+        \item \(\forall_{\varepsilon \in (0, 1)} \;\, B_{\tilde{d}}(x, \varepsilon) = B_d\big(x, \frac{\varepsilon}{1 - \varepsilon}\big)\) \, (wystarczy \(\varepsilon < 1\), bo dla \(\varepsilon \geq 1\) \; \(B_{\tilde{d}}(x, \varepsilon) = X\), a mniejsza kula też leży w \(U\))
+    \end{itemize}
+    zatem w warunku \(\forall_{x \in U} \; \exists_{r > 0} \;\, B(x, r) \subseteq U\) każdą kulę \(B_d\) można zastąpić kulą \(B_{\tilde{d}}\) o tym samym środku i odwrotnie \(\implies \mathcal{T}_d = \mathcal{T}_{\tilde{d}}\)
+\end{podpunkty}
+
+\bigskip
+\zad{6} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(A, B \subseteq X\)
+\begin{podpunkty}
+    \item \(\operatorname{int}(A \cap B) \overset{?}{=} \operatorname{int} A \cap \operatorname{int} B\)
+    \begin{itemize}
+        \item \(\subseteq\): \, \(x \in \operatorname{int}(A \cap B) \iff x \in \bigcup \{U \in \mathcal{T} : U \subseteq A \cap B\} \iff \exists_{U \in \mathcal{T}} \;\, x \in U \subseteq A \cap B \iff \exists_{U \in \mathcal{T}} \;\, x \in U \subseteq A \land x \in U \subseteq B \implies x \in \operatorname{int} A \cap \operatorname{int} B\)
+        \item \(\supseteq\): \, \(x \in \operatorname{int} A \cap \operatorname{int} B \iff \exists_{U, V \in \mathcal{T}} \;\, x \in U \subseteq A \land x \in V \subseteq B \implies x \in U \cap V \overset{\text{iii)}}{\in} \mathcal{T} \land U \cap V \subseteq A \cap B \implies x \in \operatorname{int}(A \cap B)\)
+    \end{itemize}
+    \item \(\operatorname{int}(A \cup B) \overset{?}{=} \operatorname{int} A \cup \operatorname{int} B\)
+
+    \smallskip
+    kontrprzykład: \, \((\mathbb{R}, \mathcal{T}_{\text{st}})\), \; \(A = \mathbb{Q}, \; B = \mathbb{R} \setminus \mathbb{Q}\), \; \(\operatorname{int} \mathbb{R} = \mathbb{R} \neq \underbrace{\operatorname{int} \mathbb{Q}}_{= \, \emptyset} \cup \underbrace{\operatorname{int}(\mathbb{R} \setminus \mathbb{Q})}_{= \, \emptyset}\)
+\end{podpunkty}
+
+\bigskip
+\zad{7} \; \(X\) - zbiór, \; \(\operatorname{CL}: 2^X \to 2^X\) \, t.że: \, (operacja domknięcia opisana aksjomatycznie - aksjomaty Kuratowskiego)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\operatorname{CL}(\emptyset) = \emptyset\)
+    \item \(\operatorname{CL}(A) \supseteq A\)
+    \item \(\operatorname{CL}(A \cup B) = \operatorname{CL}(A) \cup \operatorname{CL}(B)\)
+    \item \(\operatorname{CL}(\operatorname{CL}(A)) = \operatorname{CL}(A)\)
+\end{enumerate}
+czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topologia na \(X\)?
 
 \bigskip
 \bigskip

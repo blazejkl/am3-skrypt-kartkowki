@@ -282,3 +282,4 @@ INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./am3-ć-skrypt.aux
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

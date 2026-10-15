@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  15 OCT 2026 13:28
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  15 OCT 2026 13:44
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex
@@ -1208,7 +1208,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./am3-ć-skrypt.aux)
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] (./am3-ć-skrypt.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1216,19 +1216,19 @@ L3 programming layer <2026-01-19>
 )
 
 Here is how much of LuaTeX's memory you used:
- 32606 strings out of 476076
+ 32629 strings out of 476076
  125240,1373583 words of node,token memory allocated
- 1707 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_kern, 8 glyph, 181 attribute, 60 glue_spec, 128 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:2435,3:779,4:172,5:829,6:88,7:7570,8:82,9:1352,10:2,11:410
- 54275 multiletter control sequences out of 65536+600000
- 54 fonts using 24472975 bytes
+ 1897 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 10 glyph, 241 attribute, 60 glue_spec, 158 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:2914,3:1065,4:198,5:1002,6:88,7:7568,8:118,9:1704,10:3,11:410
+ 54298 multiletter control sequences out of 65536+600000
+ 54 fonts using 24473019 bytes
  111i,14n,107p,1072b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoText.ttf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Bold.otf>
-Output written on am3-ć-skrypt.pdf (2 pages, 43570 bytes).
+</System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoText.ttf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on am3-ć-skrypt.pdf (4 pages, 72930 bytes).
 
-PDF statistics: 87 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+PDF statistics: 97 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 1048576)
  256 words of extra memory for PDF output out of 10000 (max. 100000000)
 

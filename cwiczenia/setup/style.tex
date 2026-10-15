@@ -117,13 +117,16 @@
 % =========================
 \newcommand{\zad}[1]{\textbf{z#1}}
 
-\newcommand{\zd}[1]{%
+\newcommand{\domek}[2]{%
   \tikz[baseline=(t.base)]{%
-    \node[inner xsep=2.5pt, inner ysep=1.8pt, font=\bfseries] (t) {z#1};%
-    \draw[line width=0.6pt, line join=round]
+    \node[inner xsep=2.5pt, inner ysep=1.8pt, font=\bfseries] (t) {#2};%
+    \draw[line width=0.6pt, line join=round, #1]
       (t.south west) -- (t.north west) --
       ([xshift=-1.5pt]t.north west) -- ([yshift=1.1ex]t.north) --
       ([xshift=1.5pt]t.north east) -- (t.north east) --
       (t.south east) -- cycle;%
   }%
 }
+
+\newcommand{\zd}[1]{\domek{}{z#1}}                              % domowe z numerem (pod kolokwium)
+\newcommand{\zdc}{\domek{dash pattern=on 1.5pt off 1pt}{z}}    % domowe bez numeru (ciekawostka)
