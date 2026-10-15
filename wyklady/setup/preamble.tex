@@ -1,0 +1,42 @@
+% =========================
+% układ strony
+% =========================
+\usepackage[
+  paper=a3paper,
+  left=1.35cm,
+  right=1.35cm,
+  top=1.2cm,
+  bottom=1.55cm,
+  footskip=18pt
+]{geometry}
+
+\pagestyle{plain}
+\raggedbottom
+
+% =========================
+% typografia i język
+% =========================
+\usepackage{microtype}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{polish}
+\setmainfont{STIX Two Text}
+
+% =========================
+% matematyka
+% =========================
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\usepackage{diagbox}
+\setmathfont{STIX Two Math}
+
+% =========================
+% dodatki
+% =========================
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs} % tabelki
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows.meta}

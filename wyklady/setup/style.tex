@@ -1,0 +1,113 @@
+% =========================
+% kolory
+% =========================
+\definecolor{TaskGray}{HTML}{F7F7F8}
+
+% =========================
+% globalna zwartość / odstępy
+% =========================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.6pt}
+\setlength{\columnsep}{0.9cm}
+\setlength{\columnseprule}{0.5pt}
+\linespread{1.02}
+
+% =========================
+% itemize, steps i podpunkty 
+% =========================
+
+\setlist[itemize]{
+  label=\textbullet,
+  leftmargin=1.2em,
+  itemsep=0pt,
+  topsep=0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps]{
+  label=\textbf{(\arabic*)},
+  leftmargin=1.9em,
+  itemsep=0.42em,
+  topsep=0.2em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newlist{podpunkty}{enumerate}{1}
+\setlist[podpunkty]{
+  label=\textbf{(\alph*)},
+  leftmargin=1.9em,
+  itemsep=0.42em,
+  topsep=0.2em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+
+% =========================
+% indeks
+% =========================
+\newcommand{\indeks}[1]{%
+  \par\bigskip
+  \noindent
+  {\setlength{\fboxsep}{8pt}%
+   \setlength{\fboxrule}{1.3pt}%
+   \fcolorbox{black}{white}{%
+     \strut\fontsize{22}{26}\selectfont\bfseries #1%
+   }}%
+  \par\vspace{0.95em}
+}
+
+% =========================
+% temat i bit
+% =========================
+\newcommand{\temat}[1]{%
+  \par\medskip
+  \noindent{\bfseries
+      \fontsize{16}{20}\selectfont
+      #1%
+  }
+  \par\medskip
+}
+
+\newcommand{\bit}[1]{%
+  \par\medskip
+  \noindent{\bfseries #1}%
+  \par\smallskip
+}
+
+% =========================
+% logbox
+% =========================
+\newtcolorbox{logbox}{
+  enhanced,
+  colback=TaskGray,
+  colframe=white,
+  boxrule=0.9pt,
+  arc=0pt,
+  left=6pt,
+  right=6pt,
+  top=5pt,
+  bottom=5pt,
+  boxsep=0pt,
+  before skip=0.2em,
+  after skip=0.7em
+}
+
+% =========================
+% tw i def
+% =========================
+\newcommand{\twierdzenie}[2]{%
+  \noindent
+  #1
+  \par\smallskip
+  \noindent\hspace*{1.2em}$\Longrightarrow$
+  \par\smallskip
+  \noindent
+  #2
+  \par\smallskip
+}
+
+\newcommand{\definicja}[2]{\textbf{def #1}$\ \coloneqq\ $#2}
