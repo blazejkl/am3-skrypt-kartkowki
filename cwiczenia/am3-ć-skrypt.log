@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  15 OCT 2026 20:53
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.3.29)  15 OCT 2026 21:16
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex
@@ -1030,7 +1030,23 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count372
 \@lastruleclass=\count373
 \@thisrulewidth=\dimen333
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count374
+\csq@gtype=\count375
+\csq@glevel=\count376
+\csq@qlevel=\count377
+\csq@maxlvl=\count378
+\csq@tshold=\count379
+\csq@ltx@everypar=\toks44
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
 File: tikzlibraryautomata.code.tex 2025-08-29 v3.1.11a (3.1.11a)
  (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -1065,11 +1081,16 @@ File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowwidth=\dimen336
 \pgfarrowlinewidth=\dimen337
 )) (./setup/style.tex
-\c@stepsi=\count374
-\enitdp@steps=\count375
-\c@podpunktyi=\count376
-\enitdp@podpunkty=\count377
-) (./setup/math.tex) (./am3-ć-skrypt.aux)
+\c@stepsi=\count380
+\enitdp@steps=\count381
+\c@podpunktyi=\count382
+\enitdp@podpunkty=\count383
+) (./setup/math.tex)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'polyglossia' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'polish'.
+ (./am3-ć-skrypt.aux)
 \openout1 = am3-ć-skrypt.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -1178,24 +1199,24 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count378
+\scratchcounter=\count384
 \scratchdimen=\dimen338
 \scratchbox=\box155
-\nofMPsegments=\count379
-\nofMParguments=\count380
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count381
+\nofMPsegments=\count385
+\nofMParguments=\count386
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count387
 \MPscratchDim=\dimen339
-\MPnumerator=\count382
-\makeMPintoPDFobject=\count383
-\everyMPtoPDFconversion=\toks45
+\MPnumerator=\count388
+\makeMPintoPDFobject=\count389
+\everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count384
+\c@lstlisting=\count390
 
 set lang polish, 2
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1208,7 +1229,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] (./am3-ć-skrypt.aux)
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9] (./am3-ć-skrypt.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1216,19 +1237,19 @@ L3 programming layer <2026-01-19>
 )
 
 Here is how much of LuaTeX's memory you used:
- 32657 strings out of 476076
- 125240,1373583 words of node,token memory allocated
- 2306 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 11 glyph, 375 attribute, 60 glue_spec, 225 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 2:5068,3:1690,4:218,5:1064,6:100,7:9300,8:118,9:2157,10:3,11:580
- 54326 multiletter control sequences out of 65536+600000
- 54 fonts using 24473063 bytes
+ 33334 strings out of 476076
+ 125236,1373583 words of node,token memory allocated
+ 2487 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 12 glyph, 433 attribute, 60 glue_spec, 254 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 2:4405,3:1561,4:218,5:1096,6:104,7:9299,8:118,9:1686,10:3,11:598
+ 54988 multiletter control sequences out of 65536+600000
+ 75 fonts using 36452855 bytes
  111i,14n,107p,1072b,927s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></System/Library/Fonts/Supplemental/STIXTwoText.ttf></System/Library/Fonts/Supplemental/STIXTwoMath.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on am3-ć-skrypt.pdf (7 pages, 96140 bytes).
+Output written on am3-ć-skrypt.pdf (9 pages, 111283 bytes).
 
-PDF statistics: 106 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+PDF statistics: 112 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 1048576)
  256 words of extra memory for PDF output out of 10000 (max. 100000000)
 

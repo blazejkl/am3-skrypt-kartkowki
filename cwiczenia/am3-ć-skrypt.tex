@@ -172,8 +172,7 @@ sprawdź, czy to metryki na \(\mathbb{R}^2\)
 \end{podpunkty}
 
 
-\bigskip
-\bigskip
+\newpage
 \indeks{ć2}
 
 \bigskip
@@ -334,7 +333,7 @@ d_\infty \leq d_2 \leq d_1 \leq 2 \, d_\infty \implies B_{d_\infty}\big(x, \tfra
 \textbf{przykład} \; \(\mathbb{R}^n, \; \mathbb{C}^n\) \, - przestrzenie Hausdorffa
 \end{logbox}
 
-\newpage
+\bigskip
 \zdc \; pokazać, że w przestrzeni Hausdorffa \(\#\operatorname{Lim}(x_n) \leq 1\)
 \smallskip
 \begin{itemize}
@@ -358,8 +357,7 @@ d_\infty \leq d_2 \leq d_1 \leq 2 \, d_\infty \implies B_{d_\infty}\big(x, \tfra
 \end{itemize}
 
 
-\bigskip
-\bigskip
+\newpage
 \indeks{ć3}
 
 \bigskip
@@ -426,7 +424,7 @@ czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topolog
     \(X \overset{\text{CL ii)}}{\subseteq} \operatorname{CL}(X) \subseteq X\) \, (bo \(\operatorname{CL}(X) \in 2^X\)), \; zatem \(\operatorname{CL}(X) = X\), \; zatem \(\emptyset \in \mathcal{T}\) \, \(\checkmark\)
 
     \(X \in \mathcal{T} \iff \operatorname{CL}(\emptyset) \overset{\text{CL i)}}{=} \emptyset\) \, \(\checkmark\)
-    \newpage
+    \smallskip
     \item \(\forall_{\alpha \in A} \;\, U_\alpha \in \mathcal{T} \overset{?}{\implies} \bigcup_{\alpha \in A} U_\alpha \in \mathcal{T}\)
     \begin{itemize}
         \item \textbf{monotoniczność CL}: \, \(A \subseteq B \implies B = A \cup B \implies \operatorname{CL}(B) = \operatorname{CL}(A \cup B) \overset{\text{CL iii)}}{=} \operatorname{CL}(A) \cup \operatorname{CL}(B) \supseteq \operatorname{CL}(A)\) \, \(\blacksquare\)
@@ -445,7 +443,7 @@ czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topolog
     \end{align*}
 \end{enumerate}
 
-\bigskip
+\newpage
 \zd{8} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; czy operacja domknięcia spełnia założenia \zad{7}?
 \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
     \item \(\overline{\emptyset} \overset{?}{=} \emptyset\): \, w każdej topologii \(\emptyset\) jest otwarto-domknięty, więc \(\overline{\emptyset} = \bigcap \{F : F \supseteq \emptyset, \; F^c \in \mathcal{T}\} = \emptyset\) \, \(\checkmark\)
@@ -568,8 +566,7 @@ czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topolog
     zatem \(g^{-1}\) nie jest ciągła \, \(\big((g^{-1})^{-1}(\{0\}) = g(\{0\})\big)\), \; zatem \(g\) nie jest homeomorfizmem
 \end{podpunkty}
 
-\bigskip
-\bigskip
+\newpage
 \indeks{ć4}
 
 \bigskip
@@ -670,5 +667,174 @@ rozwiązanie \zad{14}:
 \newpage
 \indeks{ć5}
 
+\bigskip
+\zad{15} \; uzasadnij, że każda p.m. jest homeomorficzna z p.m. ograniczoną \, (metryka - \textbf{ograniczona} \(\iff \exists_{M < \infty} \; \forall_{x, y \in X} \;\, d(x, y) \leq M\))
+
+\smallskip
+wykażemy, że każda przestrzeń metryczna \((X, d)\) jest homeomorficzna z \((X, \tilde{d})\), \; \(\tilde{d}(x, y) = \frac{d(x, y)}{1 + d(x, y)}\) \, z \zad{5} \, (ograniczona, bo \(\tilde{d} < 1\))
+
+niech \((X, \mathcal{T}_d), \; (X, \mathcal{T}_{\tilde{d}})\) - przestrzenie topologiczne generowane przez odpowiednio \(d\) i \(\tilde{d}\)
+
+\smallskip
+\textbf{def} \; \(f: (X, \mathcal{T}_X) \to (Y, \mathcal{T}_Y)\) - \textbf{homeomorfizm} \, \(\iff f\) - ciągła, \; \(f\) - bijekcja, \; \(f^{-1}\) - ciągła
+
+\smallskip
+wykażemy, że \(\operatorname{id}: (X, \mathcal{T}_d) \to (X, \mathcal{T}_{\tilde{d}})\) - homeomorfizm
+\begin{itemize}
+    \item \((*)\) \; z \zad{5}(b) mamy: \, \(\mathcal{T}_d = \mathcal{T}_{\tilde{d}}\)
+    \item bijekcja - trywialnie
+    \item \(\operatorname{id}\) i \(\operatorname{id}^{-1}\) - ciągłe \(\iff \forall_{U \in \mathcal{T}_{\tilde{d}}} \;\, \operatorname{id}^{-1}(U) \in \mathcal{T}_d \;\, \land \;\, \forall_{U \in \mathcal{T}_d} \;\, (\operatorname{id}^{-1})^{-1}(U) \in \mathcal{T}_{\tilde{d}}\)
+    \item dla bijekcji to jest równoważne warunkowi \(U \in \mathcal{T}_d \iff \operatorname{id}(U) \in \mathcal{T}_{\tilde{d}}\)
+    \item \(\operatorname{id}(U) = U\), więc \(U \in \mathcal{T}_d \iff U \in \mathcal{T}_{\tilde{d}}\), a to zachodzi z \((*)\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zad{16} \; czy homeomorficzne są:
+\begin{podpunkty}
+    \item \([0, 1)\) \, i \, \((a, b]\), \; \(a < b\), \; topologie indukowane z \(\mathbb{R}\)
+    \begin{itemize}
+        \item \(t \in [0, 1)\)
+        \item \([0, 1) \to (0, 1]\): \, \(s = 1 - t\) \, - różnowartościowa, \enquote{na}, \(1 - t\) jest ciągła na \(\mathbb{R}\), więc obcięcie ciągłe w top. ind., \; \(s^{-1} = 1 - u\) - ciągła \(\implies s\) - homeomorfizm
+        \item \((0, 1] \to (a, b]\): \, \(x = a + (b - a)s\) \, - bijekcja analogicznie, ciągła, \; \(x^{-1} = \frac{y - a}{b - a}\) - funkcja afiniczna - ciągła \(\implies x\) - homeomorfizm
+        \item złożenie: \, \(f: [0, 1) \to (a, b], \;\; f(t) = a + (b - a)(1 - t) = b - (b - a)t\)\; - złożenie homeomorfizmów jest homeomorfizmem
+    \end{itemize}
+    \item \((-1, 1)\) \, i \, \(\mathbb{R}\)
+    \begin{itemize}
+        \item \(\operatorname{tg} x\) rozciągnięty na \((-1, 1)\): \, \(f(x) = \operatorname{tg}\big(\frac{\pi}{2} x\big)\), \; \(f: (-1, 1) \to \mathbb{R}\) - ciągła bijekcja, \; \(f^{-1}(y) = \frac{2}{\pi} \operatorname{arctg} y\) - ciągła \(\implies f\) - homeomorfizm
+    \end{itemize}
+    \item \([0, 1)\) \, i \, \((0, 1)\)
+    \begin{itemize}
+        \item załóżmy, że \(h: [0, 1) \to (0, 1)\) - homeomorfizm
+        \item \(h\) - ciągła i różnowartościowa \(\overset{\text{fakt 14b}}{\implies} h\) - monotoniczna
+        \begin{itemize}
+            \item jeśli \(h\) - rosnąca: \, \(\forall_{x > 0} \;\, h(x) > h(0) \implies h([0, 1)) \subseteq [h(0), 1)\), \, ale \(h(0) \in (0, 1)\), więc np. \(\frac{h(0)}{2} \in (0, 1) \setminus h([0, 1))\) \, - sprzeczność z \(h\) - \enquote{na}
+            \item jeśli \(h\) - malejąca: \, symetrycznie \(h([0, 1)) \subseteq (0, h(0)]\), więc np. \(\frac{h(0) + 1}{2}\) jest nieosiągalne \, - sprzeczność z tym, że \(h\) jest \enquote{na}
+        \end{itemize}
+        \item zatem \([0, 1)\) nie jest homeomorficzne z \((0, 1)\) \, \(\blacksquare\)
+    \end{itemize}
+\end{podpunkty}
+
+
+\bigskip
+\zad{17} \; czy zbiory są zwarte?
+\begin{podpunkty}
+    \item \((0, 1)\) - nie, np. \((0, 1) = \bigcup_{n=1}^{\infty} \big(\frac{1}{n}, 1 - \frac{1}{n}\big)\) \, - pokrycie bez skończonego podpokrycia
+    \item \(\mathbb{R}\) - nie, kontrprzykład: \, \(\mathbb{R} = \bigcup_{n=1}^{\infty} (-n, n)\)
+    \item zbiór Cantora
+
+    \bigskip
+    \begin{minipage}[c]{0.45\linewidth}
+    \(C_0 = [0, 1], \;\; C_{n+1} = \frac{1}{3} C_n \cup \big(\frac{2}{3} + \frac{1}{3} C_n\big)\)
+
+    \smallskip
+    \(C = \bigcap_{n=0}^{\infty} C_n\)
+
+    \smallskip
+    czyli \, \(C_1 = \big[0, \frac{1}{3}\big] \cup \big[\frac{2}{3}, 1\big]\)
+
+    \smallskip
+    \(C_2 = \big[0, \frac{1}{9}\big] \cup \big[\frac{2}{9}, \frac{1}{3}\big] \cup \big[\frac{2}{3}, \frac{7}{9}\big] \cup \big[\frac{8}{9}, 1\big]\)
+
+    \(\vdots\)
+    \end{minipage}
+    \hspace{1.5em}
+
+    \begin{tikzpicture}[baseline=(current bounding box.center), x=0.0864cm, y=1cm]
+    \fill (0, 0) rectangle (81, -0.12);
+    \foreach \a/\b in {0/27, 54/81}
+        \fill (\a, -0.35) rectangle (\b, -0.47);
+    \foreach \a/\b in {0/9, 18/27, 54/63, 72/81}
+        \fill (\a, -0.70) rectangle (\b, -0.82);
+    \foreach \a/\b in {0/3, 6/9, 18/21, 24/27, 54/57, 60/63, 72/75, 78/81}
+        \fill (\a, -1.05) rectangle (\b, -1.17);
+    \foreach \a/\b in {0/1, 2/3, 6/7, 8/9, 18/19, 20/21, 24/25, 26/27, 54/55, 56/57, 60/61, 62/63, 72/73, 74/75, 78/79, 80/81}
+        \fill (\a, -1.40) rectangle (\b, -1.52);
+    \foreach \n in {0, ..., 4}
+        \node[left, font=\small] at (-2, -0.06 - 0.35*\n) {\(C_{\n}\)};
+    \foreach \x/\l in {0/0, 27/\frac{1}{3}, 54/\frac{2}{3}, 81/1}
+        \node[above, font=\small] at (\x, 0.05) {\(\l\)};
+    \end{tikzpicture}
+
+
+    \bigskip
+    \(C \subseteq \mathbb{R}\), więc z \textbf{tw Heinego-Borela} \, \(C\) - zwarty \(\iff C\) - domknięty \(\land \; C\) - ograniczony
+
+    \smallskip
+    ograniczony: \, \(C \subseteq [0, 1] \subseteq B\big(\frac{1}{2}, \frac{1}{2} + \varepsilon\big)\) \, w \((\mathbb{R}, d_e)\)
+
+    domknięty:
+    \begin{itemize}
+        \item \(\forall_n \;\, C_n\) - domknięty jako suma \(2^n\) przedziałów domkniętych \, (skończona suma zbiorów domkniętych)
+        \item \(C = \bigcap_n C_n\) - domknięty jako przecięcie zbiorów domkniętych \, (\(C^c\) - otwarte jako suma zbiorów otwartych)
+    \end{itemize}
+    więc \(C\) - zwarty \, \(\blacksquare\)
+\end{podpunkty}
+
+\bigskip
+\bit{przestrzeń produktowa - wstęp}
+
+\smallskip
+\textbf{def} \; \(\{X_\alpha\}_{\alpha \in A}\) - rodzina przestrzeni topologicznych, \; \textbf{przestrzeń produktowa} \, \(X = \prod_{\alpha \in A} X_\alpha \coloneqq \{(x_\alpha)_{\alpha \in A} : \forall_{\alpha \in A} \;\, x_\alpha \in X_\alpha\}\) \, (iloczyn kartezjański z topologią produktową)
+
+\bigskip
+\begin{logbox}
+\textbf{przykłady}
+\begin{steps}
+    \item \(A = \{1, \dots, n\}\) \, - krotki \((x_1, \dots, x_n), \; x_k \in X_k\)
+    \item \(A = \mathbb{N}\) \, - ciągi \((x_1, x_2, \dots), \; x_k \in X_k\)
+\end{steps}
+\end{logbox}
+
+\bigskip
+\textbf{def} \; \textbf{rzutowanie} \, \(p_\beta\big((x_\alpha)_{\alpha \in A}\big) \coloneqq x_\beta\)
+
+\smallskip
+\textbf{def} \; \textbf{cylinder} (podbaza) dla \(\beta \in A, \; U_\beta \in \mathcal{T}_{X_\beta}\): \, \(C_\beta(U_\beta) \coloneqq p_\beta^{-1}(U_\beta) = U_\beta \times \prod_{\alpha \neq \beta} X_\alpha\) \, - cylinder ogranicza jedną współrzędną
+
+\smallskip
+\textbf{def} \; \textbf{baza topologii produktowej} \, - skończone przekroje cylindrów: \, \(\bigcap_{k=1}^{n} p_{\alpha_k}^{-1}(U_{\alpha_k}), \; U_{\alpha_k} \in \mathcal{T}_{X_{\alpha_k}}\)
+
+\smallskip
+\textbf{fakt} \; równoważnie - produkty \(\prod_\alpha U_\alpha\), \, gdzie \(U_\alpha \in \mathcal{T}_{X_\alpha}\) \, i \, \(U_\alpha = X_\alpha\) dla prawie wszystkich \(\alpha\) \, (warunek \enquote{prawie wszystkich} istotny dla przypadku nieskończonego - tam dopuszczenie dowolnych \(U_\alpha\) daje silniejszą \textbf{topologię pudełkową})
+
+\bigskip
+własności rzutowań:
+\begin{itemize}
+    \item ciągłe, bo \(p_\beta^{-1}(U_\beta) = C_\beta(U_\beta)\) - otwarty; \, topologia produktowa to najsłabsza topologia, w której wszystkie \(p_\beta\) są ciągłe
+    \item otwarte - obraz (niepustego) zbioru bazowego to \(U_\beta\) albo \(X_\beta\)
+\end{itemize}
+
+\bigskip
+\zad{18} \; czy jako przestrzeń topologiczna \(\mathbb{R} \times \mathbb{R}\) to \(\mathbb{R}^2\)?
+
+\smallskip
+ozn.:
+\begin{itemize}
+    \item \(\mathcal{T}\) - topologia produktowa na \(\mathbb{R} \times \mathbb{R}\) \, - intuicyjnie: zbiory zbudowane z cylindrów przez skończone przecięcia i dowolne sumy
+    \item \(\mathcal{T}_{d_2}\) - topologia generowana przez metrykę \(d_2\) na \(\mathbb{R}^2\) \, - intuicyjnie: zbiory, w których wokół każdego punktu mieści się kulka
+\end{itemize}
+\smallskip
+wiemy, że \(\mathcal{T}_{d_2} = \mathcal{T}_{d_\infty}\), \; wykażemy \(\mathcal{T} = \mathcal{T}_{d_\infty}\):
+\begin{itemize}
+    \item \(\subseteq\):
+    \begin{itemize}
+        \item redukcja do cylindrów - pozostałe \(U \in \mathcal{T}\) są z nich zbudowane operacjami, na które każda topologia jest zamknięta
+        \item niech \(U_1 \subseteq \mathbb{R}\) - otwarty, \; niech \((x, y) \in U_1 \times \mathbb{R}\)
+        \item mamy: \, \(\exists_{\varepsilon > 0} \;\, (x - \varepsilon, x + \varepsilon) \subseteq U_1\)
+        \item \(B_{d_\infty}\big((x, y), \varepsilon\big) = (x - \varepsilon, x + \varepsilon) \times (y - \varepsilon, y + \varepsilon) \subseteq U_1 \times \mathbb{R}\)
+        \item z dowolności \((x, y)\): \, \(U_1 \times \mathbb{R} \in \mathcal{T}_{d_\infty}\)
+        \item dla \(\mathbb{R} \times U_2\) analogicznie
+        \item zatem wszystkie cylindry należą do \(\mathcal{T}_{d_\infty}\), zatem \(\mathcal{T} \subseteq \mathcal{T}_{d_\infty}\) \, \(\blacksquare\)
+    \end{itemize}
+    \item \(\supseteq\):
+    \begin{itemize}
+        \item niech \(V \in \mathcal{T}_{d_\infty}\)
+        \item z otwartości: \, \(\forall_{p = (p_1, p_2) \in V} \; \exists_{\varepsilon_p > 0} \;\, R_p \coloneqq B_{d_\infty}(p, \varepsilon_p) = (p_1 - \varepsilon_p, p_1 + \varepsilon_p) \times (p_2 - \varepsilon_p, p_2 + \varepsilon_p) \subseteq V\)
+        \item \(R_p\) jest przecięciem dwóch cylindrów: \, \(R_p = \big((p_1 - \varepsilon_p, p_1 + \varepsilon_p) \times \mathbb{R}\big) \cap \big(\mathbb{R} \times (p_2 - \varepsilon_p, p_2 + \varepsilon_p)\big)\)
+        \item więc \(\forall_{p \in V} \;\, R_p \in \mathcal{T}\)
+        \item \(\forall_{p \in V} \;\, p \in R_p \land R_p \subseteq V \implies V = \bigcup_{p \in V} R_p\)
+        \item zatem \(V \in \mathcal{T}\) \, \(\blacksquare\)
+    \end{itemize}
+\end{itemize}
 
 \end{document}
