@@ -419,6 +419,156 @@ d_\infty \leq d_2 \leq d_1 \leq 2 \, d_\infty \implies B_{d_\infty}\big(x, \tfra
 \end{enumerate}
 czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topologia na \(X\)?
 
+\smallskip
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\emptyset \in \mathcal{T} \iff \operatorname{CL}(X) = X\)
+
+    \(X \overset{\text{CL ii)}}{\subseteq} \operatorname{CL}(X) \subseteq X\) \, (bo \(\operatorname{CL}(X) \in 2^X\)), \; zatem \(\operatorname{CL}(X) = X\), \; zatem \(\emptyset \in \mathcal{T}\) \, \(\checkmark\)
+
+    \(X \in \mathcal{T} \iff \operatorname{CL}(\emptyset) \overset{\text{CL i)}}{=} \emptyset\) \, \(\checkmark\)
+    \newpage
+    \item \(\forall_{\alpha \in A} \;\, U_\alpha \in \mathcal{T} \overset{?}{\implies} \bigcup_{\alpha \in A} U_\alpha \in \mathcal{T}\)
+    \begin{itemize}
+        \item \textbf{monotoniczność CL}: \, \(A \subseteq B \implies B = A \cup B \implies \operatorname{CL}(B) = \operatorname{CL}(A \cup B) \overset{\text{CL iii)}}{=} \operatorname{CL}(A) \cup \operatorname{CL}(B) \supseteq \operatorname{CL}(A)\) \, \(\blacksquare\)
+        \item niech \(\forall_{\alpha \in A} \;\, U_\alpha \in \mathcal{T}\)
+        \item chcemy otrzymać \(\operatorname{CL}\big((\bigcup_{\alpha \in A} U_\alpha)^c\big) = (\bigcup_{\alpha \in A} U_\alpha)^c\), \, czyli z praw de Morgana \, \(\operatorname{CL}\big(\bigcap_{\alpha \in A} U_\alpha^c\big) = \bigcap_{\alpha \in A} U_\alpha^c\)
+        \begin{itemize}
+            \item \(\subseteq\): \, \(\forall_{\beta \in A} \;\, \bigcap_{\alpha \in A} U_\alpha^c \subseteq U_\beta^c\), \; zatem \(\operatorname{CL}\big(\bigcap_{\alpha \in A} U_\alpha^c\big) \overset{\text{z monotoniczności}}{\subseteq} \operatorname{CL}(U_\beta^c) \overset{U_\beta \in \mathcal{T}}{=} U_\beta^c \implies \operatorname{CL}\big(\bigcap_{\alpha \in A} U_\alpha^c\big) \subseteq \bigcap_{\beta \in A} U_\beta^c\)
+            \item \(\supseteq\): \, \(\bigcap_{\alpha \in A} U_\alpha^c \overset{\text{CL ii)}}{\subseteq} \operatorname{CL}\big(\bigcap_{\alpha \in A} U_\alpha^c\big)\)
+        \end{itemize}
+    \end{itemize}
+    \item \(A, B \in \mathcal{T} \implies A \cap B \overset{?}{\in} \mathcal{T}\)
+
+    \((A \cap B)^c = A^c \cup B^c\) \, (z praw de Morgana), \; zatem
+    \begin{align*}
+    \operatorname{CL}\big((A \cap B)^c\big) = \operatorname{CL}(A^c \cup B^c) \overset{\text{CL iii)}}{=} \operatorname{CL}(A^c) \cup \operatorname{CL}(B^c) \overset{A, B \in \mathcal{T}}{=} A^c \cup B^c = (A \cap B)^c \quad \checkmark
+    \end{align*}
+\end{enumerate}
+
+\bigskip
+\zd{8} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; czy operacja domknięcia spełnia założenia \zad{7}?
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\overline{\emptyset} \overset{?}{=} \emptyset\): \, w każdej topologii \(\emptyset\) jest otwarto-domknięty, więc \(\overline{\emptyset} = \bigcap \{F : F \supseteq \emptyset, \; F^c \in \mathcal{T}\} = \emptyset\) \, \(\checkmark\)
+    \item \(A \overset{?}{\subseteq} \overline{A}\): \, trywialnie \(A \subseteq \bigcap \{F : F \supseteq A, \; F^c \in \mathcal{T}\}\), \, bo \(A\) zawiera się w każdym \(F\), więc zawiera się w przecięciu \, \(\checkmark\)
+    \item \(\overline{A \cup B} \overset{?}{=} \overline{A} \cup \overline{B}\)
+    \begin{align*}
+    \overline{A \cup B} \overset{\overline{A} = (\operatorname{int} A^c)^c}{=} \big(\operatorname{int}(A \cup B)^c\big)^c \overset{\text{z praw de Morgana}}{=} \big(\operatorname{int}(A^c \cap B^c)\big)^c \overset{(*)}{=} \big(\operatorname{int} A^c \cap \operatorname{int} B^c\big)^c \overset{\text{z praw de Morgana}}{=} \big(\operatorname{int} A^c\big)^c \cup \big(\operatorname{int} B^c\big)^c = \overline{A} \cup \overline{B} \quad \checkmark
+    \end{align*}
+    \((*)\) \; \(\operatorname{int}(C \cap D) = \operatorname{int} C \cap \operatorname{int} D\)
+    \begin{itemize}
+        \item \(\subseteq\): \, \(x_0 \in \operatorname{int}(C \cap D) \iff \exists_{U \in \mathcal{T}, \; U \subseteq C \cap D} \;\, x_0 \in U \implies x_0 \in U \subseteq C \land x_0 \in U \subseteq D \land U \in \mathcal{T} \implies x_0 \in \operatorname{int} C \land x_0 \in \operatorname{int} D \iff x_0 \in \operatorname{int} C \cap \operatorname{int} D\)
+        \item \(\supseteq\): \, \(x_0 \in \operatorname{int} C \cap \operatorname{int} D \iff \exists_{U, V \in \mathcal{T}, \; U \subseteq C, \; V \subseteq D} \;\, x_0 \in U \land x_0 \in V \overset{\text{iii)}}{\implies} U \cap V \in \mathcal{T}, \; x_0 \in U \cap V \subseteq C \cap D \implies x_0 \in \operatorname{int}(C \cap D)\)
+    \end{itemize}
+    \item \(\overline{\overline{A}} \overset{?}{=} \overline{A}\)
+
+    \smallskip
+    \(\overline{\overline{A}} = \bigcap \{F : F \supseteq \overline{A}, \; F^c \in \mathcal{T}\}\), \; \(\forall_{F : F^c \in \mathcal{T}} \;\, F \supseteq A \iff F \supseteq \overline{A}\)
+    \begin{itemize}
+        \item \(\impliedby\): \, \(A \subseteq \overline{A}\)
+        \item \(\implies\): \, \(A \subseteq F \implies F\) jest jednym z przecinanych zbiorów z def domknięcia \(\implies \overline{A} \subseteq F\)
+    \end{itemize}
+    zatem \(\overline{\overline{A}} = \bigcap \{F : F \supseteq A, \; F^c \in \mathcal{T}\} = \overline{A}\) \, \(\checkmark\)
+\end{enumerate}
+
+\bigskip
+\zad{9} \; zbadaj ciągłość funkcji
+\begin{podpunkty}
+    \item \(f: [0, 2] \to [0, 2], \;\; f(x) = \begin{cases} x, & x \in [0, 1) \\ 3 - x, & x \in [1, 2] \end{cases}\) \; na topologii standardowej indukowanej na \(X = [0, 2]\)
+
+    \smallskip
+    \begin{minipage}[c]{0.45\linewidth}
+    \(\big(\frac{3}{2}, 2\big] = \underbrace{\big(\tfrac{3}{2}, 3\big)}_{\in \, \mathcal{T}} \cap \underbrace{[0, 2]}_{= \, X} \implies \big(\frac{3}{2}, 2\big] \in \mathcal{T}_X\)
+
+    \medskip
+    \(f^{-1}\big(\big(\frac{3}{2}, 2\big]\big) = \big[1, \frac{3}{2}\big) \notin \mathcal{T}_X\)
+
+    \medskip
+    więc \(f\) nie jest ciągła
+    \end{minipage}
+    \hspace{1.5em}
+    \begin{tikzpicture}[baseline=(current bounding box.center), scale=1.2, >=latex]
+        \draw[->] (-0.2, 0) -- (2.5, 0) node[right] {\(x\)};
+        \draw[->] (0, -0.2) -- (0, 2.5) node[above] {\(y\)};
+        \foreach \x in {1, 2} \draw (\x, 0.05) -- (\x, -0.05) node[below] {\(\x\)};
+        \foreach \y in {1, 2} \draw (0.05, \y) -- (-0.05, \y) node[left] {\(\y\)};
+        \draw (0.05, 1.5) -- (-0.05, 1.5) node[left] {\(\frac{3}{2}\)};
+        \draw[blue, dashed] (0, 1.5) -- (1.5, 1.5) -- (1.5, 0);
+        \draw[thick] (0, 0) -- (1, 1);
+        \draw[thick] (1, 2) -- (2, 1);
+        \draw[blue, very thick] (0, 1.5) -- (0, 2);
+        \draw[blue, very thick] (1, 0) -- (1.5, 0);
+        \foreach \x/\y in {0/0, 1/2, 2/1} \fill (\x, \y) circle (1.5pt);
+        \draw[fill=white] (1, 1) circle (1.5pt);
+        \fill[blue] (0, 2) circle (1.5pt);
+        \fill[blue] (1, 0) circle (1.5pt);
+        \draw[blue, fill=white] (0, 1.5) circle (1.5pt);
+        \draw[blue, fill=white] (1.5, 0) circle (1.5pt);
+    \end{tikzpicture}
+
+    \smallskip
+    \((*)\) \; \(\mathcal{T}' \coloneqq \{U \cup (V \cap [1, 2]) : U, V \in \mathcal{T}_X\}\) \, (topologia generowana przez \(\mathcal{T}_X \cup \{[1, 2]\}\)) \, - \(f\) na tym jest ciągła
+
+        \itemzd \(f: [0, 2] \to [0, \infty)\), \; \(\mathcal{T}_Y = \{\emptyset, [0, \infty), (a, \infty) \text{ dla } a \geq 0\}\), \; \(f(x) = \begin{cases} x, & x \in [0, 1] \\ x + 1, & x \in (1, 2] \end{cases}\)
+
+    \smallskip
+    \begin{minipage}[c]{0.5\linewidth}
+    wykażemy, że \(\forall_{U \in \mathcal{T}_Y} \;\, f^{-1}(U) \in \mathcal{T}_X\)
+
+    \smallskip
+    \(U \in \mathcal{T}_Y \iff \underbrace{U = \emptyset}_{1^\circ} \lor \underbrace{U = [0, \infty)}_{2^\circ} \lor \underbrace{U = (a, \infty)}_{3^\circ}\)
+
+    \smallskip
+    \(1^\circ\) \; \(f^{-1}(\emptyset) = \emptyset \in \mathcal{T}_X\) \, \(\checkmark\)
+
+    \(2^\circ\) \; \(f^{-1}\big([0, \infty)\big) = [0, 2] = (-6, 7) \cap [0, 2] \in \mathcal{T}_X\) \, \(\checkmark\)
+
+    \(3^\circ\) \; \(f^{-1}\big((a, \infty)\big) = \begin{cases} (a, 2], & a \in [0, 1) \\ (1, 2], & a \in [1, 2] \\ (a - 1, 2], & a \in (2, 3) \\ \emptyset, & a \geq 3 \end{cases} \in \mathcal{T}_X\) \, \(\checkmark\)
+
+    \smallskip
+    zatem \(f\) - ciągła \, \(\blacksquare\)
+    \end{minipage}
+    \hspace{1.5em}
+    \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.9, >=latex]
+        \draw[->] (-0.2, 0) -- (2.5, 0) node[right] {\(x\)};
+        \draw[->] (0, -0.2) -- (0, 3.5) node[above] {\(y\)};
+        \foreach \x in {1, 2} \draw (\x, 0.05) -- (\x, -0.05) node[below] {\(\x\)};
+        \foreach \y in {1, 2, 3} \draw (0.05, \y) -- (-0.05, \y) node[left] {\(\y\)};
+        \draw[thick] (0, 0) -- (1, 1);
+        \draw[thick] (1, 2) -- (2, 3);
+        \foreach \x/\y in {0/0, 1/1, 2/3} \fill (\x, \y) circle (1.5pt);
+        \draw[fill=white] (1, 2) circle (1.5pt);
+    \end{tikzpicture}
+    \item niech \(f: \mathbb{Z}_+ \to \mathbb{R}, \;\; f(x) = \begin{cases} \frac{1}{x}, & x \neq 0 \\ 0, & x = 0 \end{cases}\), \; niech \(g: \mathbb{Z}_+ \to f(\mathbb{Z}_+), \;\; g(k) = f(k)\)
+
+    \smallskip
+    \begin{minipage}[c]{0.5\linewidth}
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item czy \(f\) - ciągła?
+        \item czy \(g\) - homeomorfizm? \, (ciągła, bijekcja, \(g^{-1}\) ciągła)
+    \end{enumerate}
+    \end{minipage}
+    \hspace{1.5em}
+    \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.9, >=latex]
+        \draw[->] (-0.2, 0) -- (5.6, 0);
+        \draw[->] (0, -0.2) -- (0, 1.5);
+        \foreach \x in {1, 2, 3, 4, 5} \draw (\x, 0.05) -- (\x, -0.05) node[below] {\(\x\)};
+        \draw (0.05, 1) -- (-0.05, 1) node[left] {\(1\)};
+        \foreach \x/\y in {0/0, 1/1, 2/0.5, 3/0.333, 4/0.25, 5/0.2} \fill (\x, \y) circle (1.5pt);
+    \end{tikzpicture}
+
+    \smallskip
+    \(\{n\} \in \mathcal{T}_{\mathbb{Z}_+}\), \, bo \(\{n\} = \big(n - \frac{1}{2}, n + \frac{1}{2}\big) \cap \mathbb{Z}_+\)
+
+    \(\mathcal{T}_{\text{st}}\) indukowana przez \(\mathbb{Z}_+\) to \(2^{\mathbb{Z}_+}\) - topologia dyskretna
+
+    więc \(f\) i \(g\) - trywialnie ciągłe
+
+    ale np. \(g(\underbrace{\{0\}}_{\in \, \mathcal{T}_{\mathbb{Z}_+}}) = \{0\} \notin \mathcal{T}_{f(\mathbb{Z}_+)}\), \, bo każde otoczenie \(0\) zawiera prawie wszystkie \(\frac{1}{n}\)
+
+    zatem \(g^{-1}\) nie jest ciągła \, \(\big((g^{-1})^{-1}(\{0\}) = g(\{0\})\big)\), \; zatem \(g\) nie jest homeomorfizmem
+\end{podpunkty}
+
+
 \bigskip
 \bigskip
 \indeks{ć4}
