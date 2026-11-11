@@ -38,6 +38,13 @@
 \smallskip
 odp.: topologia dyskretna - tak, \; topologia antydyskretna - nie
 
+\bigskip
+\zdc \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(\{F_\alpha\}_{\alpha \in A}\) - rodzina zbiorów domkniętych, \; wykazać, że \(\bigcap_{\alpha \in A} F_\alpha\) - domknięty
+\begin{itemize}
+    \item \(\forall_{\alpha \in A} \;\, F_\alpha\) - domknięty \(\iff \forall_{\alpha \in A} \;\, F_\alpha^c \in \mathcal{T}\)
+    \item z praw de Morgana: \, \(\Big(\bigcap_{\alpha \in A} F_\alpha\Big)^c = \bigcup_{\alpha \in A} F_\alpha^c \overset{\text{ii)}}{\in} \mathcal{T}\)
+    \item zatem \(\bigcap_{\alpha \in A} F_\alpha\) - domknięty \, \(\blacksquare\)
+\end{itemize}
 
 \bigskip
 \zad{1} \; czy \((X, \mathcal{T})\) - przestrzeń topologiczna?
@@ -119,11 +126,11 @@ niech \((X, d)\) - przestrzeń metryczna
 odp.: tak
 
 \newpage
-\zad{2} \; na \(\mathbb{R}^2\) definiujemy:
+\zd{2} \; na \(\mathbb{R}^2\) definiujemy:
 \smallskip
 \begin{itemize}
     \item \(d_1(x, y) = |x_1 - y_1| + |x_2 - y_2|\)
-    \item \(d_2(x, y) = \big(|x_1 - y_1|^2 + |x_2 - y_2|^2\big)^{\frac{1}{2}}\)
+    \item \(d_2(x, y) = \big(|x_1 - y_1|^2 + |x_2 - y_2|^2\big)^{\frac{1}{2}}\)ń
     \smallskip
     \item \(d_\infty(x, y) = \max\{|x_1 - y_1|, |x_2 - y_2|\}\)
 \end{itemize}
@@ -566,6 +573,24 @@ czy \(\mathcal{T} = \{U \subseteq X : \operatorname{CL}(U^c) = U^c\}\) - topolog
     zatem \(g^{-1}\) nie jest ciągła \, \(\big((g^{-1})^{-1}(\{0\}) = g(\{0\})\big)\), \; zatem \(g\) nie jest homeomorfizmem
 \end{podpunkty}
 
+\bigskip
+\zdc \; niech \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(Y \subseteq X\), \; \(\mathcal{T}_Y = \{Y \cap U : U \in \mathcal{T}\}\), \; wykazać, że \((Y, \mathcal{T}_Y)\) - przestrzeń topologiczna
+
+\smallskip
+\(\forall_{U \in \mathcal{T}} \;\, Y \cap U \subseteq Y \implies \mathcal{T}_Y \subseteq 2^Y\)
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\emptyset = Y \cap \emptyset, \;\; Y = Y \cap X\), \; \(\emptyset, X \in \mathcal{T} \implies \emptyset, Y \in \mathcal{T}_Y\) \, \(\checkmark\)
+    \item \(\forall_{\alpha \in A} \;\, V_\alpha \in \mathcal{T}_Y \implies \forall_{\alpha \in A} \; \exists_{U_\alpha \in \mathcal{T}} \;\, V_\alpha = Y \cap U_\alpha\)
+    \[
+    \implies \bigcup_{\alpha \in A} V_\alpha = \bigcup_{\alpha \in A} (Y \cap U_\alpha) = Y \cap \underbrace{\bigcup_{\alpha \in A} U_\alpha}_{\in \, \mathcal{T} \text{ (ii))}} \in \mathcal{T}_Y \quad \checkmark
+    \]
+    \item \(V_1, V_2 \in \mathcal{T}_Y \implies V_1 = Y \cap U_1, \;\; V_2 = Y \cap U_2, \;\; U_1, U_2 \in \mathcal{T}\)
+    \[
+    \implies V_1 \cap V_2 = (Y \cap U_1) \cap (Y \cap U_2) = Y \cap \underbrace{(U_1 \cap U_2)}_{\in \, \mathcal{T} \text{ (iii))}} \in \mathcal{T}_Y \quad \checkmark
+    \]
+\end{enumerate}
+zatem \((Y, \mathcal{T}_Y)\) - przestrzeń topologiczna \, \(\blacksquare\)
+
 \newpage
 \indeks{ć4}
 
@@ -692,7 +717,7 @@ wykażemy, że \(\operatorname{id}: (X, \mathcal{T}_d) \to (X, \mathcal{T}_{\til
 \textbf{wniosek} \; homeomorfizmy nie zachowują ograniczoności  (ograniczoność przestrzeni nie jest niezmiennikiem topologicznym)
 
 \bigskip
-\zad{16} \; czy homeomorficzne są:
+\zd{16} \; czy homeomorficzne są:
 \begin{podpunkty}
     \item \([0, 1)\) \, i \, \((a, b]\), \; \(a < b\), \; topologie indukowane z \(\mathbb{R}\)
     \begin{itemize}
@@ -1134,5 +1159,457 @@ czy istnieje \(\mu: 2^{\mathbb{R}} \to [0, \infty]\) o własnościach:
     \item \([0, 1] \subseteq W\): \, \(x \in [0, 1] \implies \exists_{v \in V} \;\, x \sim v \implies x - v \in \mathbb{Q} \cap (-1, 1] \implies x = \underbrace{(x - v)}_{= \, t \, \in \, [-1, 1] \cap \mathbb{Q}} + v \in W\)
     \item zatem \(1 \overset{\text{(a)}}{=} \mu([0, 1]) \overset{\text{mon.}}{\leq} \mu(W) = 0\) \, - sprzeczność \, \(\blacksquare\)
 \end{itemize}
+
+\bigskip
+\zad{24} \; \(X\) - zbiór, \; \(\mu^*: 2^X \to [0, \infty]\), \; uzasadnij, że \(\mu^*\) - miara zewnętrzna, wyznacz zbiory mierzalne
+\begin{podpunkty}
+    \item \(\mu^*(A) = \begin{cases} 0, & A = \emptyset \\ 1, & \text{w przeciwnym przypadku} \end{cases}\)
+    \begin{itemize}
+        \item \(\mu^*(\emptyset) = 0\) \, z def \, \(\checkmark\)
+        \item monotoniczność: \, \(A \subseteq B \overset{?}{\implies} \mu^*(A) \leq \mu^*(B)\)
+        \begin{itemize}
+            \item[\(1^\circ\)] \(A = \emptyset, \; B = \emptyset \implies \mu^*(A) = 0 = \mu^*(B)\) \, \(\checkmark\)
+            \item[\(2^\circ\)] \(A = \emptyset, \; B \neq \emptyset \implies \mu^*(A) = 0 < 1 = \mu^*(B)\) \, \(\checkmark\)
+            \item[\(3^\circ\)] \(A \neq \emptyset, \; B \neq \emptyset \implies \mu^*(A) = 1 = \mu^*(B)\) \, \(\checkmark\) \quad (\(A \neq \emptyset, \; B = \emptyset\) niemożliwe dla \(A \subseteq B\))
+        \end{itemize}
+        \item przeliczalna podaddytywność: \, \(\mu^*\big(\bigcup_n A_n\big) \overset{?}{\leq} \sum_n \mu^*(A_n)\)
+        \begin{itemize}
+            \item[\(1^\circ\)] \(\forall_n \;\, A_n = \emptyset \implies \mu^*\big(\bigcup_n A_n\big) = 0 = \sum_n \mu^*(A_n)\) \, \(\checkmark\)
+            \item[\(2^\circ\)] \(\exists_n \;\, A_n \neq \emptyset \implies \mu^*\big(\bigcup_n A_n\big) = 1, \;\; \sum_n \mu^*(A_n) \geq 1\) \, \(\checkmark\)
+        \end{itemize}
+        \item zbiory mierzalne: \, \(A \in \mathcal{M} \iff \forall_{E \subseteq X} \;\, \mu^*(E) = \mu^*(E \cap A) + \underbrace{\mu^*(E \setminus A)}_{= \, \mu^*(E \cap A^c)}\)
+        \begin{itemize}
+            \item dla \(E = \emptyset\): \, \(\mu^*(E) = 0, \; \mu^*(E \cap A) = 0, \; \mu^*(E \setminus A) = 0\) \, - spełnia to każde \(A \in 2^X\)
+            \item dla \(E \neq \emptyset\) spełniają tylko \(A \in \{\emptyset, X\}\):
+            \begin{itemize}
+                \item \(\emptyset \neq A \neq X\): \, \(E = X \implies \mu^*(X) = 1 \neq 2 = \mu^*(A) + \mu^*(A^c)\)
+                \item \(A = \emptyset\): \, \(\mu^*(E) = \mu^*(\emptyset) + \mu^*(E)\); \; \(A = X\): \, \(\mu^*(E) = \mu^*(E) + \mu^*(\emptyset)\) \, \(\checkmark\)
+            \end{itemize}
+        \end{itemize}
+        \(\implies \mathcal{M} = \{\emptyset, X\}\)
+    \end{itemize}
+
+    \itemzdc \(\mu^*(A) = \begin{cases} 0, & A = \emptyset \\ 1, & \emptyset \neq A \neq X \\ 2, & A = X \end{cases}\) \quad (\(X \neq \emptyset\))
+    \begin{itemize}
+        \item \(\mu^*(\emptyset) = 0\) \, z def \, \(\checkmark\)
+        \item monotoniczność oczywista \, \(\checkmark\)
+        \item przeliczalna podaddytywność, \; ozn.: \(U = \bigcup_n A_n\)
+        \begin{itemize}
+            \item \(\mu^*(U) = 0 \implies\) trywialnie
+            \item \(\mu^*(U) = 1 \implies U \neq \emptyset \implies \exists_n \;\, A_n \neq \emptyset \implies \sum_n \mu^*(A_n) \geq 1\)
+            \item \(\mu^*(U) = 2 \implies U = X \implies \begin{cases} \exists_n \;\, A_n = X \implies \sum_n \mu^*(A_n) \geq 2 \\ \forall_n \;\, A_n \neq X \implies \text{do pokrycia } X \text{ potrzebne są} \geq 2 \text{ niepuste zbiory z } A_n \implies \sum_n \mu^*(A_n) \geq 2 \end{cases}\) \, \(\checkmark\)
+        \end{itemize}
+        \item zbiory mierzalne:
+        \begin{itemize}
+            \item \(A \in \{\emptyset, X\}\) - zawsze mierzalne (jak w (a): \, \(E \cap \emptyset = \emptyset, \;\; E \setminus X = \emptyset\))
+            \item \(\emptyset \neq A \neq X, \;\; \#X \geq 3\): \, weźmy \(a \in A, \; b \in A^c\), \, \(E = \{a, b\} \neq X\) \\
+            \(\implies \mu^*(E) = 1 \neq 2 = \underbrace{\mu^*(\{a\})}_{= \, 1} + \underbrace{\mu^*(\{b\})}_{= \, 1} = \mu^*(E \cap A) + \mu^*(E \setminus A) \implies A \notin \mathcal{M}\)
+            \item \(\emptyset \neq A \neq X, \;\; \#X = 2\): \, \(X = \{a, b\}, \; A = \{a\}\), \, sprawdzamy wszystkie \(E\):
+            \begin{itemize}
+                \item \(E = \emptyset\): \, \(0 = 0 + 0\)
+                \item \(E = \{a\}\): \, \(1 = 1 + 0\); \;\; \(E = \{b\}\): \, \(1 = 0 + 1\)
+                \item \(E = X\): \, \(2 = \mu^*(\{a\}) + \mu^*(\{b\}) = 1 + 1\) \, \(\implies A \in \mathcal{M}\)
+            \end{itemize}
+        \end{itemize}
+        \(\implies \mathcal{M} = \begin{cases} \{\emptyset, X\}, & \#X \geq 3 \\ 2^X, & \#X \leq 2 \end{cases}\)
+    \end{itemize}
+\end{podpunkty}
+
+\bigskip
+\((*)\) \; przyjmujemy, że co najwyżej przeliczalny (cnp) \(\iff\) skończony \(\lor\) przeliczalny
+
+\bigskip
+\zad{25} \; \(\mathcal{M} \subseteq 2^{\mathbb{R}}\), \; \(A \in \mathcal{M} \iff A\) - cnp \(\lor \; A^c\) - cnp, \; czy \(\mathcal{M}\) - \(\sigma\)-ciało?
+\begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+    \item \(\emptyset \in \mathcal{M}\), bo \(\emptyset\) - skończony; \; \(\mathbb{R} \in \mathcal{M}\), bo \(\mathbb{R}^c = \emptyset\) - skończony \, \(\checkmark\)
+    \item \(A \in \mathcal{M} \implies A^c \in \mathcal{M}\) \, - trywialne (warunek jest symetryczny względem \(A\) i \(A^c\)) \, \(\checkmark\)
+    \item \((A_n)_{n=1}^{\infty} \subset \mathcal{M} \overset{?}{\implies} \bigcup_n A_n \in \mathcal{M}\)
+    \begin{itemize}
+        \item[\(1^\circ\)] wszystkie \(A_n\) - cnp \(\implies \bigcup_n A_n\) - cnp \(\implies \bigcup_n A_n \in \mathcal{M}\) \, \(\checkmark\)
+        \item[\(2^\circ\)] istnieje nieprzeliczalne \(A_{n_0}\) \(\overset{A_{n_0} \in \mathcal{M}}{\implies} A_{n_0}^c\) - cnp, \; \(\big(\bigcup_n A_n\big)^c = \bigcap_n A_n^c \subseteq A_{n_0}^c \implies \big(\bigcup_n A_n\big)^c\) - cnp \(\implies \bigcup_n A_n \in \mathcal{M}\) \, \(\checkmark\)
+    \end{itemize}
+\end{enumerate}
+zatem \(\mathcal{M}\) - \(\sigma\)-ciało
+
+\bigskip
+\zad{26} \; sprawdź, czy podane funkcje są miarami na przestrzeni mierzalnej \((X, \mathcal{M})\)
+\begin{podpunkty}
+    \item \(X \neq \emptyset, \; x_0 \in X, \; \mathcal{M} = 2^X\), \; \(\mu_{x_0}(A) = \begin{cases} 1, & x_0 \in A \\ 0, & x_0 \notin A \end{cases}\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \item \(x_0 \notin \emptyset\), więc \(\mu_{x_0}(\emptyset) = 0\) \, \(\checkmark\)
+        \item \(A_n\) - parami rozłączne \(\implies \#\{n : x_0 \in A_n\} \in \{0, 1\}\), \, dwa trywialne przypadki:
+        \begin{itemize}
+            \item[\(0\):] \(x_0 \notin \bigcup_n A_n \implies \mu_{x_0}\big(\bigcup_n A_n\big) = 0 = \sum_n \mu_{x_0}(A_n)\)
+            \item[\(1\):] \(x_0 \in A_{n_0} \implies x_0 \in \bigcup_n A_n \implies \mu_{x_0}\big(\bigcup_n A_n\big) = 1 = \mu_{x_0}(A_{n_0}) = \sum_n \mu_{x_0}(A_n)\)
+        \end{itemize}
+        \(\implies\) przeliczalna addytywność \, \(\checkmark\)
+    \end{enumerate}
+
+    \smallskip
+    \textbf{def} \; \textbf{delta Diraca} \, \(\delta_{x_0}(A) \coloneqq \mu_{x_0}(A) = \chi_A(x_0) = \begin{cases} 1, & x_0 \in A \\ 0, & x_0 \notin A \end{cases}, \;\; A \in 2^X\)
+    \item \(\#X \geq 2, \; \mathcal{M} = 2^X\), \; \(\mu(A) = \begin{cases} 0, & A = \emptyset \\ 1, & A \neq \emptyset \end{cases}\)
+    \begin{enumerate}[label=\roman*), leftmargin=1.9em, itemsep=0.2em, topsep=0.2em, parsep=0pt, partopsep=0pt]
+        \setcounter{enumi}{1}
+        \item niech \(A, B \neq \emptyset, \; A \cap B = \emptyset\), \, wówczas \(\mu(A) + \mu(B) = 2\), \, a \(\mu(A \cup B) = 1\) \, \(\times\)
+    \end{enumerate}
+    takie \(A, B\) istnieją, bo \(\#X \geq 2\), więc np. \(A = \{a\}, \; B = \{b\}\); \; dla \(\#X = 1\) \, \(\mu = \delta_{x_0}\)
+    \itemzdc \(\mu\) z (b) jest miarą zewnętrzną \, (to samo \(\mu^*\) co w \zad{24}(a))
+    \begin{itemize}
+        \item \(\mu(\emptyset) = 0\) \, z def \, \(\checkmark\)
+        \item monotoniczność: \, \(A \subseteq B\)
+        \begin{itemize}
+            \item \(A = \emptyset \implies \mu(A) = 0 \leq \mu(B)\)
+            \item \(A \neq \emptyset \implies B \neq \emptyset \implies \mu(A) = 1 = \mu(B)\) \, \(\checkmark\)
+        \end{itemize}
+        \item przeliczalna podaddytywność:
+        \begin{itemize}
+            \item \(\forall_n \;\, A_n = \emptyset \implies \mu\big(\bigcup_n A_n\big) = 0 = \sum_n \mu(A_n)\)
+            \item \(\exists_{n_0} \;\, A_{n_0} \neq \emptyset \implies \mu\big(\bigcup_n A_n\big) = 1 = \mu(A_{n_0}) \leq \sum_n \mu(A_n)\) \, \(\checkmark\)
+        \end{itemize}
+    \end{itemize}
+\end{podpunkty}
+
+\bigskip
+\((*)\) \; \textbf{własność wyczerpania miary}: \, \(A_1 \subseteq \dots \subseteq A_n \subseteq \dots\) (wstępujące), \; \(\forall_n \;\, A_n \in \mathcal{M} \implies \mu\big(\bigcup_{n=1}^{\infty} A_n\big) = \sup_{n \in \mathbb{N}} \mu(A_n) = \lim_{n \to \infty} \mu(A_n)\)
+
+\smallskip
+\((***)\) \; \(\sigma\)-ciało - zamknięte na przeliczalne sumy i przeliczalne przecięcia
+
+\bigskip
+\zad{27} \; \((Y, \mathcal{M}, \mu)\) - przestrzeń z miarą, \; \(\{A_n\}_n \subseteq \mathcal{M}\) - zstępujące, \; \(\underbrace{\mu(A_1) < \infty}_{(**)}\), \; uzasadnij, że \(\mu\big(\bigcap_{n=1}^{\infty} A_n\big) = \lim_{n \to \infty} \mu(A_n)\), \; czy \((**)\) jest konieczne?
+\begin{itemize}
+    \item zdefiniujmy rodzinę \(B_n = A_1 \setminus A_n\), \; \(B_n\) - wstępujące
+    \item \(A_1 \setminus A_n = A_1 \cap A_n^c \in \mathcal{M}\) \, (\(\sigma\)-ciało domknięte na dopełnienie i przecięcie, \((***)\))
+    \item zatem z \((*)\): \, \(\mu\big(\bigcup_{n=1}^{\infty} B_n\big) = \sup_{n \in \mathbb{N}} \mu(B_n) = \lim_{n \to \infty} \mu(B_n)\)
+    \item \(\mu\big(\bigcup_{n=1}^{\infty} A_1 \setminus A_n\big) \overset{\text{z praw de Morgana}}{=} \mu\big(A_1 \setminus \bigcap_{n=1}^{\infty} A_n\big) \overset{\text{addytywność, } (!!)}{=} \mu(A_1) - \mu\big(\bigcap_{n=1}^{\infty} A_n\big)\)
+    \item \(\lim_{n \to \infty} \mu(B_n) = \lim_{n \to \infty} \mu(A_1 \setminus A_n) \overset{\text{addytywność, } (!!)}{=} \lim_{n \to \infty} \big(\mu(A_1) - \mu(A_n)\big) \overset{(!)}{=} \lim_{n \to \infty} \mu(A_1) - \lim_{n \to \infty} \mu(A_n) = \mu(A_1) - \lim_{n \to \infty} \mu(A_n)\) \\
+    \((!)\) \; \(\mu(A_n)\) - nierosnący i ograniczony z dołu przez \(0\), więc zbieżny do liczby rzeczywistej
+    \item zatem \(\mu(A_1) - \mu\big(\bigcap_{n=1}^{\infty} A_n\big) = \mu(A_1) - \lim_{n \to \infty} \mu(A_n) \overset{(!!)}{\implies} \mu\big(\bigcap_{n=1}^{\infty} A_n\big) = \lim_{n \to \infty} \mu(A_n)\) \, \(\blacksquare\)
+\end{itemize}
+\((!!)\) \; wymaga \(\mu(A_1) < \infty\) \, (odejmowanie, skracanie)
+
+\smallskip
+\((**)\) jest konieczne, kontrprzykład: \, miara Lebesgue'a \(\lambda\) na \(\mathbb{R}\), \; \(A_n = (-\infty, -n)\), \; \(\bigcap_n A_n = \emptyset\) \(\implies \lambda\big(\bigcap_n A_n\big) = 0 \neq \infty = \lim_{n \to \infty} \lambda(A_n)\)
+
+\newpage
+\indeks{ć9}
+
+\bigskip
+\textbf{def} \; \((X, \mathcal{T})\) - przestrzeń topologiczna, \; \(\mathcal{B}(X) \coloneqq \sigma(\mathcal{T})\)
+
+\smallskip
+\textbf{fakt} \; \(U_n \in \mathcal{T} \implies \bigcap_{n=1}^{\infty} U_n \in \mathcal{B}(X)\), \; \(F_n\) - domknięte \(\implies \bigcup_{n=1}^{\infty} F_n \in \mathcal{B}(X)\) \, (przeliczalne przecięcia otwartych, przeliczalne sumy domkniętych)
+
+\smallskip
+ozn.: \, \(G\) - otwarty, \; \(F\) - domknięty, \; \(\sigma\) - przeliczalna suma, \; \(\delta\) - przeliczalne przecięcie
+
+\smallskip
+czyli \(G_\delta \subseteq \mathcal{B}(X), \;\; F_\sigma \subseteq \mathcal{B}(X)\) \, (\(\subseteq\), bo to klasy zbiorów)
+
+\bigskip
+\zad{28} \; uzasadnij, że:
+\begin{podpunkty}
+    \item \([0, 3) \in \mathcal{B}(\mathbb{R})\)
+
+    \smallskip
+    \([0, 3) = \bigcup_{n=1}^{\infty} \big[0, 3 - \frac{1}{n}\big] \in F_\sigma\) \, albo \, \([0, 3) = \bigcap_{n=1}^{\infty} \big(-\frac{1}{n}, 3\big) \in G_\delta\)
+    \item \(D = \{(x, y) \in \mathbb{R}^2 : |x| \leq 1, \; 0 \leq y < 1\} \in \mathcal{B}(\mathbb{R}^2)\)
+
+    \smallskip
+    \begin{minipage}[c]{0.6\linewidth}
+    \begin{itemize}
+        \item \(D = \bigcup_{n=1}^{\infty} [-1, 1] \times \big[0, 1 - \frac{1}{n}\big] \in F_\sigma\)
+        \item \(D = \bigcap_{n=1}^{\infty} \big(-1 - \frac{1}{n}, 1 + \frac{1}{n}\big) \times \big(-\frac{1}{n}, 1\big) \in G_\delta\)
+    \end{itemize}
+    \end{minipage}
+    \hspace{1.5em}
+    \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.9, >=latex]
+        \fill[gray!25] (-1, 0) rectangle (1, 1);
+        \draw[->] (-1.6, 0) -- (1.6, 0) node[right] {\(x\)};
+        \draw[->] (0, -0.3) -- (0, 1.5) node[above] {\(y\)};
+        \draw[thick] (-1, 1) -- (-1, 0) -- (1, 0) -- (1, 1);
+        \draw[thick, dashed] (-1, 1) -- (1, 1);
+        \node[below] at (-1, 0) {\(-1\)};
+        \node[below] at (1, 0) {\(1\)};
+        \node[left] at (0, 1.12) {\(1\)};
+    \end{tikzpicture}
+\end{podpunkty}
+
+\bigskip
+\zad{29} \; \(X, Y\) - przestrzenie topologiczne, \; \(f: X \to Y\) - ciągła, \; uzasadnij, że \(W \in \mathcal{B}(Y) \implies f^{-1}(W) \in \mathcal{B}(X)\)
+\begin{itemize}
+    \item z ciągłości mamy \(U_Y \in \mathcal{T}_Y \implies f^{-1}(U_Y) \in \mathcal{T}_X\)
+    \item \(f_*(\mathcal{M}) \coloneqq \{A \subseteq Y : f^{-1}(A) \in \mathcal{M}\}\) \, - \(\sigma\)-ciało przepchnięte przez \(f\), \; dla \(\mathcal{M}\) - \(\sigma\)-ciała na \(X\) samo jest \(\sigma\)-ciałem
+    \item z ciągłości: \, \(U_Y \in \mathcal{T}_Y \implies f^{-1}(U_Y) \in \mathcal{T}_X \subseteq \mathcal{B}(X)\), \, czyli \(\mathcal{T}_Y \subseteq f_*(\mathcal{B}(X))\) \quad \(\big/\) \, weźmy \(\sigma\) obustronnie
+    \item \(\mathcal{B}(Y) = \sigma(\mathcal{T}_Y) \subseteq \sigma\big(f_*(\mathcal{B}(X))\big) = f_*(\mathcal{B}(X)) = \{A \subseteq Y : f^{-1}(A) \in \mathcal{B}(X)\}\)
+    \item \(W \in \mathcal{B}(Y) \implies W \in f_*(\mathcal{B}(X)) \implies f^{-1}(W) \in \mathcal{B}(X)\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zad{30} \; niech \((X, \mathcal{M}, \mu)\) - przestrzeń z miarą zupełną, \; \(A \subseteq X\), \; \(\exists_{A_n, B_n \in \mathcal{M}} \;\, \forall_n \;\, A_n \subseteq A \subseteq B_n, \;\; \mu(B_n \setminus A_n) \xrightarrow{n \to \infty} 0\), \; uzasadnij, że \(A \in \mathcal{M}\) \, i \, \(\mu(A) = \mu\big(\bigcup_{n=1}^{\infty} A_n\big)\)
+\begin{itemize}
+    \item oznaczmy \(L = \bigcup_{n=1}^{\infty} A_n, \;\; U = \bigcap_{n=1}^{\infty} B_n\), \; \(L, U \in \mathcal{M}\) \, (oczywiste)
+    \item \(\forall_n \;\, A_n \subseteq A \implies \bigcup_n A_n \subseteq A\), \; \(\forall_n \;\, B_n \supseteq A \implies \bigcap_n B_n \supseteq A\), \; czyli \(L \subseteq A \subseteq U\)
+    \item \(\forall_n \;\, U \subseteq B_n \;\land\; A_n \subseteq L \implies U \setminus L \subseteq B_n \setminus A_n\)
+    \item \(U \setminus L \in \mathcal{M}\), zatem z monotoniczności \(\forall_n \;\, \mu(U \setminus L) \leq \mu(B_n \setminus A_n)\)
+    \item a \(\mu(B_n \setminus A_n) \to 0\), więc \(\mu(U \setminus L) = 0\)
+    \item \(A = L \sqcup (A \setminus L)\), \, gdzie \(L \in \mathcal{M}\) \, i \, \(A \setminus L \subseteq U \setminus L\), więc z zupełności \(A \setminus L \in \mathcal{M}\), więc \(A \in \mathcal{M}\)
+    \item z monotoniczności \(\mu(A \setminus L) = 0\)
+    \item z przeliczalnej addytywności \(\mu(A) = \mu(L) + \mu(A \setminus L) = \mu(L) = \mu\big(\bigcup_n A_n\big)\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zad{31} \; \(\mu^*\) - miara zewnętrzna na \(X\), \; \(A \subseteq X\), \; \(\mu^*(A) < \infty\), \; \(\exists_{B \in \mathcal{M}(\mu^*)} \;\, B \subseteq A \;\land\; \mu^*(A) = \mu^*(B)\), \; udowodnij, że \(A \in \mathcal{M}(\mu^*)\) \\
+(\(\mathcal{M}(\mu^*)\) - \(\sigma\)-ciało otrzymane z warunku Carathéodory'ego)
+\begin{itemize}
+    \item \(B \in \mathcal{M}(\mu^*)\), zatem \(\forall_{E \subseteq X} \;\, \mu^*(E) = \mu^*(E \cap B) + \mu^*(E \setminus B)\)
+    \item \(E = A\): \, \(\mu^*(A) = \mu^*(A \cap B) + \mu^*(A \setminus B) \overset{B \subseteq A}{=} \mu^*(B) + \mu^*(A \setminus B)\)
+    \item zatem z \(\mu^*(A) < \infty\) oraz \(\mu^*(A) = \mu^*(B)\) mamy \(\mu^*(A \setminus B) = 0\)
+    \item z \textbf{tw Carathéodory'ego} \(\mathcal{M}(\mu^*)\) zawiera wszystkie zbiory miary zewnętrznej \(0\), więc \(A \setminus B \in \mathcal{M}(\mu^*)\)
+    \item \(A = B \sqcup (A \setminus B)\), \, gdzie \(B, \, A \setminus B \in \mathcal{M}(\mu^*) \implies A \in \mathcal{M}(\mu^*)\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zad{32} \; czy istnieje nieskończone przeliczalne \(\sigma\)-ciało?
+
+\smallskip
+odp.: nie \, - skończone \(\sigma\)-ciała istnieją (np. \(\{\emptyset, X\}\), \(\{\emptyset, A, A^c, X\}\)), ale każde nieskończone \(\sigma\)-ciało ma co najmniej \(2^{\aleph_0} = \mathfrak{c}\) elementów
+
+\smallskip
+idea: \, gdyby \(\mathcal{F}\) było przeliczalne, to dla każdego punktu przecięcie wszystkich zbiorów z \(\mathcal{F}\), które go zawierają, jest przecięciem przeliczalnym, więc należy do \(\mathcal{F}\) - tak powstają \enquote{atomy} (najmniejsze niepuste zbiory w \(\mathcal{F}\)); nieskończenie wiele atomów daje \(2^{\aleph_0}\) różnych sum
+
+\smallskip
+\textbf{dowód} \; (nie wprost) \, \(\mathcal{F} \subseteq 2^X\) - nieskończone przeliczalne \(\sigma\)-ciało
+\begin{steps}
+    \item atomy należą do \(\mathcal{F}\): \, dla \(x \in X\) \, \(A_x \coloneqq \bigcap_{B \in \mathcal{F}, \; x \in B} B\) \, - \textbf{atom} zawierający \(x\)
+    \begin{itemize}
+        \item przecinamy co najwyżej przeliczalnie wiele zbiorów z \(\mathcal{F}\) \(\implies A_x \in \mathcal{F}\)
+        \item \(x \in A_x\), \; \(\forall_{B \in \mathcal{F}, \; x \in B} \;\, A_x \subseteq B\)
+    \end{itemize}
+    \item dwa atomy są równe albo rozłączne: \, \(x, y \in X\)
+    \begin{itemize}
+        \item \(x \notin A_y \implies x \in A_y^c \in \mathcal{F} \implies A_x \subseteq A_y^c \implies A_x \cap A_y = \emptyset\)
+        \item \(x \in A_y \implies A_x \subseteq A_y\) (\(A_y \in \mathcal{F}\) zawiera \(x\)); \; gdyby \(y \notin A_x\), to z poprzedniego punktu (z zamienionymi \(x, y\)) \(A_x \cap A_y = \emptyset\) - sprzeczność z \(x \in A_x \cap A_y\); \; zatem \(y \in A_x \implies A_y \subseteq A_x \implies A_x = A_y\)
+    \end{itemize}
+    \item każdy zbiór z \(\mathcal{F}\) jest sumą atomów: \, \(B \in \mathcal{F}, \; x \in B \implies x \in A_x \subseteq B \implies B = \bigcup_{x \in B} A_x\)
+    \item atomów jest przeliczalnie nieskończenie wiele:
+    \begin{itemize}
+        \item \(\{A_x : x \in X\} \subseteq \mathcal{F}\) \(\implies\) co najwyżej przeliczalna
+        \item gdyby różnych atomów było skończenie wiele (\(n\)), to z (3) \(\#\mathcal{F} \leq 2^n\) - sprzeczność z nieskończonością \(\mathcal{F}\)
+        \item mamy więc ciąg \(D_1, D_2, \dots\) parami rozłącznych (z (2)), niepustych atomów z \(\mathcal{F}\)
+    \end{itemize}
+    \item \(\#\mathcal{F} \geq 2^{\aleph_0}\): \, dla \(S \subseteq \mathbb{N}\) \, \(B_S \coloneqq \bigcup_{i \in S} D_i \in \mathcal{F}\) \, (suma przeliczalna)
+    \begin{itemize}
+        \item \(S \neq T\), np. \(i \in S \setminus T\) \(\implies D_i \subseteq B_S, \;\; D_i \cap B_T = \emptyset, \;\; D_i \neq \emptyset \implies B_S \neq B_T\)
+        \item \(S \mapsto B_S\) - różnowartościowe z \(2^{\mathbb{N}}\) w \(\mathcal{F}\) \(\implies \#\mathcal{F} \geq \#2^{\mathbb{N}} = 2^{\aleph_0} > \aleph_0\) \, - sprzeczność z przeliczalnością \(\mathcal{F}\) \, \(\blacksquare\)
+    \end{itemize}
+\end{steps}
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(X = \{1, 2, 3, 4\}\), \; \(\mathcal{F} = \sigma(\{\{1, 2\}\}) = \{\emptyset, \{1, 2\}, \{3, 4\}, X\}\)
+
+\smallskip
+atomy: \, \(A_1 = A_2 = \{1, 2\}, \;\; A_3 = A_4 = \{3, 4\}\) \, - dwa atomy \(\implies \#\mathcal{F} = 2^2 = 4\); \; ogólnie skończone \(\sigma\)-ciało z \(n\) atomami ma dokładnie \(2^n\) elementów
+\end{logbox}
+
+\smallskip
+\((*)\) \; kluczowy trik: przeliczalność \(\mathcal{F}\) sprawia, że \(A_x = \bigcap \{B \in \mathcal{F} : x \in B\} \in \mathcal{F}\) \, - bez tego założenia atomy nie musiałyby należeć do \(\mathcal{F}\)
+
+\smallskip
+\((*)\) \; moc \(\sigma\)-ciała jest skończona i równa \(2^n\) albo co najmniej \(\mathfrak{c}\) \, - nic pomiędzy
+
+\newpage
+\indeks{ć10}
+
+\bigskip
+\zd{33} \; niech \(A \subseteq \mathbb{R}^m\) - przeliczalny, \; pokazać, że \(\lambda_m(A) = 0\)
+\begin{itemize}
+    \item \(A\) - przeliczalny, więc jest przeliczalną sumą swoich singletonów: \, \(A = \bigcup_{n=1}^{\infty} \{a_n\}\)
+    \item singletony to zbiory domknięte miary zero: \, \(\{a_n\} \subseteq \prod_{j=1}^{m} \big[a_{n,j} - \frac{\varepsilon}{2}, a_{n,j} + \frac{\varepsilon}{2}\big] \implies \lambda_m(\{a_n\}) \leq \varepsilon^m \xrightarrow{\varepsilon \to 0} 0\)
+    \item więc z zamkniętości \(\sigma\)-ciała na przeliczalne sumy i z przeliczalnej podaddytywności: \, \(A \in \mathcal{M}\) \, i \, \(\lambda_m(A) \leq \sum_{n=1}^{\infty} \lambda_m(\{a_n\}) = 0\) \, \(\blacksquare\)
+\end{itemize}
+
+\bigskip
+\zad{34} \; \(C\) - zbiór Cantora; \, wiemy, że \(C \subseteq [0, 1]\) - nieprzeliczalny i zwarty \, (\zad{17}), \; \(C = \bigcap_{n=0}^{\infty} C_n\) \, \(\big(\)równoważnie \(C = \{x \in [0, 1] : x = \sum_{n=1}^{\infty} \frac{a_n}{3^n}, \; a_n \in \{0, 2\}\}\big)\); \; uzasadnij, że:
+\begin{itemize}
+    \item \(C\) nie ma punktów izolowanych
+    \item \(\lambda_1(C) = 0\)
+    \item \(\operatorname{int} C = \emptyset\)
+\end{itemize}
+
+\smallskip
+wszystkie trzy punkty robimy samą konstrukcją geometryczną \(C = \bigcap_n C_n\), bez sum \(\sum \frac{a_n}{3^n}\)
+
+\smallskip
+przygotowanie: \, \(C_0 = [0, 1]\), \; \(C_{n+1}\) powstaje z \(C_n\) przez usunięcie z każdego przedziału otwartej środkowej tercji:
+\[
+[\alpha, \alpha + 3^{-n}] \;\longrightarrow\; \big[\alpha, \alpha + 3^{-(n+1)}\big] \cup \big[\alpha + 2 \cdot 3^{-(n+1)}, \alpha + 3^{-n}\big]
+\]
+\begin{itemize}
+    \item[(F1)] \(C_n\) - suma \(2^n\) rozłącznych przedziałów domkniętych, każdy długości \(3^{-n}\) \, (indukcja: każdy przedział zamienia się na dwa, każdy trzy razy krótszy)
+    \item[(F2)] końce przedziałów z \(C_n\) należą do \(C\): \, końce \(\alpha, \; \alpha + 3^{-n}\) przedziału z \(C_n\) są dalej końcami przedziałów w \(C_{n+1}\) (usuwamy tylko otwarte środki) \(\implies\) indukcyjnie leżą w każdym \(C_m\), \(m \geq n\); \; w \(C_0, \dots, C_{n-1}\) też, bo \(C_n \subseteq C_{n-1} \subseteq \dots \subseteq C_0\) \(\implies\) leżą w \(\bigcap_m C_m = C\)
+\end{itemize}
+
+\bigskip
+\begin{logbox}
+\textbf{przykład} \; \(\frac{2}{9}\) jest końcem przedziału w \(C_2 = \big[0, \frac{1}{9}\big] \cup \big[\frac{2}{9}, \frac{1}{3}\big] \cup \big[\frac{2}{3}, \frac{7}{9}\big] \cup \big[\frac{8}{9}, 1\big]\), \, więc \(\frac{2}{9} \in C\)
+\end{logbox}
+
+\begin{podpunkty}
+    \item \(C\) nie ma punktów izolowanych: \, \(\forall_{x \in C} \; \forall_{r > 0} \; \exists_{y \in C, \; y \neq x} \;\, |y - x| < r\)
+    \begin{itemize}
+        \item ustalmy \(x \in C, \; r > 0\), \; wybierzmy \(n\) t.że \(3^{-n} < r\)
+        \item \(x \in C \subseteq C_n \overset{(\text{F1})}{\implies} x \in I = [\alpha, \alpha + 3^{-n}]\) \, - jeden z przedziałów tworzących \(C_n\)
+        \item \(I\) ma dwa różne końce, a \(x\) jest równy co najwyżej jednemu z nich; \, niech \(y\) - koniec różny od \(x\):
+        \begin{itemize}
+            \item \(y \in C\) \, z (F2)
+            \item \(y \neq x\)
+            \item \(|y - x| \leq 3^{-n} < r\), \, bo \(x, y\) leżą w przedziale długości \(3^{-n}\)
+        \end{itemize}
+        \item zatem w każdej kuli wokół \(x\) jest inny punkt \(C\), więc \(x\) nie jest izolowany \, \(\blacksquare\)
+    \end{itemize}
+
+    \smallskip
+    \begin{logbox}
+    \textbf{przykład} \; \(x = 0, \; r = 0{,}05\) \, - \(n = 3\), bo \(\frac{1}{27} \approx 0{,}037 < 0{,}05\); \; \(x \in \big[0, \frac{1}{27}\big]\), więc \(y = \frac{1}{27} \in C\) \, i \, \(|y - x| < r\)
+    \end{logbox}
+    \item \(\lambda_1(C) = 0\)
+    \begin{itemize}
+        \item \(C\) - domknięty (przecięcie zbiorów domkniętych) \(\implies\) borelowski \(\implies\) mierzalny
+        \item z (F1) i addytywności miary: \, \(\lambda_1(C_n) = 2^n \cdot \frac{1}{3^n} = \big(\frac{2}{3}\big)^n\)
+        \item \(\forall_n \;\, C \subseteq C_n\), więc z monotoniczności: \, \(0 \leq \lambda_1(C) \leq \big(\frac{2}{3}\big)^n \xrightarrow{n \to \infty} 0\) \(\implies \lambda_1(C) = 0\) \, \(\blacksquare\)
+    \end{itemize}
+    uwaga: można też z ciągłości miary z góry (\zad{27}: \(C_n\) - zstępujące, \(\lambda_1(C_0) = 1 < \infty\)), ale monotoniczność wystarcza
+    \item \(\operatorname{int} C = \emptyset\)
+    \begin{itemize}
+        \item załóżmy nie wprost, że \(\operatorname{int} C \neq \emptyset\) \(\implies C\) zawiera niepusty zbiór otwarty w \(\mathbb{R}\), a więc przedział \((a, b)\), \(a < b\)
+        \item z monotoniczności \(\lambda_1(C) \geq \lambda_1((a, b)) = b - a > 0\) \, - sprzeczność z (b) \, \(\blacksquare\)
+    \end{itemize}
+\end{podpunkty}
+
+\smallskip
+\textbf{fakt} \; każdy zbiór miary Lebesgue'a zero w \(\mathbb{R}^m\) ma puste wnętrze \, (każdy niepusty zbiór otwarty zawiera kulę o dodatniej mierze); \; odwrotność nie zachodzi \, (\enquote{grube} zbiory Cantora: puste wnętrze, dodatnia miara)
+
+\bigskip
+\((*)\) \; (a): w kroku \(n\) każdy punkt \(C\) siedzi w przedziale długości \(3^{-n}\), którego końce są w \(C\) - wystarczy wziąć \(3^{-n} < r\)
+
+\smallskip
+\((*)\) \; (b): \(\lambda_1(C_n) = \big(\frac{2}{3}\big)^n \to 0\)
+
+\smallskip
+\((*)\) \; (c): wynika z (b), bo miara zero wyklucza zawieranie przedziału
+
+\smallskip
+\((*)\) \; trzy własności razem (zwarty, bez punktów izolowanych, o pustym wnętrzu) to dokładnie to, co mówi się o \(C\): \enquote{doskonały, nigdziegęsty}
+
+\bigskip
+\zad{35} \; oblicz \(\lambda_2(A)\), \; \(A = \{(x, y) \in \mathbb{R}^2 : 1 \leq x < \infty, \; 0 \leq y \leq \frac{1}{x^2}\}\)
+
+\smallskip
+wskazówka: \, dla \(\varepsilon > 0\) zbudować cegły o podstawach \(\big[(1 + \varepsilon)^k, (1 + \varepsilon)^{k+1}\big]\), \; \(k = 0, 1, 2, \dots\)
+
+\begin{center}
+\begin{tikzpicture}[x=1.2cm, y=3cm, >=latex]
+    \foreach \a/\b/\p/\q in {1/1.5/1/0.4444, 1.5/2.25/0.4444/0.1975, 2.25/3.375/0.1975/0.0878, 3.375/5.0625/0.0878/0.0390} {
+        \fill[gray!25] (\a, 0) rectangle (\b, \q);
+        \draw[dashed] (\a, 0) rectangle (\b, \p);
+    }
+    \draw[->] (-0.2, 0) -- (5.6, 0) node[right] {\(x\)};
+    \draw[->] (0, -0.08) -- (0, 1.2) node[above] {\(y\)};
+    \draw[thick, domain=1:5.4, samples=60] plot (\x, {1/(\x*\x)});
+    \node at (2.7, 0.55) {\(y = \frac{1}{x^2}\)};
+    \draw (1, 0.03) -- (1, -0.03) node[below] {\(1\)};
+    \draw (0.05, 1) -- (-0.05, 1) node[left] {\(1\)};
+\end{tikzpicture}
+
+{\small (\(1 + \varepsilon = \frac{3}{2}\); \, \(P_k\) - przerywane, \, \(Q_k\) - zacieniowane)}
+\end{center}
+
+\begin{steps}
+    \item \(A\) - domknięty \, (\(\implies\) borelowski \(\implies\) mierzalny, bo \(\mathcal{B}(\mathbb{R}^2) \subseteq \mathcal{M}(\lambda_2^*)\))
+    \begin{itemize}
+        \item w przestrzeni metrycznej \(\mathbb{R}^2\): \, \(\operatorname{scl} A = \overline{A}\)
+        \item niech \((x_n, y_n) \subset A, \;\; (x_n, y_n) \to (x_0, y_0)\), \, tzn. \(x_n \to x_0, \;\; y_n \to y_0\)
+        \item \(x_n \geq 1 \implies x_0 \geq 1\), \; \(0 \leq y_n \leq \frac{1}{x_n^2} \xrightarrow{n \to \infty} 0 \leq y_0 \leq \frac{1}{x_0^2}\) \, (ciągłość \(\frac{1}{x^2}\) na \([1, \infty)\)) \(\implies (x_0, y_0) \in A\)
+        \item czyli \(\operatorname{scl} A \subseteq A \implies \overline{A} = \operatorname{scl} A = A \implies A\) - domknięty
+    \end{itemize}
+    \item oszacowanie z góry: \, \(\varepsilon > 0\), \; \(P_k \coloneqq \big[(1 + \varepsilon)^k, (1 + \varepsilon)^{k+1}\big] \times \Big[0, \frac{1}{(1 + \varepsilon)^{2k}}\Big]\)
+    \begin{itemize}
+        \item \(A \subseteq \bigcup_{k=0}^{\infty} P_k\) \, (na \(\big[(1 + \varepsilon)^k, (1 + \varepsilon)^{k+1}\big]\) mamy \(\frac{1}{x^2} \leq \frac{1}{(1 + \varepsilon)^{2k}}\))
+        \begin{align*}
+        \lambda_2(A) &\leq \lambda_2\Big(\bigcup_{k=0}^{\infty} P_k\Big) \leq \sum_{k=0}^{\infty} \lambda_2(P_k) = \sum_{k=0}^{\infty} \big((1 + \varepsilon)^{k+1} - (1 + \varepsilon)^k\big) \cdot \frac{1}{(1 + \varepsilon)^{2k}} = \sum_{k=0}^{\infty} (1 + \varepsilon)^k \underbrace{(1 + \varepsilon - 1)}_{= \, \varepsilon} \cdot \frac{1}{(1 + \varepsilon)^{2k}} = \\
+        &= \varepsilon \sum_{k=0}^{\infty} \frac{1}{(1 + \varepsilon)^k} \overset{\text{geom.}}{=} \varepsilon \cdot \frac{1}{1 - \frac{1}{1 + \varepsilon}} = \varepsilon \cdot \frac{1 + \varepsilon}{\varepsilon} = 1 + \varepsilon
+        \end{align*}
+    \end{itemize}
+    \item oszacowanie z dołu: \, \(Q_k \coloneqq \big[(1 + \varepsilon)^k, (1 + \varepsilon)^{k+1}\big) \times \Big[0, \frac{1}{(1 + \varepsilon)^{2(k+1)}}\Big]\) \, - parami rozłączne
+    \begin{itemize}
+        \item \(\bigcup_{k=0}^{\infty} Q_k \subseteq A\) \, (na \(\big[(1 + \varepsilon)^k, (1 + \varepsilon)^{k+1}\big)\) mamy \(\frac{1}{x^2} > \frac{1}{(1 + \varepsilon)^{2(k+1)}}\))
+        \begin{align*}
+        \lambda_2(A) &\geq \lambda_2\Big(\bigcup_{k=0}^{\infty} Q_k\Big) = \sum_{k=0}^{\infty} \lambda_2(Q_k) = \sum_{k=0}^{\infty} \big((1 + \varepsilon)^{k+1} - (1 + \varepsilon)^k\big) \cdot \frac{1}{(1 + \varepsilon)^{2(k+1)}} = \sum_{k=0}^{\infty} (1 + \varepsilon)^k \underbrace{(1 + \varepsilon - 1)}_{= \, \varepsilon} \cdot \frac{1}{(1 + \varepsilon)^{2k+2}} = \\
+        &= \frac{\varepsilon}{(1 + \varepsilon)^2} \sum_{k=0}^{\infty} \frac{1}{(1 + \varepsilon)^k} \overset{\text{geom.}}{=} \frac{\varepsilon}{(1 + \varepsilon)^2} \cdot \frac{1 + \varepsilon}{\varepsilon} = \frac{1}{1 + \varepsilon}
+        \end{align*}
+    \end{itemize}
+    \item \(\forall_{\varepsilon > 0} \;\, \frac{1}{1 + \varepsilon} \leq \lambda_2(A) \leq 1 + \varepsilon \implies \lambda_2(A) = 1\) \, \(\blacksquare\)
+\end{steps}
+
+\bigskip
+\zad{36} \; niech \(f: (0, 1) \to \mathbb{R}\) - ciągła, \; \(G = \{(x, f(x)) : x \in (0, 1)\}\) - jej wykres, \; pokaż, że \(G\) jest mierzalny i \(\lambda_2(G) = 0\)
+
+\smallskip
+idea: \, na odcinku domkniętym \([a, b] \subseteq (0, 1)\) \(f\) jest jednostajnie ciągła \(\implies\) dzielimy \([a, b]\) na krótkie kawałki, nad każdym wykres mieści się w prostokącie wysokości \(< \varepsilon\), suma pól \(\leq \varepsilon(b - a)\); \, potem wyczerpujemy \((0, 1)\) odcinkami \(\big[\frac{1}{n}, 1 - \frac{1}{n}\big]\)
+
+\smallskip
+dlaczego nie od razu na \((0, 1)\)? \, na przedziale otwartym \(f\) nie musi być jednostajnie ciągła ani ograniczona, np. \(f(x) = \frac{1}{x}\) albo \(f(x) = \sin \frac{1}{x}\)
+\begin{steps}
+    \item wykres nad \([a, b]\) ma miarę zero: \, \(0 < a < b < 1\), \; \(G_{a, b} \coloneqq \{(x, f(x)) : x \in [a, b]\}\)
+    \begin{itemize}
+        \item \(f\) - ciągła na zwartym \([a, b]\) \(\overset{\text{tw Cantora}}{\implies}\) jednostajnie ciągła: \, \(\forall_{\varepsilon > 0} \; \exists_{\delta > 0} \; \forall_{x, y \in [a, b]} \;\, |x - y| < \delta \implies |f(x) - f(y)| < \varepsilon\)
+        \item ustalmy \(\varepsilon > 0\) i odpowiadające mu \(\delta\), \; \(N\) t.że \(\frac{b - a}{N} < \delta\), \; dzielimy \([a, b]\) na \(N\) odcinków domkniętych \(I_1, \dots, I_N\), \; \(|I_k| = \frac{b - a}{N}\)
+        \item na zwartym \(I_k\) \(f\) osiąga kresy (tw Weierstrassa): \, \(\exists_{x_k, y_k \in I_k} \;\, f(x_k) = \min_{I_k} f, \;\; f(y_k) = \max_{I_k} f\)
+        \item \(|x_k - y_k| \leq |I_k| < \delta \implies f(y_k) - f(x_k) < \varepsilon\) \, (jednostajna ciągłość)
+        \item \(\forall_{x \in I_k} \;\, f(x_k) \leq f(x) \leq f(y_k) \implies G_{a, b} \subseteq \bigcup_{k=1}^{N} I_k \times [f(x_k), f(y_k)]\)
+        \item z monotoniczności i podaddytywności miary zewnętrznej:
+        \[
+        \lambda_2^*(G_{a, b}) \leq \sum_{k=1}^{N} |I_k| \cdot \big(f(y_k) - f(x_k)\big) \leq \varepsilon \sum_{k=1}^{N} |I_k| = \varepsilon(b - a)
+        \]
+        \item \(\varepsilon > 0\) - dowolne \(\implies \lambda_2^*(G_{a, b}) = 0\)
+    \end{itemize}
+    \item mierzalność \(G_{a, b}\): \, zbiór miary zewnętrznej zero spełnia warunek Carathéodory'ego \(\implies G_{a, b} \in \mathcal{M}, \;\; \lambda_2(G_{a, b}) = 0\) \\
+    (alternatywnie: \(G_{a, b}\) - obraz zwartego \([a, b]\) przez ciągłe \(x \mapsto (x, f(x))\) \(\implies\) zwarty \(\implies\) domknięty \(\implies\) borelowski)
+    \item wyczerpanie \((0, 1)\): \, każdy \(x \in (0, 1)\) leży w \(\big[\frac{1}{n}, 1 - \frac{1}{n}\big]\) dla dostatecznie dużego \(n\), więc
+    \[
+    G = \bigcup_{n=3}^{\infty} G_{\frac{1}{n}, 1 - \frac{1}{n}}
+    \]
+    (od \(n = 3\), żeby odcinki były niezdegenerowane: dla \(n = 1\) odcinek pusty, dla \(n = 2\) - punkt)
+
+    \smallskip
+    \(G\) - przeliczalna suma zbiorów mierzalnych \(\implies G \in \mathcal{M}\), \; z przeliczalnej podaddytywności:
+    \[
+    \lambda_2(G) \leq \sum_{n=3}^{\infty} \lambda_2\big(G_{\frac{1}{n}, 1 - \frac{1}{n}}\big) = \sum_{n=3}^{\infty} 0 = 0 \quad \blacksquare
+    \]
+\end{steps}
+
+\smallskip
+uwaga: \, co gdy \(f\) nie jest ciągła?
+\begin{itemize}
+    \item tw Łuzina nie pomaga: daje domknięty \(F\), na którym \(f\) - ciągła i \(\lambda_1((0, 1) \setminus F) < \varepsilon\), ale wykres nad \((0, 1) \setminus F\) zawiera się tylko w pasie \(\big((0, 1) \setminus F\big) \times \mathbb{R}\) o mierze nieskończonej
+    \item właściwe narzędzie - Fubini: \, \(f\) - mierzalna \(\implies G = \{(x, y) : y - f(x) = 0\}\) - mierzalny, \; każde pionowe cięcie \(G_x = \{f(x)\}\) - jeden punkt:
+    \[
+    \lambda_2(G) = \int_{(0, 1)} \lambda_1(G_x) \, d\lambda_1(x) = \int_{(0, 1)} 0 \, d\lambda_1 = 0
+    \]
+\end{itemize}
+
+\bigskip
+\((*)\) \; jednostajna ciągłość na \([a, b]\): nad kawałkiem długości \(< \delta\) wykres mieści się w prostokącie wysokości \(< \varepsilon\) - suma pól \(\leq \varepsilon(b - a)\)
+
+\smallskip
+\((*)\) \; na \((0, 1)\) nie ma jednostajnej ciągłości - wyczerpujemy go odcinkami \(\big[\frac{1}{n}, 1 - \frac{1}{n}\big]\) i korzystamy z przeliczalnej podaddytywności
+
+\smallskip
+\((*)\) \; mierzalność za darmo: \(\lambda^* = 0 \implies \in \mathcal{M}\) \, (Carathéodory)
+
+\smallskip
+\((*)\) \; ogólny fakt: wykres dowolnej mierzalnej \(f: \mathbb{R} \to \mathbb{R}\) ma miarę \(\lambda_2\) zero \, (Fubini)
 
 \end{document}

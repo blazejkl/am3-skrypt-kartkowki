@@ -1,8 +1,8 @@
 # Fdb version 4
-["lualatex"] 1794419613.24131 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" "am3-ć-skrypt.pdf" "am3-ć-skrypt" 1794419620.80745 0
+["lualatex"] 1794422192.84392 "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" "am3-ć-skrypt.pdf" "am3-ć-skrypt" 1794422200.94431 0
   "/System/Library/Fonts/Supplemental/STIXTwoMath.otf" 1777577597 838652 fb2396fd2ef8c2e20bbb59b398c5e5b2 ""
   "/System/Library/Fonts/Supplemental/STIXTwoText.ttf" 1777577597 418956 f30770c0c6d2f28df776fa38e697dd4d ""
-  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" 1794419612.96497 77716 b2bd7d414188882d5ea632d53eee9b7e ""
+  "/Users/blazejkl/Documents/repos/am3-skrypt-kartkowki/cwiczenia/am3-ć-skrypt.tex" 1794422192.6564 113859 73da30fc3169362d8a2793fb1f2f1509 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/1bf66b236f82bc2a932aece03596c98956d1e89791c939de056b0af983bb67e6.luc" 1774820196.71856 113899 cd61ef35cdd759601a523c5e72967e98 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/4535fff5720926da9eb41482febfbf87ab8c02a4232fee006a16c0028a1c21f4.luc" 1783298542.10267 116532 fd7195ebfe39c5178b639d8d6d94ae05 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/hb/951d7374bd446dd7af3ccf8522cc114c66a592d223d5addd18777c1b5f92ab60.luc" 1783298542.06403 112992 027767471409683013dd78de211dcaf3 ""
@@ -10,7 +10,7 @@
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1783299802.67228 128299 e88a11083ed6d9ac103f9e63f3b663d2 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1783299802.3188 127670 e9488709ecbb9088bc7e0315c96def49 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/fonts/otl/stixtwomath.luc" 1783298543.28237 926144 c30c781e4cbe365f0085d87ad34ec676 ""
-  "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1792091311.26102 13129 2c534f9acc7e2fc51c7125c204f6d0d7 ""
+  "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1794420385.88486 14366 ece5d7ddac3d8299a333a6da06ecfde5 ""
   "/Users/blazejkl/Library/texlive/2026/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1774812025.31076 430311 d0408f013928b13fcba2866fa2e84d69 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Bold.otf" 1617503255 296140 9d9e879880983b374249d837a1f8b4fe ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -261,11 +261,11 @@
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat" 1774209518 6843 b47da19a8f71adfd0d5f143e53e45276 ""
   "/usr/local/texlive/2026/texmf-var/tex/generic/config/language.dat.lua" 1774209518 18335 c4274f8330817a9faeabaefbb3147a29 ""
   "/usr/local/texlive/2026/texmf-var/web2c/luahbtex/lualatex.fmt" 1774811157 5655603 173f143ad37b8dc4c9ae53d40a591731 ""
-  "am3-ć-skrypt.aux" 1794419620.10748 131 7e6d2a2bdea39815a27b0aa6022629c7 "lualatex"
-  "am3-ć-skrypt.tex" 1794419612.96497 77716 b2bd7d414188882d5ea632d53eee9b7e ""
+  "am3-ć-skrypt.aux" 1794422200.13642 131 df1799a199e3505e6e2f3a992e979608 "lualatex"
+  "am3-ć-skrypt.tex" 1794422192.6564 113859 73da30fc3169362d8a2793fb1f2f1509 ""
   "setup/math.tex" 1792061992.36788 497 7c03886e88d3edcee8c382176bd9caa0 ""
   "setup/preamble.tex" 1792091432.10074 896 f712bf992163ac7d15623b28bfcc4809 ""
-  "setup/style.tex" 1792091432.10068 2830 06c459639964574ec17cdbb127ff0215 ""
+  "setup/style.tex" 1794419761.76506 2976 16d0f1581dd58a19f2f6fdc0a9ab9890 ""
   (generated)
   "am3-ć-skrypt.aux"
   "am3-ć-skrypt.log"
