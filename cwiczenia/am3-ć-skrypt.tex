@@ -689,6 +689,9 @@ wykażemy, że \(\operatorname{id}: (X, \mathcal{T}_d) \to (X, \mathcal{T}_{\til
 \end{itemize}
 
 \bigskip
+\textbf{wniosek} \; homeomorfizmy nie zachowują ograniczoności  (ograniczoność przestrzeni nie jest niezmiennikiem topologicznym)
+
+\bigskip
 \zad{16} \; czy homeomorficzne są:
 \begin{podpunkty}
     \item \([0, 1)\) \, i \, \((a, b]\), \; \(a < b\), \; topologie indukowane z \(\mathbb{R}\)
@@ -771,6 +774,13 @@ wykażemy, że \(\operatorname{id}: (X, \mathcal{T}_d) \to (X, \mathcal{T}_{\til
 \end{podpunkty}
 
 \bigskip
+\textbf{*} \; \textbf{(a)} i \textbf{(b)} też łatwo z Heinego-Borela
+
+\smallskip
+\textbf{uwaga} \; zwartość i spójność są niezmiennikami topologicznymi
+
+
+\newpage
 \bit{przestrzeń produktowa - wstęp}
 
 \smallskip
@@ -835,6 +845,294 @@ wiemy, że \(\mathcal{T}_{d_2} = \mathcal{T}_{d_\infty}\), \; wykażemy \(\mathc
         \item \(\forall_{p \in V} \;\, p \in R_p \land R_p \subseteq V \implies V = \bigcup_{p \in V} R_p\)
         \item zatem \(V \in \mathcal{T}\) \, \(\blacksquare\)
     \end{itemize}
+\end{itemize}
+
+\bigskip
+\zdc \; analogicznie do \zad{18}
+\begin{podpunkty}
+    \item czy \(\mathbb{R} \times \mathbb{R} \times \mathbb{R} = \mathbb{R}^3\)? \, dosłownie to samo co \zad{18}, tylko wymiar wyżej
+
+    \smallskip
+    \(\mathcal{T}\) - topologia produktowa na \(\mathbb{R} \times \mathbb{R} \times \mathbb{R}\), \; \(\mathcal{T}_{d_2} = \mathcal{T}_{d_\infty}\) na \(\mathbb{R}^3\) (analogicznie jak w \(\mathbb{R}^2\)), \; wykażemy \(\mathcal{T} = \mathcal{T}_{d_\infty}\):
+    \begin{itemize}
+        \item \(\subseteq\): \, cylindry \(U_1 \times \mathbb{R} \times \mathbb{R}\) (pozostałe analogicznie), \; \((x, y, z) \in U_1 \times \mathbb{R} \times \mathbb{R} \implies \exists_{\varepsilon > 0} \;\, (x - \varepsilon, x + \varepsilon) \subseteq U_1\) \\
+        \(\implies B_{d_\infty}\big((x, y, z), \varepsilon\big) = (x - \varepsilon, x + \varepsilon) \times (y - \varepsilon, y + \varepsilon) \times (z - \varepsilon, z + \varepsilon) \subseteq U_1 \times \mathbb{R} \times \mathbb{R} \implies\) cylindry \(\in \mathcal{T}_{d_\infty} \implies \mathcal{T} \subseteq \mathcal{T}_{d_\infty}\)
+        \item \(\supseteq\): \, \(V \in \mathcal{T}_{d_\infty} \implies \forall_{p \in V} \; \exists_{\varepsilon_p > 0} \;\, R_p \coloneqq B_{d_\infty}(p, \varepsilon_p) \subseteq V\), \; \(R_p\) - sześcian, przecięcie trzech cylindrów:
+        \[
+        R_p = \big((p_1 - \varepsilon_p, p_1 + \varepsilon_p) \times \mathbb{R} \times \mathbb{R}\big) \cap \big(\mathbb{R} \times (p_2 - \varepsilon_p, p_2 + \varepsilon_p) \times \mathbb{R}\big) \cap \big(\mathbb{R} \times \mathbb{R} \times (p_3 - \varepsilon_p, p_3 + \varepsilon_p)\big) \in \mathcal{T}
+        \]
+        \(\implies V = \bigcup_{p \in V} R_p \in \mathcal{T}\)
+    \end{itemize}
+    \item czy \(\mathbb{R}^2 \times \mathbb{R} = \mathbb{R}^3\)? \, schemat taki sam jak \zad{18}, zmieniają się cylindry, trzeba skorzystać z otwartości w \(\mathbb{R}^2\)
+
+    \smallskip
+    ozn.: \, \(\big((x, y), z\big) \equiv (x, y, z)\), \; cylindry: \, \(U \times \mathbb{R}\), \, \(U\) - otwarty w \(\mathbb{R}^2\) \; oraz \; \(\mathbb{R}^2 \times W\), \, \(W\) - otwarty w \(\mathbb{R}\)
+    \begin{itemize}
+        \item \(\subseteq\): \, \((x, y, z) \in U \times \mathbb{R}\), \; \(U\) - otwarty w \(\mathbb{R}^2\) \(\implies \exists_{\varepsilon > 0} \;\, B^{\mathbb{R}^2}_{d_\infty}\big((x, y), \varepsilon\big) \subseteq U\) \\
+        \(\implies B^{\mathbb{R}^3}_{d_\infty}\big((x, y, z), \varepsilon\big) = B^{\mathbb{R}^2}_{d_\infty}\big((x, y), \varepsilon\big) \times (z - \varepsilon, z + \varepsilon) \subseteq U \times \mathbb{R}\); \; \(\mathbb{R}^2 \times W\) jak w \zad{18} \(\implies \mathcal{T} \subseteq \mathcal{T}_{d_\infty}\)
+        \item \(\supseteq\): \, sześcian \(R_p\) jak w (a), ale jako przecięcie dwóch cylindrów:
+        \[
+        R_p = \big(\underbrace{(p_1 - \varepsilon_p, p_1 + \varepsilon_p) \times (p_2 - \varepsilon_p, p_2 + \varepsilon_p)}_{= \, B^{\mathbb{R}^2}_{d_\infty}((p_1, p_2), \varepsilon_p) \text{ - otwarty w } \mathbb{R}^2} \times \mathbb{R}\big) \cap \big(\mathbb{R}^2 \times (p_3 - \varepsilon_p, p_3 + \varepsilon_p)\big) \in \mathcal{T}
+        \]
+        \(\implies V = \bigcup_{p \in V} R_p \in \mathcal{T}\)
+    \end{itemize}
+\end{podpunkty}
+
+\newpage
+\indeks{ć6}
+
+\bit{topologia pudełkowa}
+
+na produkcie \(X = \prod_{\alpha \in A} X_\alpha\) można wprowadzić inną topologię, np. pudełkową
+
+\smallskip
+\textbf{def} \; \textbf{topologia pudełkowa} \, - produktowa ze zniesionym założeniem, że \(U_\alpha = X_\alpha\) dla prawie wszystkich \(\alpha\)
+\begin{itemize}
+    \item baza \(\mathcal{T}_{\text{box}}\): \, \(\prod_{\alpha \in A} U_\alpha\), \, gdzie \(U_\alpha \in \mathcal{T}_{X_\alpha}\)
+    \item (baza \(\mathcal{T}_{\text{prod}}\): \, \(\prod_{\alpha \in A} U_\alpha\), \, gdzie \(U_\alpha \in \mathcal{T}_{X_\alpha}\) \, oraz \, \(\#\{\alpha \in A : U_\alpha \neq X_\alpha\} < \infty\))
+\end{itemize}
+
+\bigskip
+\textbf{fakt} \; zawsze zachodzi \(\mathcal{T}_{\text{prod}} \subseteq \mathcal{T}_{\text{box}}\)
+\begin{itemize}
+    \item \(X = \prod_{k=1}^{n} X_k \implies \mathcal{T}_{\text{prod}} = \mathcal{T}_{\text{box}}\)
+    \item \(X = \prod_{k=1}^{\infty} X_k\) \, i nieskończenie wiele \(X_k\) z topologią nietrywialną (różną od antydyskretnej) \(\implies \mathcal{T}_{\text{prod}} \subseteq \mathcal{T}_{\text{box}}, \;\; \mathcal{T}_{\text{prod}} \neq \mathcal{T}_{\text{box}}\)
+\end{itemize}
+
+\bigskip
+\zad{19} \; niech \(X_n = [0, 1]\), \; \(X = \prod_{n=1}^{\infty} X_n\), \; \(f: [0, 1] \to X\), \; \(f(x) = \begin{bmatrix} x \\ x \\ x \\ \vdots \end{bmatrix}\)
+\begin{podpunkty}
+    \item czy \(f\) jest ciągła, gdy topologia na \(X\) to topologia produktowa?
+    \begin{itemize}
+        \item \(f\) - ciągła \(\iff \forall_{U \in \mathcal{T}_X} \;\, f^{-1}(U) \in \mathcal{T}_{[0, 1]}\)
+        \item możemy ograniczyć się do cylindrów elementarnych, bo są podbazą \(\mathcal{T}_X\)
+        \item \(f^{-1}\big(C_{n_0}(U_{n_0})\big) = U_{n_0} \in \mathcal{T}_{[0, 1]}\), \, bo \(U_{n_0}\) jest otwarty w \(X_{n_0} = [0, 1]\)
+        \item zatem \(f\) - ciągła
+    \end{itemize}
+    \item czy \(f\) jest ciągła, gdy topologia na \(X\) to topologia pudełkowa?
+    \begin{itemize}
+        \item \(U = \prod_{n=1}^{\infty} \big(\frac{1}{2} - \frac{1}{2n}, \frac{1}{2} + \frac{1}{2n}\big) \in \mathcal{T}_{\text{box}}\), \, ale \(f^{-1}(U) = \big\{\frac{1}{2}\big\} \notin \mathcal{T}_{[0, 1]}\) \quad \(\big(\)albo \(U = \prod_{n=1}^{\infty} \big[0, \frac{1}{n}\big)\), \, \(f^{-1}(U) = \{0\}\big)\)
+        \item zatem \(f\) nie jest ciągła
+    \end{itemize}
+\end{podpunkty}
+
+\bigskip
+\textbf{def} \; \textbf{kostka Hilberta} \, \(\coloneqq \big(\prod_{n=1}^{\infty} [0, 1], \; \mathcal{T}_{\text{prod}}\big)\)
+
+\bigskip
+\zad{20} \; \(X_n = [0, 1]\), \; \(X = \prod_{n=1}^{\infty} X_n\), \; czy \(X\) jest zwarty, gdy topologia na \(X\) to:
+\begin{podpunkty}
+    \item \(\mathcal{T}_{\text{prod}}\)? \, tak, wprost z \textbf{tw Tichonowa}: \, \(\forall_{\alpha \in A} \;\, X_\alpha\) - zwarte \(\implies \prod_{\alpha \in A} X_\alpha\) - zwarte \, (dowolny iloczyn, nawet nieprzeliczalny)
+    \item \(\mathcal{T}_{\text{box}}\)? \, nie, kontrprzykład: \, \(U_0 = \big[0, \frac{2}{3}\big), \; U_1 = \big(\frac{1}{3}, 1\big]\) - otwarte w \([0, 1]\), \; niech \(g \in \{0, 1\}^{\mathbb{N}}\) (zbiór ciągów binarnych)
+    \begin{itemize}
+        \item niech \(W_g = \prod_{n=1}^{\infty} U_{g(n)} \in \mathcal{T}_{\text{box}}\), \, czyli np. \(U_1 \times U_0 \times U_0 \times \dots\) - indeksy tworzą dowolny ciąg binarny
+        \item \(X = \bigcup_g W_g\) \, - pokrycie
+        \item \(0 \in U_0\), ale \(0 \notin U_1\)
+        \item \(1 \in U_1\), ale \(1 \notin U_0\)
+    \end{itemize}
+    zatem każdy punkt \(x \in \{0, 1\}^{\mathbb{N}}\) jest pokryty przez dokładnie jeden zbiór z pokrycia (\(W_x\)), a takich punktów jest nieskończenie wiele, więc nie istnieje skończone podpokrycie \(\implies X\) nie jest zwarty
+\end{podpunkty}
+
+\newpage
+\indeks{ć7}
+
+\bigskip
+\zad{21} \; czy kostka Hilberta jest ciągowo zwarta?
+
+\smallskip
+kostka Hilberta: \, \(X = \prod_{n=1}^{\infty} [0, 1]\) z \(\mathcal{T}_{\text{prod}}\), \; \(K \subseteq X\) - \textbf{ciągowo zwarty} \(\iff\) każdy ciąg z \(K\) ma podciąg zbieżny w \(K\)
+
+\smallskip
+\((*)\) \; z wykładu: na przestrzeni metrycznej zwartość \(\iff\) ciągowa zwartość \, (1 \(\iff\) 3 z T4)
+
+\smallskip
+wykażemy, że kostka Hilberta jest \textbf{metryzowalna} \, \(\big(\iff \exists_d \;\, \mathcal{T}_d = \mathcal{T}_{\text{prod}}\), \, gdzie \(\mathcal{T}_d = \{U \subseteq X : \forall_{x \in U} \; \exists_{r > 0} \;\, B_d(x, r) \subseteq U\}\big)\)
+
+wówczas wprost z tw Tichonowa i \((*)\) kostka Hilberta będzie ciągowo zwarta
+\begin{steps}
+    \item wykażemy, że \(d(x, y) = \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k|\) jest metryką
+    \begin{itemize}
+        \item dla kostki Hilberta \(\displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| \leq \displaystyle\sum_{k=1}^{\infty} 2^{-k} \cdot 1 = 1\) \, - zbieżny szereg geometryczny
+        \item i) \, \(d(x, y) = 0 \iff \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| = 0 \overset{\text{każdy wyraz} \, = \, 0}{\iff} \forall_k \;\, x_k = y_k \iff x = y\) \, \(\checkmark\)
+        \item ii) \, trywialne z symetrii \(|\cdot|\) \, \(\checkmark\)
+        \item iii) \, \(\displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| \overset{?}{\leq} \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - z_k| + \displaystyle\sum_{k=1}^{\infty} 2^{-k} |z_k - y_k|\)
+        \begin{itemize}
+            \item \(\forall_k \;\, |x_k - y_k| \leq |x_k - z_k| + |z_k - y_k|\)
+            \item zatem \(\forall_k \;\, 2^{-k} |x_k - y_k| \leq 2^{-k} |x_k - z_k| + 2^{-k} |z_k - y_k|\)
+            \item zatem \(\displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| \leq \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - z_k| + \displaystyle\sum_{k=1}^{\infty} 2^{-k} |z_k - y_k|\) \, \(\blacksquare\)
+        \end{itemize}
+    \end{itemize}
+    \item wykażemy, że \(\mathcal{T}_d = \mathcal{T}_{\text{prod}}\)
+    \begin{itemize}
+        \item \(\subseteq\):
+        \begin{itemize}
+            \item \((**)\) \; \(U \in \mathcal{T}_{\text{prod}} \iff \forall_{x \in U} \; \exists_{V_x \text{ - bazowy w } \mathcal{T}_{\text{prod}}} \;\, x \in V_x \subseteq U\) \, (\(V_x\) - skończone przecięcie cylindrów)
+            \item czyli \(\mathcal{T}_d \subseteq \mathcal{T}_{\text{prod}} \iff (U \in \mathcal{T}_d \implies U \in \mathcal{T}_{\text{prod}}) \impliedby \forall_{U \in \mathcal{T}_d} \; \forall_{x \in U} \; \exists_{V_x} \;\, x \in V_x \subseteq B_d(x, r_x) \subseteq U\)
+            \item \(V_x \subseteq B_d(x, r) \iff \forall_{y \in V_x} \;\, d(x, y) < r\)
+            \item \(d(x, y) = \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| = \displaystyle\sum_{k=1}^{N} 2^{-k} |x_k - y_k| + \displaystyle\sum_{k=N+1}^{\infty} 2^{-k} |x_k - y_k|\), \; gdzie
+            \begin{align*}
+            \sum_{k=N+1}^{\infty} 2^{-k} |x_k - y_k| \leq \sum_{k=N+1}^{\infty} 2^{-k} \overset{j \, = \, k - N - 1}{=} \sum_{j=0}^{\infty} 2^{-(N+1+j)} = 2^{-(N+1)} \sum_{j=0}^{\infty} \Big(\frac{1}{2}\Big)^j \overset{\text{geom., } q = \frac{1}{2}}{=} 2^{-(N+1)} \cdot \frac{1}{1 - \frac{1}{2}} = 2^{-N} \xrightarrow{N \to \infty} 0
+            \end{align*}
+            \item dobieramy \(N\) tak, żeby \(2^{-N} < \frac{r}{2} \overset{\log_2 \nearrow \text{ na } (0, \infty)}{\iff} \log_2 2^{-N} < \log_2 \frac{r}{2} \iff -N < \log_2 r - 1 \iff N > 1 - \log_2 r\)
+            \item więc ustalmy \(N = \max\{1, \lfloor 1 - \log_2 r \rfloor + 1\}\)
+            \item chcemy otrzymać \(\displaystyle\sum_{k=1}^{N} 2^{-k} |x_k - y_k| < \frac{r}{2}\)
+            \item niech \(V_x\) będzie przecięciem cylindrów ograniczających współrzędne \(1, \dots, N\) przez \(|x_k - y_k| < \frac{r}{2}\)
+            \item wtedy mamy \(\displaystyle\sum_{k=1}^{N} 2^{-k} |x_k - y_k| < \frac{r}{2} \displaystyle\sum_{k=1}^{N} 2^{-k} < \frac{r}{2} \cdot 1 = \frac{r}{2}\)
+            \item czyli \(d(x, y) = \displaystyle\sum_{k=1}^{\infty} 2^{-k} |x_k - y_k| < \frac{r}{2} + \frac{r}{2} = r\) \, \(\blacksquare\)
+        \end{itemize}
+        \item \(\supseteq\):
+        \begin{itemize}
+            \item redukcja do cylindrów: \, \(U \in \mathcal{T}_{\text{prod}} \iff U\) jest dowolną sumą skończonych przecięć cylindrów \, (topologia jest zamknięta na obie operacje)
+            \item więc wystarczy wykazać, że cylindry są otwarte w \(\mathcal{T}_d\) \, (dla dowolnego otwartego \(W\) w \([0, 1]\))
+            \item cylindry są otwarte \(\iff\) przeciwobrazy rzutowań są otwarte \(\iff\) rzutowania są ciągłe \, (to też daje tezę, bo \(\mathcal{T}_{\text{prod}}\) - najsłabsza topologia t.że rzutowania są ciągłe)
+            \item \((C)\) \; \(f: (X, d_X) \to (Y, d_Y)\) - ciągła w \(x_0 \iff \forall_{\varepsilon > 0} \; \exists_{\delta > 0} \; \forall_{x \in X} \;\, d_X(x, x_0) < \delta \implies d_Y(f(x), f(x_0)) < \varepsilon\)
+            \item zakładamy, że kostka Hilberta jest z \(\mathcal{T}_{\text{prod}}\) nad czynnikami \([0, 1]\) z topologią standardową indukowaną z \(\mathbb{R}\)
+            \item wtedy \(f = p_k, \;\; d_X = d, \;\; d_Y(a, b) = |b - a|\)
+            \item musimy więc wykazać \(d(x, x_0) < \delta \implies |x_k - x_{0, k}| < \varepsilon\)
+            \item mamy \(2^{-k} |x_k - x_{0, k}| \leq d(x, x_0) \iff |x_k - x_{0, k}| \leq 2^k d(x, x_0)\)
+            \item ustalmy \(\varepsilon > 0\), chcemy \(2^k \delta \leq \varepsilon\), czyli \(\delta \leq \varepsilon 2^{-k}\), \; weźmy \(\delta = \varepsilon 2^{-k}\)
+            \item zatem \(d(x, x_0) < \delta \implies |x_k - x_{0, k}| \leq 2^k d(x, x_0) < 2^k \delta = 2^k \varepsilon 2^{-k} = \varepsilon\) \, \(\blacksquare\)
+        \end{itemize}
+    \end{itemize}
+\end{steps}
+
+\bigskip
+\textbf{uwaga} \; zupełność nie jest niezmiennikiem topologicznym, H nie musi zachowywać ciągów Cauchy'ego
+
+\bigskip
+\textbf{def} \; \textbf{przestrzeń} \(\ell^p\) \, dla \(1 \leq p < \infty\): \, \(\ell^p \coloneqq \{x = (x_n)_{n=1}^{\infty} \subset \mathbb{R} : \sum_{n=1}^{\infty} |x_n|^p < \infty\}\)
+\begin{itemize}
+    \item \(\norm{x}_p = \big(\sum_{n=1}^{\infty} |x_n|^p\big)^{\frac{1}{p}}\)
+    \item iloczyn skalarny w \(\ell^2\): \, \(\inner{x, y} = \sum_{n=1}^{\infty} x_n y_n\)
+    \item metryka w \(\ell^2\): \, \(d_2(x, y) = \sqrt{\sum_n (x_n - y_n)^2}\)
+\end{itemize}
+
+\smallskip
+\textbf{fakt} \; \((\ell^2, d_2)\) - przestrzeń liniowa, zupełna
+
+\smallskip
+\textbf{nierówność Cauchy'ego-Schwarza} \; (= nierówność Höldera dla \(p = q = 2\)) \, \(\sum_n |x_n y_n| \leq \norm{x}_2 \norm{y}_2\)
+
+\newpage
+\zad{22} \; \(X = \prod_{n=1}^{\infty} \big[0, \frac{1}{n}\big]\) z metryką \(d_2\), \; pokazać, że \((X, d_2)\) jest homeomorficzne z kostką Hilberta
+
+\smallskip
+kandydat: \, \(h: H \to X, \;\; h(x_1, x_2, \dots) = \big(x_1, \frac{1}{2} x_2, \dots\big)\), \; \(h^{-1}: X \to H, \;\; h^{-1}(y_1, y_2, \dots) = (y_1, 2y_2, \dots)\)
+
+\smallskip
+skrót: \, ciągła bijekcja z przestrzeni zwartej na przestrzeń Hausdorffa \(\implies\) homeomorfizm; \, \(H\) - zwarta (tw Tichonowa), \, \(X\) - metryczna \(\implies\) Hausdorffa \, - ale robimy na piechotę
+
+\smallskip
+ozn.: \, \(H = \prod_{n=1}^{\infty} [0, 1]\) z metryką \(d(x, y) = \sum_{n=1}^{\infty} 2^{-n} |x_n - y_n|\), która generuje \(\mathcal{T}_{\text{prod}}\) \, (\zad{21}); \, \(X\) z \(d_2\) \, (\(d_2\) skończona na \(X\), bo \(\sum \frac{1}{n^2} < \infty\))
+
+\smallskip
+\(h(x) = \big(\frac{x_n}{n}\big)_{n=1}^{\infty}, \;\; g(y) = (n y_n)_{n=1}^{\infty}\)
+\begin{steps}
+    \item poprawność określenia:
+    \begin{itemize}
+        \item \(x \in H \implies 0 \leq x_n \leq 1 \implies 0 \leq \frac{x_n}{n} \leq \frac{1}{n} \;\, \forall_n \implies h(x) \in X\)
+        \item \(y \in X \implies 0 \leq y_n \leq \frac{1}{n} \implies 0 \leq n y_n \leq 1 \;\, \forall_n \implies g(y) \in H\)
+    \end{itemize}
+    \item ciągłość:
+    \begin{podpunkty}
+        \item \(g: (X, d_2) \to (H, d)\) - lipschitzowska
+        \begin{itemize}
+            \item jeden składnik sumy kwadratów nie przekracza całej sumy: \, \(\forall_n \;\, |x_n - y_n| \leq d_2(x, y)\)
+            \item \(d(g(x), g(y)) = \displaystyle\sum_{n=1}^{\infty} 2^{-n} n |x_n - y_n| \leq d_2(x, y) \displaystyle\sum_{n=1}^{\infty} \frac{n}{2^n} \overset{(\text{f1})}{=} 2 \, d_2(x, y)\)
+            \item zatem \(g\) - lipschitzowska ze stałą \(2\), więc ciągła
+        \end{itemize}
+        \item \(h: (H, d) \to (X, d_2)\) - ciągła \, (trik z ogonem)
+        \begin{itemize}
+            \item ustalmy \(\varepsilon > 0\), \; \(\sum \frac{1}{n^2}\) - zbieżny \(\implies \exists_N \;\, \sum_{n=N+1}^{\infty} \frac{1}{n^2} < \frac{\varepsilon^2}{2}\), \; weźmy \(\delta = 2^{-(N+1)} \varepsilon\) \, i niech \(d(x, y) < \delta\)
+            \item \(d_2(h(x), h(y))^2 = \displaystyle\sum_{n=1}^{\infty} \frac{(x_n - y_n)^2}{n^2}\)
+            \item ogon: \, \(|x_n - y_n| \leq 1 \implies \displaystyle\sum_{n=N+1}^{\infty} \frac{(x_n - y_n)^2}{n^2} \leq \displaystyle\sum_{n=N+1}^{\infty} \frac{1}{n^2} < \frac{\varepsilon^2}{2}\)
+            \item początek: \, jak w \zad{21}: \, \(\forall_{n \leq N} \;\, |x_n - y_n| \leq 2^n d(x, y) \leq 2^N d(x, y)\), \, zatem
+            \begin{align*}
+            \sum_{n=1}^{N} \frac{(x_n - y_n)^2}{n^2} \leq 4^N d(x, y)^2 \sum_{n=1}^{N} \frac{1}{n^2} \overset{(\text{f2})}{<} 2 \cdot 4^N \delta^2 = 2 \cdot 4^N \cdot \frac{\varepsilon^2}{4^{N+1}} = \frac{\varepsilon^2}{2}
+            \end{align*}
+            \item razem \(d_2(h(x), h(y))^2 < \varepsilon^2\), czyli \(d_2(h(x), h(y)) < \varepsilon\) \(\implies h\) - ciągła, a nawet jednostajnie ciągła (\(\delta\) nie zależy od \(x\))
+        \end{itemize}
+    \end{podpunkty}
+    \item złożenia to identyczności: \, \(\forall_n \;\, (g \circ h)(x)_n = n \cdot \frac{x_n}{n} = x_n, \;\; (h \circ g)(y)_n = \frac{n y_n}{n} = y_n\) \\
+    \(\implies g \circ h = \operatorname{id}_H, \;\; h \circ g = \operatorname{id}_X \implies h\) - bijekcja, \, \(h^{-1} = g\)
+    \item \(h: H \to X\) - ciągła bijekcja o ciągłej odwrotności \(h^{-1} = g\) \(\implies h\) - homeomorfizm \(\implies (X, d_2)\) jest homeomorficzna z kostką Hilberta \, \(\blacksquare\)
+\end{steps}
+
+\smallskip
+fakty użyte po drodze:
+\begin{itemize}
+    \item (f1) \; \(\sum_{n=1}^{\infty} \frac{n}{2^n} = 2\), \, bo \(\sum n q^n = \frac{q}{(1 - q)^2}\) dla \(q = \frac{1}{2}\)
+    \item (f2) \; \(\sum_{n=1}^{\infty} \frac{1}{n^2} < 2\), \, bo \(1 + \sum_{n \geq 2} \frac{1}{n(n-1)} = 1 + 1 = 2\), \, a \(\frac{1}{n^2} < \frac{1}{n(n-1)}\) dla \(n \geq 2\)
+\end{itemize}
+
+\bigskip
+\textbf{wniosek} \; kostka Hilberta jest homeomorficzna ze zwartym podzbiorem \(X = \prod_{n=1}^{\infty} \big[0, \frac{1}{n}\big] \subseteq \ell^2\), który nie jest zawarty w żadnej skończenie wymiarowej podprzestrzeni
+
+\bigskip
+\zad{23} \; podać przykład przestrzeni metrycznej zupełnej i jej podzbioru, który jest domknięty i ograniczony, ale nie zwarty
+
+\smallskip
+(wiadomo, że w przestrzeni metrycznej zupełnej: \, \(K\) - zwarty \(\iff K\) - domknięty \(\land \; K\) - całkowicie ograniczony)
+
+\smallskip
+odp.: \, \((\ell^2, d_2)\), \; \(K = \overline{B}(0, 1) = \{x \in \ell^2 : d_2(x, 0) \leq 1\}\)
+\begin{itemize}
+    \item domknięty: \, \(\overline{\overline{B}(0, 1)} \overset{?}{=} \overline{B}(0, 1)\)
+    \begin{itemize}
+        \item z wykładu: w przestrzeni metrycznej \(\overline{A} = \operatorname{scl} A\), \; \(\supseteq\) mamy automatycznie z \(A \subseteq \overline{A}\)
+        \item \(\subseteq\): \, \(x \in \operatorname{scl} \overline{B}(0, 1) \iff \exists_{(x_n) \subset \overline{B}(0, 1)} \;\, x_n \xrightarrow{d_2} x \implies \forall_{\varepsilon > 0} \; \exists_n \;\, d_2(x, x_n) < \varepsilon\) \\
+        \(\implies d_2(x, 0) \leq \underbrace{d_2(x, x_n)}_{< \, \varepsilon} + \underbrace{d_2(x_n, 0)}_{\leq \, 1} < \varepsilon + 1 \;\; \forall_{\varepsilon > 0} \implies d_2(x, 0) \leq 1 \implies x \in \overline{B}(0, 1)\)
+        \item stąd \(\overline{\overline{B}(0, 1)} = \operatorname{scl} \overline{B}(0, 1) \subseteq \overline{B}(0, 1) \subseteq \overline{\overline{B}(0, 1)}\), \, czyli \(\overline{B}(0, 1) = \overline{\overline{B}(0, 1)}\) - domknięty
+    \end{itemize}
+    \item ograniczony: \, zbiór jest ograniczony, gdy jest zawarty w kuli o pewnym promieniu; \; \(\overline{B}(0, 1) \subseteq B(0, 2)\)
+    \item nie zwarty:
+    \begin{itemize}
+        \item baza standardowa \((e_k)_{k=1}^{\infty} \subset \overline{B}(0, 1)\): \, \(e_1 = (1, 0, 0, \dots), \; e_2 = (0, 1, 0, \dots), \; \dots\)
+        \item \(\forall_{k \neq m} \;\, d_2(e_k, e_m) = \sqrt{2}\) \, - ciąg \enquote{zdystansowany}
+        \item każda kula o promieniu \(\frac{\sqrt{2}}{2}\) zawiera co najwyżej jeden \(e_k\), więc skończenie wiele takich kul nie pokryje \(\overline{B}(0, 1)\) \(\implies\) nie jest całkowicie ograniczony \(\implies\) nie jest zwarty
+    \end{itemize}
+\end{itemize}
+
+\newpage
+\indeks{ć8}
+
+\bigskip
+czy istnieje \(\mu: 2^{\mathbb{R}} \to [0, \infty]\) o własnościach:
+\begin{podpunkty}
+    \item \(\mu([a, b]) = b - a, \;\; b > a\)
+    \item \(\mu(\emptyset) = 0\)
+    \item przeliczalna addytywność: \, \(A_n \subseteq \mathbb{R}\) - parami rozłączne \(\implies \mu\big(\bigcup_{n=1}^{\infty} A_n\big) = \displaystyle\sum_{n=1}^{\infty} \mu(A_n)\)
+    \item \(\forall_{V \subseteq \mathbb{R}} \; \forall_{t \in \mathbb{R}} \;\, \mu(t + V) = \mu(V)\)
+\end{podpunkty}
+
+\bigskip
+\textbf{tw Vitaliego} \; funkcja \(\mu: 2^{\mathbb{R}} \to [0, \infty]\) o własnościach (a)-(d) nie istnieje
+
+\smallskip
+\textbf{dowód}
+\begin{itemize}
+    \item na \(\mathbb{R}\) określmy relację \(x \sim y \iff x - y \in \mathbb{Q}\), \, jest to relacja równoważności:
+    \begin{itemize}
+        \item zwrotność: \, \(x - x = 0 \in \mathbb{Q}\)
+        \item symetria: \, \(x - y \in \mathbb{Q} \implies y - x \in \mathbb{Q}\)
+        \item przechodniość: \, \(x \sim y \land y \sim z \implies x - z = (x - y) + (y - z) \in \mathbb{Q}\)
+    \end{itemize}
+    \item dostajemy więc podział \(\mathbb{R}\) na klasy abstrakcji
+    \item zauważmy, że \(\forall_{x \in \mathbb{R}} \;\, x \sim x - \lfloor x \rfloor \in [0, 1)\)
+    \item niech \(V\) - zbiór reprezentantów wszystkich klas abstrakcji (z każdej klasy bierzemy dokładnie jednego reprezentanta, z aksjomatu wyboru), t.że \(V \subseteq [0, 1)\)
+    \item niech \(W = \bigcup_{t \in [-1, 1] \cap \mathbb{Q}} (t + V)\), \, wtedy zbiory \(\{t + V : t \in [-1, 1] \cap \mathbb{Q}\}\) są parami rozłączne:
+    \begin{itemize}
+        \item przypuśćmy, że \(\exists_{t_1, t_2 \in [-1, 1] \cap \mathbb{Q}, \; t_1 \neq t_2} \; \exists_{v_1, v_2 \in V} \;\, t_1 + v_1 = t_2 + v_2\)
+        \item wtedy \(v_1 - v_2 = t_2 - t_1 \in \mathbb{Q} \setminus \{0\}\), więc \(v_1 \sim v_2\) i \(v_1 \neq v_2\) \, - sprzeczność z def \(V\) (jeden reprezentant z każdej klasy)
+    \end{itemize}
+    \item \textbf{monotoniczność} \(\mu\): \, \(A \subseteq B \subseteq \mathbb{R} \implies \mu(B) = \mu\big((B \setminus A) \sqcup A\big) \overset{\text{(b), (c)}}{=} \mu(B \setminus A) + \mu(A) \geq \mu(A)\)
+    \item \(V \subseteq [0, 1), \; t \in [-1, 1] \implies W \subseteq [-1, 2]\), \, zatem
+    \begin{align*}
+    3 \overset{\text{(a)}}{=} \mu([-1, 2]) \overset{\text{mon.}}{\geq} \mu(W) = \mu\Big(\bigcup_{t \in [-1, 1] \cap \mathbb{Q}} (t + V)\Big) \overset{\text{(c)}}{=} \sum_{t \in [-1, 1] \cap \mathbb{Q}} \mu(t + V) \overset{\text{(d)}}{=} \sum_{t \in [-1, 1] \cap \mathbb{Q}} \mu(V) = \mu(V) + \mu(V) + \dots
+    \end{align*}
+    \item jeśli \(\mu(V) > 0\), to suma \(= \infty > 3\) \, - sprzeczność, \; zatem \(\mu(V) = 0\), więc \(\mu(W) = 0\)
+    \item \([0, 1] \subseteq W\): \, \(x \in [0, 1] \implies \exists_{v \in V} \;\, x \sim v \implies x - v \in \mathbb{Q} \cap (-1, 1] \implies x = \underbrace{(x - v)}_{= \, t \, \in \, [-1, 1] \cap \mathbb{Q}} + v \in W\)
+    \item zatem \(1 \overset{\text{(a)}}{=} \mu([0, 1]) \overset{\text{mon.}}{\leq} \mu(W) = 0\) \, - sprzeczność \, \(\blacksquare\)
 \end{itemize}
 
 \end{document}
